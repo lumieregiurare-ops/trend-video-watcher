@@ -1,7 +1,7 @@
 {
-  "name": "youtube-ranking-gotcha",
+  "name": "trend-video-watcher",
   "version": "1.0.0",
-  "description": "YouTube の急上昇をいろいろな切り口のランキングにまとめる静的サイト",
+  "description": "話題の動画の急上昇ランキングを、いろいろな切り口でまとめる静的サイト",
   "type": "module",
   "private": true,
   "engines": { "node": ">=20" },

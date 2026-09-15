@@ -1,8 +1,8 @@
 {
   "site": {
-    "title": "Youtubeランキングゴッチャ",
+    "title": "急上昇動画ウォッチャー",
     "tagline": "YouTube の急上昇を、カテゴリ別・伸び順・高評価率などいろいろな切り口でまとめています。",
-    "url": "https://yt.gamelab.main.jp/",
+    "url": "https://trend.gamelab.main.jp/",
     "contactUrl": ""
   },
   "port": 3240,

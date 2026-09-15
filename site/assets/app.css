@@ -1,4 +1,4 @@
-/* Youtubeランキングゴッチャ — 順位が主役のランキング一覧 */
+/* 急上昇動画ウォッチャー — 順位が主役のランキング一覧 */
 :root {
   --bg: #f7f7f8;
   --surface: #ffffff;
@@ -7,10 +7,10 @@
   --border-strong: #cbcbd2;
   --text: #16161a;
   --text-muted: #6b6b75;
-  --accent: #ff0033;
-  --accent-dark: #d1002a;
-  --accent-soft: #ffe8ec;
-  --up: #d1002a;
+  --accent: #f4511e;
+  --accent-dark: #c63d10;
+  --accent-soft: #ffeee7;
+  --up: #c63d10;
   --down: #2b6cb0;
   --gold: #c9971b;
   --radius: 12px;
@@ -99,23 +99,9 @@ button {
   gap: 7px;
 }
 
-.logo .play {
-  width: 24px;
-  height: 17px;
-  border-radius: 5px;
-  background: var(--accent);
-  position: relative;
+.logo .mark {
+  color: var(--accent);
   flex: 0 0 auto;
-}
-
-.logo .play::after {
-  content: "";
-  position: absolute;
-  left: 9px;
-  top: 4.5px;
-  border-left: 7px solid #fff;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
 }
 
 .logo .hit {
@@ -818,7 +804,7 @@ main.wrap {
 .bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #ff6b6b, var(--accent));
+  background: linear-gradient(90deg, #ff9f6b, var(--accent));
 }
 
 .bar-row .val {
