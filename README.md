@@ -113,7 +113,7 @@ APIキーと FTP の認証情報はご本人で入力してください。
 | 名前 | 内容 |
 | --- | --- |
 | `DEPLOY_TARGET` | `lolipop`（この値のときだけアップロードする） |
-| `LOLIPOP_SERVER_DIR` | サブドメインの公開ディレクトリ（例: `./trend.gamelab.main.jp/`。末尾のスラッシュ必須） |
+| `LOLIPOP_SERVER_DIR` | サブドメインの公開ディレクトリ（例: `./trend.gamelab.website/`。末尾のスラッシュ必須） |
 
 サブドメインを決めたら `config.json` の `site.url` と `site/index.html` の OGP も更新してください。
 
