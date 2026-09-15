@@ -3,6 +3,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners } from "./lib/derive.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const config = await readJson(join(ROOT, "config.json"));
@@ -77,16 +78,24 @@ const channels = [...byChannel.values()]
   .sort((a, b) => b.count - a.count || b.views - a.views)
   .map((c, i) => ({ ...c, rank: i + 1 }));
 
+const catCounts = config.categories
+  .map((c) => ({ id: c.id, label: c.label, count: videos.filter((v) => v.categories.includes(c.id)).length }))
+  .filter((c) => c.count > 0);
+
 await writeJson(join(ROOT, "docs", "data", "rankings.json"), {
   updatedAt: new Date().toISOString(),
   previousAt: new Date(now - 6 * 3600000).toISOString(),
   site: config.site,
   isSample: true,
   total: videos.length,
-  categories: config.categories.map((c) => ({ id: c.id, label: c.label, count: videos.filter((v) => v.categories.includes(c.id)).length })).filter((c) => c.count > 0),
+  categories: catCounts,
   rankings: config.rankings,
   likeRateMinViews: config.likeRateMinViews ?? 10000,
   channels,
+  keywords: buildKeywords(videos),
+  stats: buildStats(videos, catCounts),
+  digest: buildDigest(videos, catCounts),
+  longRunners: buildLongRunners(videos),
   videos,
 });
 log(`サンプルデータを書き出しました: 動画 ${videos.length} 件 / チャンネル ${channels.length} 件`);

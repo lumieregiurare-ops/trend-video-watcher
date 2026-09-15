@@ -3,6 +3,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners } from "./lib/derive.mjs";
 import { fetchTrending, fetchChannels, apiKey } from "./lib/youtube.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -128,18 +129,29 @@ const channels = [...byChannel.values()]
   .slice(0, config.channelRankingSize || 20)
   .map((c, i) => ({ ...c, rank: i + 1 }));
 
-// ---------- 4. 保存 ----------
+// ---------- 4. 一覧の外に出す集計 ----------
 videos.sort((a, b) => (a.overallRank || 999) - (b.overallRank || 999) || b.views - a.views);
 
+const cats = perCategory.filter((c) => c.count > 0);
+const keywords = buildKeywords(videos);
+const stats = buildStats(videos, cats);
+const digest = buildDigest(videos, cats);
+const longRunners = buildLongRunners(videos);
+
+// ---------- 5. 保存 ----------
 await writeJson(OUT, {
   updatedAt: nowIso,
   previousAt: history.ranAt || "",
   site: config.site || {},
   total: videos.length,
-  categories: perCategory.filter((c) => c.count > 0),
+  categories: cats,
   rankings: config.rankings,
   likeRateMinViews: config.likeRateMinViews ?? 10000,
   channels,
+  keywords,
+  stats,
+  digest,
+  longRunners,
   videos,
 });
 

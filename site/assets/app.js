@@ -198,7 +198,7 @@
   function renderChannels() {
     const box = $("#channelList");
     box.innerHTML = "";
-    for (const c of data.channels) {
+    for (const c of (data.channels || []).slice(0, 10)) {
       const li = document.createElement("li");
       li.className = "ch-item" + (c.rank <= 3 ? ` top${c.rank}` : "");
       const a = document.createElement("a");
@@ -206,14 +206,203 @@
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       a.className = "info";
-      a.innerHTML = `<div class="nm">${c.title}</div><div class="sub">急上昇 ${c.count} 本 ・ 合計 ${jpNum(c.views)} 回再生</div>`;
+      const nm = document.createElement("div");
+      nm.className = "nm";
+      nm.textContent = c.title;
+      const sub = document.createElement("div");
+      sub.className = "sub";
+      sub.textContent = `急上昇 ${c.count} 本 ・ 計 ${jpNum(c.views)} 回再生`;
+      a.append(nm, sub);
       const r = document.createElement("span");
       r.className = "r";
       r.textContent = c.rank;
       li.append(r, a);
       box.appendChild(li);
     }
-    $("#channelSection").hidden = !data.channels.length;
+    $("#channelMod").hidden = !(data.channels || []).length;
+  }
+
+  function renderStats() {
+    const s = data.stats;
+    if (!s) {
+      $("#statsMod").hidden = true;
+      return;
+    }
+    const boxes = [
+      { k: "急上昇の動画", v: jpNum(s.videoCount), u: "本" },
+      { k: "合計再生数", v: jpNum(s.totalViews), u: "回" },
+      { k: "ショート比率", v: s.shortRatio, u: "%" },
+      { k: "初登場", v: jpNum(s.newCount), u: "本" },
+    ];
+    $("#statGrid").innerHTML = boxes
+      .map((b) => `<div class="stat-box"><div class="k">${b.k}</div><div class="v">${b.v}<small>${b.u}</small></div></div>`)
+      .join("");
+
+    const tg = s.topGrowth;
+    const box = $("#topGrowth");
+    box.innerHTML = "";
+    if (!tg) {
+      box.hidden = true;
+      return;
+    }
+    box.hidden = false;
+    const a = document.createElement("a");
+    a.href = `https://www.youtube.com/watch?v=${tg.id}`;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.style.display = "contents";
+    const img = document.createElement("img");
+    img.src = tg.thumb;
+    img.alt = "";
+    img.loading = "lazy";
+    const body = document.createElement("div");
+    body.className = "tg-body";
+    const label = document.createElement("div");
+    label.className = "tg-label";
+    label.textContent = "いちばん伸びている動画";
+    const title = document.createElement("div");
+    title.className = "tg-title";
+    title.textContent = tg.title;
+    const num = document.createElement("div");
+    num.className = "tg-num";
+    num.textContent = `+${jpNum(tg.viewsPerHour)} 回/時 ・ ${tg.channel}`;
+    body.append(label, title, num);
+    a.append(img, body);
+    box.appendChild(a);
+  }
+
+  function renderKeywords() {
+    const box = $("#keywordCloud");
+    box.innerHTML = "";
+    const list = data.keywords || [];
+    for (const k of list) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "kw";
+      b.innerHTML = `${k.word}<span class="n">${k.count}</span>`;
+      b.addEventListener("click", () => {
+        $("#q").value = k.word;
+        set({ q: k.word });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      box.appendChild(b);
+    }
+    $("#keywordMod").hidden = !list.length;
+  }
+
+  function renderDigest() {
+    const box = $("#digestGrid");
+    box.innerHTML = "";
+    const list = data.digest || [];
+    for (const d of list) {
+      const sec = document.createElement("article");
+      sec.className = "digest";
+
+      const head = document.createElement("div");
+      head.className = "digest-head";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = d.label;
+      btn.addEventListener("click", () => {
+        set({ cat: d.id });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      const n = document.createElement("span");
+      n.className = "n";
+      n.textContent = `${data.categories.find((c) => c.id === d.id)?.count || d.videos.length} 本`;
+      head.append(btn, n);
+
+      const ol = document.createElement("ol");
+      d.videos.forEach((v, i) => {
+        const li = document.createElement("li");
+        const r = document.createElement("span");
+        r.className = "r";
+        r.textContent = i + 1;
+        const a = document.createElement("a");
+        a.href = `https://www.youtube.com/watch?v=${v.id}`;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.style.display = "contents";
+        const img = document.createElement("img");
+        img.src = v.thumb;
+        img.alt = "";
+        img.loading = "lazy";
+        const body = document.createElement("div");
+        body.style.minWidth = "0";
+        const t = document.createElement("div");
+        t.className = "t";
+        t.textContent = v.title;
+        const c = document.createElement("div");
+        c.className = "c";
+        c.textContent = `${v.channel} ・ ${jpNum(v.views)} 回`;
+        body.append(t, c);
+        a.append(img, body);
+        li.append(r, a);
+        ol.appendChild(li);
+      });
+
+      sec.append(head, ol);
+      box.appendChild(sec);
+    }
+    $("#digestSection").hidden = !list.length;
+  }
+
+  function renderStrength() {
+    const box = $("#strengthBars");
+    box.innerHTML = "";
+    const list = data.stats?.categoryStrength || [];
+    const max = Math.max(1, ...list.map((c) => c.viewsPerHour));
+    for (const c of list) {
+      const row = document.createElement("div");
+      row.className = "bar-row";
+      const lbl = document.createElement("span");
+      lbl.className = "lbl";
+      lbl.textContent = c.label;
+      const track = document.createElement("div");
+      track.className = "bar-track";
+      const fill = document.createElement("div");
+      fill.className = "bar-fill";
+      fill.style.width = `${Math.max(3, Math.round((c.viewsPerHour / max) * 100))}%`;
+      track.appendChild(fill);
+      const val = document.createElement("span");
+      val.className = "val";
+      val.textContent = `+${jpNum(c.viewsPerHour)}/時`;
+      row.append(lbl, track, val);
+      box.appendChild(row);
+    }
+    $("#strengthSection").hidden = !list.length;
+  }
+
+  function renderLongRunners() {
+    const box = $("#longList");
+    box.innerHTML = "";
+    const list = data.longRunners || [];
+    for (const v of list) {
+      const li = document.createElement("li");
+      li.className = "long-item";
+      const a = document.createElement("a");
+      a.href = `https://www.youtube.com/watch?v=${v.id}`;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.style.display = "contents";
+      const img = document.createElement("img");
+      img.src = v.thumb;
+      img.alt = "";
+      img.loading = "lazy";
+      const info = document.createElement("div");
+      info.className = "info";
+      const t = document.createElement("div");
+      t.className = "t";
+      t.textContent = v.title;
+      const m = document.createElement("div");
+      m.className = "m";
+      m.innerHTML = `<span class="badge">${v.appearances} 回ランクイン</span>${v.channel} ・ ${jpNum(v.views)} 回再生`;
+      info.append(t, m);
+      a.append(img, info);
+      li.appendChild(a);
+      box.appendChild(li);
+    }
+    $("#longSection").hidden = !list.length;
   }
 
   function render() {
@@ -260,7 +449,12 @@
     if (!data.rankings.some((r) => r.id === state.rank)) state.rank = "trending";
     renderTabs();
     renderRankChips();
+    renderStats();
     renderChannels();
+    renderKeywords();
+    renderDigest();
+    renderStrength();
+    renderLongRunners();
     render();
   }
 
