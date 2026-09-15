@@ -6,6 +6,22 @@
 
   let data = { videos: [], channels: [], categories: [], rankings: [] };
   let shown = PAGE;
+  let lastVisibleCount = 0;
+  let pendingData = null;
+
+  function formatRelative(date) {
+    const min = Math.floor((Date.now() - date.getTime()) / 60000);
+    if (min < 1) return "たった今";
+    if (min < 60) return `${min}分前`;
+    const hr = Math.floor(min / 60);
+    if (hr < 24) return `${hr}時間前`;
+    return `${date.getMonth() + 1}/${date.getDate()}`;
+  }
+
+  function updateMeta() {
+    if (!data.updatedAt) return;
+    $("#meta").textContent = `${lastVisibleCount} 件 ・ 最終更新 ${formatRelative(new Date(data.updatedAt))}`;
+  }
 
   const state = Object.assign({ cat: "all", rank: "trending", len: "all", q: "" }, load(STATE_KEY, {}));
 
@@ -411,8 +427,8 @@
     more.hidden = all.length <= list.length;
     more.textContent = `もっと見る（残り ${all.length - list.length} 件）`;
 
-    const u = new Date(data.updatedAt);
-    $("#meta").textContent = `${all.length} 件 ・ 最終更新 ${u.getMonth() + 1}/${u.getDate()} ${String(u.getHours()).padStart(2, "0")}:${String(u.getMinutes()).padStart(2, "0")}`;
+    lastVisibleCount = all.length;
+    updateMeta();
   }
 
   function set(patch) {
@@ -424,20 +440,7 @@
     render();
   }
 
-  async function boot() {
-    $("#year").textContent = new Date().getFullYear();
-    $("#q").value = state.q;
-    for (const b of document.querySelectorAll("#lenSeg button")) {
-      b.classList.toggle("active", b.dataset.len === state.len);
-    }
-
-    try {
-      const r = await fetch(`data/rankings.json?t=${Math.floor(Date.now() / 300000)}`);
-      data = await r.json();
-    } catch {
-      $("#meta").textContent = "データを読み込めませんでした。";
-      return;
-    }
+  function applyData() {
     $("#sampleNotice").hidden = !data.isSample;
     if (!data.categories.some((c) => c.id === state.cat)) state.cat = "all";
     if (!data.rankings.some((r) => r.id === state.rank)) state.rank = "trending";
@@ -450,6 +453,43 @@
     renderStrength();
     renderLongRunners();
     render();
+  }
+
+  async function fetchRankings() {
+    const r = await fetch(`data/rankings.json?t=${Date.now()}`);
+    return r.json();
+  }
+
+  async function checkForUpdate() {
+    if (pendingData || document.hidden) return;
+    try {
+      const fresh = await fetchRankings();
+      if (fresh.updatedAt && fresh.updatedAt !== data.updatedAt) {
+        pendingData = fresh;
+        $("#newData").hidden = false;
+      }
+    } catch {
+      // 取得に失敗しても静かに諦める（次回のポーリングに任せる）
+    }
+  }
+
+  async function boot() {
+    $("#year").textContent = new Date().getFullYear();
+    $("#q").value = state.q;
+    for (const b of document.querySelectorAll("#lenSeg button")) {
+      b.classList.toggle("active", b.dataset.len === state.len);
+    }
+
+    try {
+      data = await fetchRankings();
+    } catch {
+      $("#meta").textContent = "データを読み込めませんでした。";
+      return;
+    }
+    applyData();
+
+    setInterval(updateMeta, 30000);
+    setInterval(checkForUpdate, 180000);
   }
 
   $("#q").addEventListener("input", (() => {
@@ -479,6 +519,14 @@
       $("#q").focus();
     }
   });
+  $("#newData").addEventListener("click", () => {
+    if (!pendingData) return;
+    data = pendingData;
+    pendingData = null;
+    $("#newData").hidden = true;
+    applyData();
+  });
+
   $("#shareX").addEventListener("click", () => {
     const shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(SHARE_TEXT) + "&url=" + encodeURIComponent(location.origin + "/");
     const w = 600, h = 480;
