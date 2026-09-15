@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://trend.gamelab.website/sitemap.xml
+Sitemap: https://trend.gamelab.website/sitemap.xml
