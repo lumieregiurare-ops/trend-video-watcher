@@ -116,7 +116,7 @@
       // 配信中は再生時間の代わりに LIVE と経過時間を出す
       const l = document.createElement("span");
       l.className = "live-tag";
-      l.textContent = v.liveStartedAt ? `LIVE ${rel(v.liveStartedAt).replace("前", "経過")}` : "LIVE";
+      l.textContent = v.liveStartedAt ? `LIVE ${rel(v.liveStartedAt).replace("前", "")}` : "LIVE";
       thumb.appendChild(l);
     } else if (v.durationSec) {
       const d = document.createElement("span");
@@ -221,7 +221,7 @@
       nm.textContent = c.title;
       const sub = document.createElement("div");
       sub.className = "sub";
-      sub.textContent = `急上昇 ${c.count} 本 ・ 計 ${jpNum(c.views)} 回再生`;
+      sub.textContent = `急上昇 ${c.count} 本 ・ 合計 ${jpNum(c.views)} 回再生`;
       a.append(nm, sub);
       const r = document.createElement("span");
       r.className = "r";
@@ -230,55 +230,6 @@
       box.appendChild(li);
     }
     $("#channelMod").hidden = !(data.channels || []).length;
-  }
-
-  function renderStats() {
-    const s = data.stats;
-    if (!s) {
-      $("#statsMod").hidden = true;
-      return;
-    }
-    const boxes = [
-      { k: "急上昇の動画", v: jpNum(s.videoCount), u: "本" },
-      { k: "合計再生数", v: jpNum(s.totalViews), u: "回" },
-      { k: "配信中", v: jpNum(s.liveCount || 0), u: "本" },
-      { k: "初登場", v: jpNum(s.newCount), u: "本" },
-    ];
-    $("#statGrid").innerHTML = boxes
-      .map((b) => `<div class="stat-box"><div class="k">${b.k}</div><div class="v">${b.v}<small>${b.u}</small></div></div>`)
-      .join("");
-
-    const tg = s.topGrowth;
-    const box = $("#topGrowth");
-    box.innerHTML = "";
-    if (!tg) {
-      box.hidden = true;
-      return;
-    }
-    box.hidden = false;
-    const a = document.createElement("a");
-    a.href = `https://www.youtube.com/watch?v=${tg.id}`;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.style.display = "contents";
-    const img = document.createElement("img");
-    img.src = tg.thumb;
-    img.alt = "";
-    img.loading = "lazy";
-    const body = document.createElement("div");
-    body.className = "tg-body";
-    const label = document.createElement("div");
-    label.className = "tg-label";
-    label.textContent = "いちばん伸びている動画";
-    const title = document.createElement("div");
-    title.className = "tg-title";
-    title.textContent = tg.title;
-    const num = document.createElement("div");
-    num.className = "tg-num";
-    num.textContent = `+${jpNum(tg.viewsPerHour)} 回/時 ・ ${tg.channel}`;
-    body.append(label, title, num);
-    a.append(img, body);
-    box.appendChild(a);
   }
 
   function renderLive() {
@@ -304,7 +255,7 @@
       t.textContent = v.title;
       const m = document.createElement("div");
       m.className = "m";
-      m.textContent = `${jpNum(v.concurrentViewers)} 人視聴中 ・ ${v.channel}`;
+      m.textContent = `${jpNum(v.concurrentViewers)} 人が視聴中 ・ ${v.channel}`;
       info.append(t, m);
       a.append(img, info);
       li.appendChild(a);
@@ -491,7 +442,6 @@
     if (!data.rankings.some((r) => r.id === state.rank)) state.rank = "trending";
     renderTabs();
     renderRankChips();
-    renderStats();
     renderLive();
     renderChannels();
     renderKeywords();

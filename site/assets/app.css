@@ -605,78 +605,6 @@ main.wrap {
 }
 
 /* ---------- 右カラムのモジュール ---------- */
-.stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 7px;
-  margin-top: 10px;
-}
-
-.stat-box {
-  background: var(--surface-2);
-  border-radius: 8px;
-  padding: 7px 9px;
-}
-
-.stat-box .k {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.stat-box .v {
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: -.02em;
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-box .v small {
-  font-size: 11px;
-  font-weight: 700;
-  margin-left: 1px;
-}
-
-.top-growth {
-  display: flex;
-  gap: 9px;
-  margin-top: 11px;
-  padding-top: 11px;
-  border-top: 1px dashed var(--border);
-}
-
-.top-growth img {
-  width: 76px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 6px;
-  flex: 0 0 auto;
-}
-
-.top-growth .tg-body {
-  min-width: 0;
-}
-
-.top-growth .tg-label {
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.top-growth .tg-title {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.top-growth .tg-num {
-  font-size: 11.5px;
-  color: var(--text-muted);
-}
-
 .ch-list {
   display: flex;
   flex-direction: column;
@@ -1040,10 +968,6 @@ main.wrap {
   .side {
     position: static;
   }
-
-  .stat-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 @media (max-width: 760px) {
@@ -1056,10 +980,6 @@ main.wrap {
 
   .tabs::-webkit-scrollbar {
     display: none;
-  }
-
-  .stat-grid {
-    grid-template-columns: 1fr 1fr;
   }
 
   .bar-row {

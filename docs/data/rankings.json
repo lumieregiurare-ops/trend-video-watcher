@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-15T07:10:55.585Z",
-  "previousAt": "2026-09-15T01:10:55.583Z",
+  "updatedAt": "2026-09-15T07:18:49.301Z",
+  "previousAt": "2026-09-15T01:18:49.298Z",
   "site": {
     "title": "急上昇動画ウォッチャー",
-    "tagline": "YouTube の急上昇を、カテゴリ別・伸び順・高評価率などいろいろな切り口でまとめています。",
+    "tagline": "YouTube の急上昇ランキングを、カテゴリ別・伸び順・高評価率など、いろいろな切り口でまとめています。",
     "url": "https://trend.gamelab.main.jp/",
     "contactUrl": ""
   },
@@ -95,37 +95,37 @@
     {
       "id": "trending",
       "label": "急上昇順",
-      "desc": "YouTube の急上昇に出ている順番そのまま"
+      "desc": "YouTube の急上昇に出ている順番のまま並べています。"
     },
     {
       "id": "growth",
       "label": "いま伸びてる順",
-      "desc": "前回の集計からの再生数の増え方（1時間あたり）が大きい順"
+      "desc": "前回の集計から、1 時間あたりの再生数が多く増えた順に並べます。"
     },
     {
       "id": "viewers",
       "label": "同時視聴者数順",
-      "desc": "いま配信中のライブを、見ている人が多い順に"
+      "desc": "配信中のライブを、視聴している人が多い順に並べます。"
     },
     {
       "id": "views",
       "label": "再生数順",
-      "desc": "急上昇に入っている動画を再生数の多い順に"
+      "desc": "急上昇に入っている動画を、再生数の多い順に並べます。"
     },
     {
       "id": "like",
       "label": "高評価率順",
-      "desc": "再生数に対する高評価の割合が高い順（1万回再生以上）"
+      "desc": "再生数に対する高評価の割合が高い順に並べます（1 万回再生以上の動画）。"
     },
     {
       "id": "comment",
       "label": "コメント数順",
-      "desc": "コメントが多い順。盛り上がっている動画が分かります"
+      "desc": "コメントが多い順に並べます。反響の大きい動画が見つかります。"
     },
     {
       "id": "fresh",
       "label": "新着順",
-      "desc": "公開されたばかりで急上昇に入った動画"
+      "desc": "公開されたばかりで急上昇に入った動画です。"
     }
   ],
   "likeRateMinViews": 10000,
@@ -934,7 +934,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%231098ad%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%231098ad%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2965500,
       "appearances": 6,
-      "firstSeen": "2026-09-13T19:10:55.583Z"
+      "firstSeen": "2026-09-13T19:18:49.298Z"
     },
     {
       "id": "sample035",
@@ -943,7 +943,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2866500,
       "appearances": 6,
-      "firstSeen": "2026-09-12T13:10:55.583Z"
+      "firstSeen": "2026-09-12T13:18:49.298Z"
     },
     {
       "id": "sample065",
@@ -952,7 +952,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2767500,
       "appearances": 6,
-      "firstSeen": "2026-09-15T01:10:55.583Z"
+      "firstSeen": "2026-09-15T01:18:49.298Z"
     },
     {
       "id": "sample095",
@@ -961,7 +961,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2668500,
       "appearances": 6,
-      "firstSeen": "2026-09-13T19:10:55.583Z"
+      "firstSeen": "2026-09-13T19:18:49.298Z"
     },
     {
       "id": "sample011",
@@ -970,7 +970,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2351700,
       "appearances": 6,
-      "firstSeen": "2026-09-12T01:10:55.583Z"
+      "firstSeen": "2026-09-12T01:18:49.298Z"
     },
     {
       "id": "sample041",
@@ -979,7 +979,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2252700,
       "appearances": 6,
-      "firstSeen": "2026-09-14T13:10:55.583Z"
+      "firstSeen": "2026-09-14T13:18:49.298Z"
     },
     {
       "id": "sample071",
@@ -988,7 +988,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2153700,
       "appearances": 6,
-      "firstSeen": "2026-09-13T07:10:55.583Z"
+      "firstSeen": "2026-09-13T07:18:49.298Z"
     },
     {
       "id": "sample101",
@@ -997,7 +997,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%231098ad%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%231098ad%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 2054700,
       "appearances": 6,
-      "firstSeen": "2026-09-12T01:10:55.583Z"
+      "firstSeen": "2026-09-12T01:18:49.298Z"
     },
     {
       "id": "sample017",
@@ -1006,7 +1006,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 1737900,
       "appearances": 6,
-      "firstSeen": "2026-09-14T01:10:55.583Z"
+      "firstSeen": "2026-09-14T01:18:49.298Z"
     },
     {
       "id": "sample047",
@@ -1015,7 +1015,7 @@
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "views": 1638900,
       "appearances": 6,
-      "firstSeen": "2026-09-12T19:10:55.583Z"
+      "firstSeen": "2026-09-12T19:18:49.298Z"
     }
   ],
   "live": [
@@ -1025,7 +1025,7 @@
       "channel": "スポーツダイジェスト",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%231098ad%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%231098ad%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 35240,
-      "liveStartedAt": "2026-09-15T04:10:55.583Z"
+      "liveStartedAt": "2026-09-15T04:18:49.298Z"
     },
     {
       "id": "sample066",
@@ -1033,7 +1033,7 @@
       "channel": "くらし手帖",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%2312b886%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%2312b886%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 30320,
-      "liveStartedAt": "2026-09-15T05:10:55.583Z"
+      "liveStartedAt": "2026-09-15T05:18:49.298Z"
     },
     {
       "id": "sample055",
@@ -1041,7 +1041,7 @@
       "channel": "旅するカメラ",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 25400,
-      "liveStartedAt": "2026-09-15T06:10:55.583Z"
+      "liveStartedAt": "2026-09-15T06:18:49.298Z"
     },
     {
       "id": "sample044",
@@ -1049,7 +1049,7 @@
       "channel": "ゲーム部",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23ae3ec9%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23ae3ec9%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 20480,
-      "liveStartedAt": "2026-09-15T02:10:55.583Z"
+      "liveStartedAt": "2026-09-15T02:18:49.298Z"
     },
     {
       "id": "sample033",
@@ -1057,7 +1057,7 @@
       "channel": "ミュージックレーベル公式",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 15560,
-      "liveStartedAt": "2026-09-15T03:10:55.583Z"
+      "liveStartedAt": "2026-09-15T03:18:49.298Z"
     },
     {
       "id": "sample110",
@@ -1065,7 +1065,7 @@
       "channel": "ウォッチャーTV",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 14000,
-      "liveStartedAt": "2026-09-15T06:10:55.583Z"
+      "liveStartedAt": "2026-09-15T06:18:49.298Z"
     },
     {
       "id": "sample022",
@@ -1073,7 +1073,7 @@
       "channel": "あさひの実験室",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 10640,
-      "liveStartedAt": "2026-09-15T04:10:55.583Z"
+      "liveStartedAt": "2026-09-15T04:18:49.298Z"
     },
     {
       "id": "sample099",
@@ -1081,7 +1081,7 @@
       "channel": "サイエンスラボ",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "concurrentViewers": 9080,
-      "liveStartedAt": "2026-09-15T02:10:55.583Z"
+      "liveStartedAt": "2026-09-15T02:18:49.298Z"
     }
   ],
   "videos": [
@@ -1092,7 +1092,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-15T06:10:55.583Z",
+      "publishedAt": "2026-09-15T06:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1102,7 +1102,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 800,
-      "liveStartedAt": "2026-09-15T06:10:55.583Z",
+      "liveStartedAt": "2026-09-15T06:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23ff5252%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23ff5252%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -1113,7 +1113,7 @@
       "isShort": false,
       "subscribers": 50000,
       "appearances": 1,
-      "firstSeen": "2026-09-15T06:10:55.583Z",
+      "firstSeen": "2026-09-15T06:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 800,
       "rankDelta": 0,
@@ -1127,7 +1127,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #2",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-14T23:10:55.583Z",
+      "publishedAt": "2026-09-14T23:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1147,7 +1147,7 @@
       "isShort": false,
       "subscribers": 1444300,
       "appearances": 2,
-      "firstSeen": "2026-09-14T23:10:55.583Z",
+      "firstSeen": "2026-09-14T23:18:49.298Z",
       "viewsGained": 31860,
       "viewsPerHour": 7730,
       "rankDelta": 1,
@@ -1161,7 +1161,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #3",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-14T16:10:55.583Z",
+      "publishedAt": "2026-09-14T16:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1181,7 +1181,7 @@
       "isShort": false,
       "subscribers": 2838600,
       "appearances": 3,
-      "firstSeen": "2026-09-14T16:10:55.583Z",
+      "firstSeen": "2026-09-14T16:18:49.298Z",
       "viewsGained": 63720,
       "viewsPerHour": 14660,
       "rankDelta": -5,
@@ -1195,7 +1195,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-14T09:10:55.583Z",
+      "publishedAt": "2026-09-14T09:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1215,7 +1215,7 @@
       "isShort": false,
       "subscribers": 1312900,
       "appearances": 4,
-      "firstSeen": "2026-09-14T09:10:55.583Z",
+      "firstSeen": "2026-09-14T09:18:49.298Z",
       "viewsGained": 23580,
       "viewsPerHour": 21590,
       "rankDelta": 2,
@@ -1229,7 +1229,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #5",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-14T02:10:55.583Z",
+      "publishedAt": "2026-09-14T02:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1249,7 +1249,7 @@
       "isShort": false,
       "subscribers": 2707200,
       "appearances": 5,
-      "firstSeen": "2026-09-14T02:10:55.583Z",
+      "firstSeen": "2026-09-14T02:18:49.298Z",
       "viewsGained": 55440,
       "viewsPerHour": 28520,
       "rankDelta": -4,
@@ -1263,7 +1263,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #6",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-13T19:10:55.583Z",
+      "publishedAt": "2026-09-13T19:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1283,7 +1283,7 @@
       "isShort": true,
       "subscribers": 1181500,
       "appearances": 6,
-      "firstSeen": "2026-09-13T19:10:55.583Z",
+      "firstSeen": "2026-09-13T19:18:49.298Z",
       "viewsGained": 15300,
       "viewsPerHour": 35450,
       "rankDelta": 3,
@@ -1297,7 +1297,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-13T12:10:55.583Z",
+      "publishedAt": "2026-09-13T12:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1317,7 +1317,7 @@
       "isShort": false,
       "subscribers": 2575800,
       "appearances": 1,
-      "firstSeen": "2026-09-13T12:10:55.583Z",
+      "firstSeen": "2026-09-13T12:18:49.298Z",
       "viewsGained": 47160,
       "viewsPerHour": 42380,
       "rankDelta": -3,
@@ -1331,7 +1331,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #8",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-13T05:10:55.583Z",
+      "publishedAt": "2026-09-13T05:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1351,7 +1351,7 @@
       "isShort": false,
       "subscribers": 1050100,
       "appearances": 2,
-      "firstSeen": "2026-09-13T05:10:55.583Z",
+      "firstSeen": "2026-09-13T05:18:49.298Z",
       "viewsGained": 7020,
       "viewsPerHour": 4310,
       "rankDelta": 4,
@@ -1365,7 +1365,7 @@
       "title": "まさかの結末、最後まで見てほしい #9",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-12T22:10:55.583Z",
+      "publishedAt": "2026-09-12T22:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1385,7 +1385,7 @@
       "isShort": false,
       "subscribers": 2444400,
       "appearances": 3,
-      "firstSeen": "2026-09-12T22:10:55.583Z",
+      "firstSeen": "2026-09-12T22:18:49.298Z",
       "viewsGained": 38880,
       "viewsPerHour": 11240,
       "rankDelta": -2,
@@ -1399,7 +1399,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-12T15:10:55.583Z",
+      "publishedAt": "2026-09-12T15:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1419,7 +1419,7 @@
       "isShort": false,
       "subscribers": 918700,
       "appearances": 4,
-      "firstSeen": "2026-09-12T15:10:55.583Z",
+      "firstSeen": "2026-09-12T15:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 18170,
       "rankDelta": 0,
@@ -1433,7 +1433,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #11",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-12T08:10:55.583Z",
+      "publishedAt": "2026-09-12T08:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1453,7 +1453,7 @@
       "isShort": true,
       "subscribers": 2313000,
       "appearances": 5,
-      "firstSeen": "2026-09-12T08:10:55.583Z",
+      "firstSeen": "2026-09-12T08:18:49.298Z",
       "viewsGained": 30600,
       "viewsPerHour": 25100,
       "rankDelta": -1,
@@ -1467,7 +1467,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #12",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-12T01:10:55.583Z",
+      "publishedAt": "2026-09-12T01:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1477,7 +1477,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 5720,
-      "liveStartedAt": "2026-09-15T05:10:55.583Z",
+      "liveStartedAt": "2026-09-15T05:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -1488,7 +1488,7 @@
       "isShort": false,
       "subscribers": 787300,
       "appearances": 6,
-      "firstSeen": "2026-09-12T01:10:55.583Z",
+      "firstSeen": "2026-09-12T01:18:49.298Z",
       "viewsGained": 62460,
       "viewsPerHour": 32030,
       "rankDelta": 6,
@@ -1502,7 +1502,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-11T18:10:55.583Z",
+      "publishedAt": "2026-09-11T18:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1522,7 +1522,7 @@
       "isShort": false,
       "subscribers": 2181600,
       "appearances": 1,
-      "firstSeen": "2026-09-11T18:10:55.583Z",
+      "firstSeen": "2026-09-11T18:18:49.298Z",
       "viewsGained": 22320,
       "viewsPerHour": 38960,
       "rankDelta": 0,
@@ -1536,7 +1536,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #14",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-15T05:10:55.583Z",
+      "publishedAt": "2026-09-15T05:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1556,7 +1556,7 @@
       "isShort": false,
       "subscribers": 655900,
       "appearances": 2,
-      "firstSeen": "2026-09-15T05:10:55.583Z",
+      "firstSeen": "2026-09-15T05:18:49.298Z",
       "viewsGained": 54180,
       "viewsPerHour": 890,
       "rankDelta": -6,
@@ -1570,7 +1570,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #15",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-14T22:10:55.583Z",
+      "publishedAt": "2026-09-14T22:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1590,7 +1590,7 @@
       "isShort": false,
       "subscribers": 2050200,
       "appearances": 3,
-      "firstSeen": "2026-09-14T22:10:55.583Z",
+      "firstSeen": "2026-09-14T22:18:49.298Z",
       "viewsGained": 14040,
       "viewsPerHour": 7820,
       "rankDelta": 1,
@@ -1604,7 +1604,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-14T15:10:55.583Z",
+      "publishedAt": "2026-09-14T15:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1624,7 +1624,7 @@
       "isShort": true,
       "subscribers": 524500,
       "appearances": 4,
-      "firstSeen": "2026-09-14T15:10:55.583Z",
+      "firstSeen": "2026-09-14T15:18:49.298Z",
       "viewsGained": 45900,
       "viewsPerHour": 14750,
       "rankDelta": -5,
@@ -1638,7 +1638,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #17",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-14T08:10:55.583Z",
+      "publishedAt": "2026-09-14T08:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1658,7 +1658,7 @@
       "isShort": false,
       "subscribers": 1918800,
       "appearances": 5,
-      "firstSeen": "2026-09-14T08:10:55.583Z",
+      "firstSeen": "2026-09-14T08:18:49.298Z",
       "viewsGained": 5760,
       "viewsPerHour": 21680,
       "rankDelta": 2,
@@ -1672,7 +1672,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #18",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-14T01:10:55.583Z",
+      "publishedAt": "2026-09-14T01:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1692,7 +1692,7 @@
       "isShort": false,
       "subscribers": 393100,
       "appearances": 6,
-      "firstSeen": "2026-09-14T01:10:55.583Z",
+      "firstSeen": "2026-09-14T01:18:49.298Z",
       "viewsGained": 37620,
       "viewsPerHour": 28610,
       "rankDelta": -4,
@@ -1706,7 +1706,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-13T18:10:55.583Z",
+      "publishedAt": "2026-09-13T18:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1726,7 +1726,7 @@
       "isShort": false,
       "subscribers": 1787400,
       "appearances": 1,
-      "firstSeen": "2026-09-13T18:10:55.583Z",
+      "firstSeen": "2026-09-13T18:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 35540,
       "rankDelta": 0,
@@ -1740,7 +1740,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #20",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-13T11:10:55.583Z",
+      "publishedAt": "2026-09-13T11:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1760,7 +1760,7 @@
       "isShort": false,
       "subscribers": 261700,
       "appearances": 2,
-      "firstSeen": "2026-09-13T11:10:55.583Z",
+      "firstSeen": "2026-09-13T11:18:49.298Z",
       "viewsGained": 29340,
       "viewsPerHour": 42470,
       "rankDelta": -3,
@@ -1774,7 +1774,7 @@
       "title": "まさかの結末、最後まで見てほしい #21",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-13T04:10:55.583Z",
+      "publishedAt": "2026-09-13T04:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1794,7 +1794,7 @@
       "isShort": true,
       "subscribers": 1656000,
       "appearances": 3,
-      "firstSeen": "2026-09-13T04:10:55.583Z",
+      "firstSeen": "2026-09-13T04:18:49.298Z",
       "viewsGained": 61200,
       "viewsPerHour": 4400,
       "rankDelta": 4,
@@ -1808,7 +1808,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-12T21:10:55.583Z",
+      "publishedAt": "2026-09-12T21:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1828,7 +1828,7 @@
       "isShort": false,
       "subscribers": 130300,
       "appearances": 4,
-      "firstSeen": "2026-09-12T21:10:55.583Z",
+      "firstSeen": "2026-09-12T21:18:49.298Z",
       "viewsGained": 21060,
       "viewsPerHour": 11330,
       "rankDelta": -2,
@@ -1842,7 +1842,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #23",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-12T14:10:55.583Z",
+      "publishedAt": "2026-09-12T14:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1852,7 +1852,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 10640,
-      "liveStartedAt": "2026-09-15T04:10:55.583Z",
+      "liveStartedAt": "2026-09-15T04:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -1863,7 +1863,7 @@
       "isShort": false,
       "subscribers": 1524600,
       "appearances": 5,
-      "firstSeen": "2026-09-12T14:10:55.583Z",
+      "firstSeen": "2026-09-12T14:18:49.298Z",
       "viewsGained": 52920,
       "viewsPerHour": 18260,
       "rankDelta": 5,
@@ -1877,7 +1877,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #24",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-12T07:10:55.583Z",
+      "publishedAt": "2026-09-12T07:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1897,7 +1897,7 @@
       "isShort": false,
       "subscribers": 2918900,
       "appearances": 6,
-      "firstSeen": "2026-09-12T07:10:55.583Z",
+      "firstSeen": "2026-09-12T07:18:49.298Z",
       "viewsGained": 12780,
       "viewsPerHour": 25190,
       "rankDelta": -1,
@@ -1911,7 +1911,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-12T00:10:55.583Z",
+      "publishedAt": "2026-09-12T00:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1931,7 +1931,7 @@
       "isShort": false,
       "subscribers": 1393200,
       "appearances": 1,
-      "firstSeen": "2026-09-12T00:10:55.583Z",
+      "firstSeen": "2026-09-12T00:18:49.298Z",
       "viewsGained": 44640,
       "viewsPerHour": 32120,
       "rankDelta": 6,
@@ -1945,7 +1945,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #26",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-11T17:10:55.583Z",
+      "publishedAt": "2026-09-11T17:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1965,7 +1965,7 @@
       "isShort": true,
       "subscribers": 2787500,
       "appearances": 2,
-      "firstSeen": "2026-09-11T17:10:55.583Z",
+      "firstSeen": "2026-09-11T17:18:49.298Z",
       "viewsGained": 4500,
       "viewsPerHour": 39050,
       "rankDelta": 0,
@@ -1979,7 +1979,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #27",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-15T04:10:55.583Z",
+      "publishedAt": "2026-09-15T04:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -1999,7 +1999,7 @@
       "isShort": false,
       "subscribers": 1261800,
       "appearances": 3,
-      "firstSeen": "2026-09-15T04:10:55.583Z",
+      "firstSeen": "2026-09-15T04:18:49.298Z",
       "viewsGained": 36360,
       "viewsPerHour": 980,
       "rankDelta": -6,
@@ -2013,7 +2013,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-14T21:10:55.583Z",
+      "publishedAt": "2026-09-14T21:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2033,7 +2033,7 @@
       "isShort": false,
       "subscribers": 2656100,
       "appearances": 4,
-      "firstSeen": "2026-09-14T21:10:55.583Z",
+      "firstSeen": "2026-09-14T21:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 7910,
       "rankDelta": 0,
@@ -2047,7 +2047,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #29",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-14T14:10:55.583Z",
+      "publishedAt": "2026-09-14T14:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2067,7 +2067,7 @@
       "isShort": false,
       "subscribers": 1130400,
       "appearances": 5,
-      "firstSeen": "2026-09-14T14:10:55.583Z",
+      "firstSeen": "2026-09-14T14:18:49.298Z",
       "viewsGained": 28080,
       "viewsPerHour": 14840,
       "rankDelta": -5,
@@ -2081,7 +2081,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #30",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-14T07:10:55.583Z",
+      "publishedAt": "2026-09-14T07:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2101,7 +2101,7 @@
       "isShort": false,
       "subscribers": 2524700,
       "appearances": 6,
-      "firstSeen": "2026-09-14T07:10:55.583Z",
+      "firstSeen": "2026-09-14T07:18:49.298Z",
       "viewsGained": 59940,
       "viewsPerHour": 21770,
       "rankDelta": 2,
@@ -2115,7 +2115,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-14T00:10:55.583Z",
+      "publishedAt": "2026-09-14T00:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2135,7 +2135,7 @@
       "isShort": true,
       "subscribers": 999000,
       "appearances": 1,
-      "firstSeen": "2026-09-14T00:10:55.583Z",
+      "firstSeen": "2026-09-14T00:18:49.298Z",
       "viewsGained": 19800,
       "viewsPerHour": 28700,
       "rankDelta": -4,
@@ -2149,7 +2149,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #32",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-13T17:10:55.583Z",
+      "publishedAt": "2026-09-13T17:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2169,7 +2169,7 @@
       "isShort": false,
       "subscribers": 2393300,
       "appearances": 2,
-      "firstSeen": "2026-09-13T17:10:55.583Z",
+      "firstSeen": "2026-09-13T17:18:49.298Z",
       "viewsGained": 51660,
       "viewsPerHour": 35630,
       "rankDelta": 3,
@@ -2183,7 +2183,7 @@
       "title": "まさかの結末、最後まで見てほしい #33",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-13T10:10:55.583Z",
+      "publishedAt": "2026-09-13T10:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2203,7 +2203,7 @@
       "isShort": false,
       "subscribers": 867600,
       "appearances": 3,
-      "firstSeen": "2026-09-13T10:10:55.583Z",
+      "firstSeen": "2026-09-13T10:18:49.298Z",
       "viewsGained": 11520,
       "viewsPerHour": 42560,
       "rankDelta": -3,
@@ -2217,7 +2217,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-13T03:10:55.583Z",
+      "publishedAt": "2026-09-13T03:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2227,7 +2227,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 15560,
-      "liveStartedAt": "2026-09-15T03:10:55.583Z",
+      "liveStartedAt": "2026-09-15T03:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%234c6ef5%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -2238,7 +2238,7 @@
       "isShort": false,
       "subscribers": 2261900,
       "appearances": 4,
-      "firstSeen": "2026-09-13T03:10:55.583Z",
+      "firstSeen": "2026-09-13T03:18:49.298Z",
       "viewsGained": 43380,
       "viewsPerHour": 4490,
       "rankDelta": 4,
@@ -2252,7 +2252,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #35",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-12T20:10:55.583Z",
+      "publishedAt": "2026-09-12T20:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2272,7 +2272,7 @@
       "isShort": false,
       "subscribers": 736200,
       "appearances": 5,
-      "firstSeen": "2026-09-12T20:10:55.583Z",
+      "firstSeen": "2026-09-12T20:18:49.298Z",
       "viewsGained": 3240,
       "viewsPerHour": 11420,
       "rankDelta": -2,
@@ -2286,7 +2286,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #36",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-12T13:10:55.583Z",
+      "publishedAt": "2026-09-12T13:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2306,7 +2306,7 @@
       "isShort": true,
       "subscribers": 2130500,
       "appearances": 6,
-      "firstSeen": "2026-09-12T13:10:55.583Z",
+      "firstSeen": "2026-09-12T13:18:49.298Z",
       "viewsGained": 35100,
       "viewsPerHour": 18350,
       "rankDelta": 5,
@@ -2320,7 +2320,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-12T06:10:55.583Z",
+      "publishedAt": "2026-09-12T06:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2340,7 +2340,7 @@
       "isShort": false,
       "subscribers": 604800,
       "appearances": 1,
-      "firstSeen": "2026-09-12T06:10:55.583Z",
+      "firstSeen": "2026-09-12T06:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 25280,
       "rankDelta": 0,
@@ -2354,7 +2354,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #38",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-11T23:10:55.583Z",
+      "publishedAt": "2026-09-11T23:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2374,7 +2374,7 @@
       "isShort": false,
       "subscribers": 1999100,
       "appearances": 2,
-      "firstSeen": "2026-09-11T23:10:55.583Z",
+      "firstSeen": "2026-09-11T23:18:49.298Z",
       "viewsGained": 26820,
       "viewsPerHour": 32210,
       "rankDelta": 6,
@@ -2388,7 +2388,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #39",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-11T16:10:55.583Z",
+      "publishedAt": "2026-09-11T16:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2408,7 +2408,7 @@
       "isShort": false,
       "subscribers": 473400,
       "appearances": 3,
-      "firstSeen": "2026-09-11T16:10:55.583Z",
+      "firstSeen": "2026-09-11T16:18:49.298Z",
       "viewsGained": 58680,
       "viewsPerHour": 39140,
       "rankDelta": 0,
@@ -2422,7 +2422,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-15T03:10:55.583Z",
+      "publishedAt": "2026-09-15T03:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2442,7 +2442,7 @@
       "isShort": false,
       "subscribers": 1867700,
       "appearances": 4,
-      "firstSeen": "2026-09-15T03:10:55.583Z",
+      "firstSeen": "2026-09-15T03:18:49.298Z",
       "viewsGained": 18540,
       "viewsPerHour": 1070,
       "rankDelta": -6,
@@ -2456,7 +2456,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #41",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-14T20:10:55.583Z",
+      "publishedAt": "2026-09-14T20:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2476,7 +2476,7 @@
       "isShort": true,
       "subscribers": 342000,
       "appearances": 5,
-      "firstSeen": "2026-09-14T20:10:55.583Z",
+      "firstSeen": "2026-09-14T20:18:49.298Z",
       "viewsGained": 50400,
       "viewsPerHour": 8000,
       "rankDelta": 1,
@@ -2490,7 +2490,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #42",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-14T13:10:55.583Z",
+      "publishedAt": "2026-09-14T13:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2510,7 +2510,7 @@
       "isShort": false,
       "subscribers": 1736300,
       "appearances": 6,
-      "firstSeen": "2026-09-14T13:10:55.583Z",
+      "firstSeen": "2026-09-14T13:18:49.298Z",
       "viewsGained": 10260,
       "viewsPerHour": 14930,
       "rankDelta": -5,
@@ -2524,7 +2524,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-14T06:10:55.583Z",
+      "publishedAt": "2026-09-14T06:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2544,7 +2544,7 @@
       "isShort": false,
       "subscribers": 210600,
       "appearances": 1,
-      "firstSeen": "2026-09-14T06:10:55.583Z",
+      "firstSeen": "2026-09-14T06:18:49.298Z",
       "viewsGained": 42120,
       "viewsPerHour": 21860,
       "rankDelta": 2,
@@ -2558,7 +2558,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #44",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-13T23:10:55.583Z",
+      "publishedAt": "2026-09-13T23:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2578,7 +2578,7 @@
       "isShort": false,
       "subscribers": 1604900,
       "appearances": 2,
-      "firstSeen": "2026-09-13T23:10:55.583Z",
+      "firstSeen": "2026-09-13T23:18:49.298Z",
       "viewsGained": 1980,
       "viewsPerHour": 28790,
       "rankDelta": -4,
@@ -2592,7 +2592,7 @@
       "title": "まさかの結末、最後まで見てほしい #45",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-13T16:10:55.583Z",
+      "publishedAt": "2026-09-13T16:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2602,7 +2602,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 20480,
-      "liveStartedAt": "2026-09-15T02:10:55.583Z",
+      "liveStartedAt": "2026-09-15T02:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23ae3ec9%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23ae3ec9%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -2613,7 +2613,7 @@
       "isShort": false,
       "subscribers": 79200,
       "appearances": 3,
-      "firstSeen": "2026-09-13T16:10:55.583Z",
+      "firstSeen": "2026-09-13T16:18:49.298Z",
       "viewsGained": 33840,
       "viewsPerHour": 35720,
       "rankDelta": 3,
@@ -2627,7 +2627,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-13T09:10:55.583Z",
+      "publishedAt": "2026-09-13T09:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2647,7 +2647,7 @@
       "isShort": true,
       "subscribers": 1473500,
       "appearances": 4,
-      "firstSeen": "2026-09-13T09:10:55.583Z",
+      "firstSeen": "2026-09-13T09:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 42650,
       "rankDelta": 0,
@@ -2661,7 +2661,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #47",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-13T02:10:55.583Z",
+      "publishedAt": "2026-09-13T02:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2681,7 +2681,7 @@
       "isShort": false,
       "subscribers": 2867800,
       "appearances": 5,
-      "firstSeen": "2026-09-13T02:10:55.583Z",
+      "firstSeen": "2026-09-13T02:18:49.298Z",
       "viewsGained": 25560,
       "viewsPerHour": 4580,
       "rankDelta": 4,
@@ -2695,7 +2695,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #48",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-12T19:10:55.583Z",
+      "publishedAt": "2026-09-12T19:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2715,7 +2715,7 @@
       "isShort": false,
       "subscribers": 1342100,
       "appearances": 6,
-      "firstSeen": "2026-09-12T19:10:55.583Z",
+      "firstSeen": "2026-09-12T19:18:49.298Z",
       "viewsGained": 57420,
       "viewsPerHour": 11510,
       "rankDelta": -2,
@@ -2729,7 +2729,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-12T12:10:55.583Z",
+      "publishedAt": "2026-09-12T12:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2749,7 +2749,7 @@
       "isShort": false,
       "subscribers": 2736400,
       "appearances": 1,
-      "firstSeen": "2026-09-12T12:10:55.583Z",
+      "firstSeen": "2026-09-12T12:18:49.298Z",
       "viewsGained": 17280,
       "viewsPerHour": 18440,
       "rankDelta": 5,
@@ -2763,7 +2763,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #50",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-12T05:10:55.583Z",
+      "publishedAt": "2026-09-12T05:18:49.298Z",
       "categoryId": "",
       "categories": [
         "all",
@@ -2783,7 +2783,7 @@
       "isShort": false,
       "subscribers": 1210700,
       "appearances": 2,
-      "firstSeen": "2026-09-12T05:10:55.583Z",
+      "firstSeen": "2026-09-12T05:18:49.298Z",
       "viewsGained": 49140,
       "viewsPerHour": 25370,
       "rankDelta": -1,
@@ -2797,7 +2797,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #51",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-11T22:10:55.583Z",
+      "publishedAt": "2026-09-11T22:18:49.298Z",
       "categoryId": "",
       "categories": [
         "education"
@@ -2816,7 +2816,7 @@
       "isShort": true,
       "subscribers": 2605000,
       "appearances": 3,
-      "firstSeen": "2026-09-11T22:10:55.583Z",
+      "firstSeen": "2026-09-11T22:18:49.298Z",
       "viewsGained": 9000,
       "viewsPerHour": 32300,
       "rankDelta": 6,
@@ -2830,7 +2830,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-11T15:10:55.583Z",
+      "publishedAt": "2026-09-11T15:18:49.298Z",
       "categoryId": "",
       "categories": [
         "tech"
@@ -2849,7 +2849,7 @@
       "isShort": false,
       "subscribers": 1079300,
       "appearances": 4,
-      "firstSeen": "2026-09-11T15:10:55.583Z",
+      "firstSeen": "2026-09-11T15:18:49.298Z",
       "viewsGained": 40860,
       "viewsPerHour": 39230,
       "rankDelta": 0,
@@ -2863,7 +2863,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #53",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-15T02:10:55.583Z",
+      "publishedAt": "2026-09-15T02:18:49.298Z",
       "categoryId": "",
       "categories": [
         "film"
@@ -2882,7 +2882,7 @@
       "isShort": false,
       "subscribers": 2473600,
       "appearances": 5,
-      "firstSeen": "2026-09-15T02:10:55.583Z",
+      "firstSeen": "2026-09-15T02:18:49.298Z",
       "viewsGained": 720,
       "viewsPerHour": 1160,
       "rankDelta": -6,
@@ -2896,7 +2896,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #54",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-14T19:10:55.583Z",
+      "publishedAt": "2026-09-14T19:18:49.298Z",
       "categoryId": "",
       "categories": [
         "autos"
@@ -2915,7 +2915,7 @@
       "isShort": false,
       "subscribers": 947900,
       "appearances": 6,
-      "firstSeen": "2026-09-14T19:10:55.583Z",
+      "firstSeen": "2026-09-14T19:18:49.298Z",
       "viewsGained": 32580,
       "viewsPerHour": 8090,
       "rankDelta": 1,
@@ -2929,7 +2929,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-14T12:10:55.583Z",
+      "publishedAt": "2026-09-14T12:18:49.298Z",
       "categoryId": "",
       "categories": [
         "pets"
@@ -2948,7 +2948,7 @@
       "isShort": false,
       "subscribers": 2342200,
       "appearances": 1,
-      "firstSeen": "2026-09-14T12:10:55.583Z",
+      "firstSeen": "2026-09-14T12:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 15020,
       "rankDelta": 0,
@@ -2962,7 +2962,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #56",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-14T05:10:55.583Z",
+      "publishedAt": "2026-09-14T05:18:49.298Z",
       "categoryId": "",
       "categories": [
         "travel",
@@ -2971,7 +2971,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 25400,
-      "liveStartedAt": "2026-09-15T06:10:55.583Z",
+      "liveStartedAt": "2026-09-15T06:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%235c7cfa%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -2982,7 +2982,7 @@
       "isShort": false,
       "subscribers": 816500,
       "appearances": 2,
-      "firstSeen": "2026-09-14T05:10:55.583Z",
+      "firstSeen": "2026-09-14T05:18:49.298Z",
       "viewsGained": 24300,
       "viewsPerHour": 21950,
       "rankDelta": 2,
@@ -2996,7 +2996,7 @@
       "title": "まさかの結末、最後まで見てほしい #57",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-13T22:10:55.583Z",
+      "publishedAt": "2026-09-13T22:18:49.298Z",
       "categoryId": "",
       "categories": [
         "music"
@@ -3015,7 +3015,7 @@
       "isShort": false,
       "subscribers": 2210800,
       "appearances": 3,
-      "firstSeen": "2026-09-13T22:10:55.583Z",
+      "firstSeen": "2026-09-13T22:18:49.298Z",
       "viewsGained": 56160,
       "viewsPerHour": 28880,
       "rankDelta": -4,
@@ -3029,7 +3029,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-13T15:10:55.583Z",
+      "publishedAt": "2026-09-13T15:18:49.298Z",
       "categoryId": "",
       "categories": [
         "gaming"
@@ -3048,7 +3048,7 @@
       "isShort": false,
       "subscribers": 685100,
       "appearances": 4,
-      "firstSeen": "2026-09-13T15:10:55.583Z",
+      "firstSeen": "2026-09-13T15:18:49.298Z",
       "viewsGained": 16020,
       "viewsPerHour": 35810,
       "rankDelta": 3,
@@ -3062,7 +3062,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #59",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-13T08:10:55.583Z",
+      "publishedAt": "2026-09-13T08:18:49.298Z",
       "categoryId": "",
       "categories": [
         "entertainment"
@@ -3081,7 +3081,7 @@
       "isShort": false,
       "subscribers": 2079400,
       "appearances": 5,
-      "firstSeen": "2026-09-13T08:10:55.583Z",
+      "firstSeen": "2026-09-13T08:18:49.298Z",
       "viewsGained": 47880,
       "viewsPerHour": 42740,
       "rankDelta": -3,
@@ -3095,7 +3095,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #60",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-13T01:10:55.583Z",
+      "publishedAt": "2026-09-13T01:18:49.298Z",
       "categoryId": "",
       "categories": [
         "people"
@@ -3114,7 +3114,7 @@
       "isShort": false,
       "subscribers": 553700,
       "appearances": 6,
-      "firstSeen": "2026-09-13T01:10:55.583Z",
+      "firstSeen": "2026-09-13T01:18:49.298Z",
       "viewsGained": 7740,
       "viewsPerHour": 4670,
       "rankDelta": 4,
@@ -3128,7 +3128,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-12T18:10:55.583Z",
+      "publishedAt": "2026-09-12T18:18:49.298Z",
       "categoryId": "",
       "categories": [
         "comedy"
@@ -3147,7 +3147,7 @@
       "isShort": true,
       "subscribers": 1948000,
       "appearances": 1,
-      "firstSeen": "2026-09-12T18:10:55.583Z",
+      "firstSeen": "2026-09-12T18:18:49.298Z",
       "viewsGained": 39600,
       "viewsPerHour": 11600,
       "rankDelta": -2,
@@ -3161,7 +3161,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #62",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-12T11:10:55.583Z",
+      "publishedAt": "2026-09-12T11:18:49.298Z",
       "categoryId": "",
       "categories": [
         "sports"
@@ -3180,7 +3180,7 @@
       "isShort": false,
       "subscribers": 422300,
       "appearances": 2,
-      "firstSeen": "2026-09-12T11:10:55.583Z",
+      "firstSeen": "2026-09-12T11:18:49.298Z",
       "viewsGained": 71460,
       "viewsPerHour": 18530,
       "rankDelta": 5,
@@ -3194,7 +3194,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #63",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-12T04:10:55.583Z",
+      "publishedAt": "2026-09-12T04:18:49.298Z",
       "categoryId": "",
       "categories": [
         "news"
@@ -3213,7 +3213,7 @@
       "isShort": false,
       "subscribers": 1816600,
       "appearances": 3,
-      "firstSeen": "2026-09-12T04:10:55.583Z",
+      "firstSeen": "2026-09-12T04:18:49.298Z",
       "viewsGained": 31320,
       "viewsPerHour": 25460,
       "rankDelta": -1,
@@ -3227,7 +3227,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-11T21:10:55.583Z",
+      "publishedAt": "2026-09-11T21:18:49.298Z",
       "categoryId": "",
       "categories": [
         "howto"
@@ -3246,7 +3246,7 @@
       "isShort": false,
       "subscribers": 290900,
       "appearances": 4,
-      "firstSeen": "2026-09-11T21:10:55.583Z",
+      "firstSeen": "2026-09-11T21:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 32390,
       "rankDelta": 0,
@@ -3260,7 +3260,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #65",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-11T14:10:55.583Z",
+      "publishedAt": "2026-09-11T14:18:49.298Z",
       "categoryId": "",
       "categories": [
         "education"
@@ -3279,7 +3279,7 @@
       "isShort": false,
       "subscribers": 1685200,
       "appearances": 5,
-      "firstSeen": "2026-09-11T14:10:55.583Z",
+      "firstSeen": "2026-09-11T14:18:49.298Z",
       "viewsGained": 23040,
       "viewsPerHour": 39320,
       "rankDelta": 0,
@@ -3293,7 +3293,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #66",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-15T01:10:55.583Z",
+      "publishedAt": "2026-09-15T01:18:49.298Z",
       "categoryId": "",
       "categories": [
         "tech"
@@ -3312,7 +3312,7 @@
       "isShort": true,
       "subscribers": 159500,
       "appearances": 6,
-      "firstSeen": "2026-09-15T01:10:55.583Z",
+      "firstSeen": "2026-09-15T01:18:49.298Z",
       "viewsGained": 54900,
       "viewsPerHour": 1250,
       "rankDelta": -6,
@@ -3326,7 +3326,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-14T18:10:55.583Z",
+      "publishedAt": "2026-09-14T18:18:49.298Z",
       "categoryId": "",
       "categories": [
         "film",
@@ -3335,7 +3335,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 30320,
-      "liveStartedAt": "2026-09-15T05:10:55.583Z",
+      "liveStartedAt": "2026-09-15T05:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%2312b886%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%2312b886%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -3346,7 +3346,7 @@
       "isShort": false,
       "subscribers": 1553800,
       "appearances": 1,
-      "firstSeen": "2026-09-14T18:10:55.583Z",
+      "firstSeen": "2026-09-14T18:18:49.298Z",
       "viewsGained": 14760,
       "viewsPerHour": 8180,
       "rankDelta": 1,
@@ -3360,7 +3360,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #68",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-14T11:10:55.583Z",
+      "publishedAt": "2026-09-14T11:18:49.298Z",
       "categoryId": "",
       "categories": [
         "autos"
@@ -3379,7 +3379,7 @@
       "isShort": false,
       "subscribers": 2948100,
       "appearances": 2,
-      "firstSeen": "2026-09-14T11:10:55.583Z",
+      "firstSeen": "2026-09-14T11:18:49.298Z",
       "viewsGained": 46620,
       "viewsPerHour": 15110,
       "rankDelta": -5,
@@ -3393,7 +3393,7 @@
       "title": "まさかの結末、最後まで見てほしい #69",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-14T04:10:55.583Z",
+      "publishedAt": "2026-09-14T04:18:49.298Z",
       "categoryId": "",
       "categories": [
         "pets"
@@ -3412,7 +3412,7 @@
       "isShort": false,
       "subscribers": 1422400,
       "appearances": 3,
-      "firstSeen": "2026-09-14T04:10:55.583Z",
+      "firstSeen": "2026-09-14T04:18:49.298Z",
       "viewsGained": 6480,
       "viewsPerHour": 22040,
       "rankDelta": 2,
@@ -3426,7 +3426,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-13T21:10:55.583Z",
+      "publishedAt": "2026-09-13T21:18:49.298Z",
       "categoryId": "",
       "categories": [
         "travel"
@@ -3445,7 +3445,7 @@
       "isShort": false,
       "subscribers": 2816700,
       "appearances": 4,
-      "firstSeen": "2026-09-13T21:10:55.583Z",
+      "firstSeen": "2026-09-13T21:18:49.298Z",
       "viewsGained": 38340,
       "viewsPerHour": 28970,
       "rankDelta": -4,
@@ -3459,7 +3459,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #71",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-13T14:10:55.583Z",
+      "publishedAt": "2026-09-13T14:18:49.298Z",
       "categoryId": "",
       "categories": [
         "music"
@@ -3478,7 +3478,7 @@
       "isShort": true,
       "subscribers": 1291000,
       "appearances": 5,
-      "firstSeen": "2026-09-13T14:10:55.583Z",
+      "firstSeen": "2026-09-13T14:18:49.298Z",
       "viewsGained": 70200,
       "viewsPerHour": 35900,
       "rankDelta": 3,
@@ -3492,7 +3492,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #72",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-13T07:10:55.583Z",
+      "publishedAt": "2026-09-13T07:18:49.298Z",
       "categoryId": "",
       "categories": [
         "gaming"
@@ -3511,7 +3511,7 @@
       "isShort": false,
       "subscribers": 2685300,
       "appearances": 6,
-      "firstSeen": "2026-09-13T07:10:55.583Z",
+      "firstSeen": "2026-09-13T07:18:49.298Z",
       "viewsGained": 30060,
       "viewsPerHour": 42830,
       "rankDelta": -3,
@@ -3525,7 +3525,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-13T00:10:55.583Z",
+      "publishedAt": "2026-09-13T00:18:49.298Z",
       "categoryId": "",
       "categories": [
         "entertainment"
@@ -3544,7 +3544,7 @@
       "isShort": false,
       "subscribers": 1159600,
       "appearances": 1,
-      "firstSeen": "2026-09-13T00:10:55.583Z",
+      "firstSeen": "2026-09-13T00:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 4760,
       "rankDelta": 0,
@@ -3558,7 +3558,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #74",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-12T17:10:55.583Z",
+      "publishedAt": "2026-09-12T17:18:49.298Z",
       "categoryId": "",
       "categories": [
         "people"
@@ -3577,7 +3577,7 @@
       "isShort": false,
       "subscribers": 2553900,
       "appearances": 2,
-      "firstSeen": "2026-09-12T17:10:55.583Z",
+      "firstSeen": "2026-09-12T17:18:49.298Z",
       "viewsGained": 21780,
       "viewsPerHour": 11690,
       "rankDelta": -2,
@@ -3591,7 +3591,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #75",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-12T10:10:55.583Z",
+      "publishedAt": "2026-09-12T10:18:49.298Z",
       "categoryId": "",
       "categories": [
         "comedy"
@@ -3610,7 +3610,7 @@
       "isShort": false,
       "subscribers": 1028200,
       "appearances": 3,
-      "firstSeen": "2026-09-12T10:10:55.583Z",
+      "firstSeen": "2026-09-12T10:18:49.298Z",
       "viewsGained": 53640,
       "viewsPerHour": 18620,
       "rankDelta": 5,
@@ -3624,7 +3624,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-12T03:10:55.583Z",
+      "publishedAt": "2026-09-12T03:18:49.298Z",
       "categoryId": "",
       "categories": [
         "sports"
@@ -3643,7 +3643,7 @@
       "isShort": true,
       "subscribers": 2422500,
       "appearances": 4,
-      "firstSeen": "2026-09-12T03:10:55.583Z",
+      "firstSeen": "2026-09-12T03:18:49.298Z",
       "viewsGained": 13500,
       "viewsPerHour": 25550,
       "rankDelta": -1,
@@ -3657,7 +3657,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #77",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-11T20:10:55.583Z",
+      "publishedAt": "2026-09-11T20:18:49.298Z",
       "categoryId": "",
       "categories": [
         "news"
@@ -3676,7 +3676,7 @@
       "isShort": false,
       "subscribers": 896800,
       "appearances": 5,
-      "firstSeen": "2026-09-11T20:10:55.583Z",
+      "firstSeen": "2026-09-11T20:18:49.298Z",
       "viewsGained": 45360,
       "viewsPerHour": 32480,
       "rankDelta": 6,
@@ -3690,7 +3690,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #78",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-11T13:10:55.583Z",
+      "publishedAt": "2026-09-11T13:18:49.298Z",
       "categoryId": "",
       "categories": [
         "howto",
@@ -3699,7 +3699,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 35240,
-      "liveStartedAt": "2026-09-15T04:10:55.583Z",
+      "liveStartedAt": "2026-09-15T04:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%231098ad%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%231098ad%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -3710,7 +3710,7 @@
       "isShort": false,
       "subscribers": 2291100,
       "appearances": 6,
-      "firstSeen": "2026-09-11T13:10:55.583Z",
+      "firstSeen": "2026-09-11T13:18:49.298Z",
       "viewsGained": 5220,
       "viewsPerHour": 39410,
       "rankDelta": 0,
@@ -3724,7 +3724,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-15T00:10:55.583Z",
+      "publishedAt": "2026-09-15T00:18:49.298Z",
       "categoryId": "",
       "categories": [
         "education"
@@ -3743,7 +3743,7 @@
       "isShort": false,
       "subscribers": 765400,
       "appearances": 1,
-      "firstSeen": "2026-09-15T00:10:55.583Z",
+      "firstSeen": "2026-09-15T00:18:49.298Z",
       "viewsGained": 37080,
       "viewsPerHour": 1340,
       "rankDelta": -6,
@@ -3757,7 +3757,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #80",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-14T17:10:55.583Z",
+      "publishedAt": "2026-09-14T17:18:49.298Z",
       "categoryId": "",
       "categories": [
         "tech"
@@ -3776,7 +3776,7 @@
       "isShort": false,
       "subscribers": 2159700,
       "appearances": 2,
-      "firstSeen": "2026-09-14T17:10:55.583Z",
+      "firstSeen": "2026-09-14T17:18:49.298Z",
       "viewsGained": 68940,
       "viewsPerHour": 8270,
       "rankDelta": 1,
@@ -3790,7 +3790,7 @@
       "title": "まさかの結末、最後まで見てほしい #81",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-14T10:10:55.583Z",
+      "publishedAt": "2026-09-14T10:18:49.298Z",
       "categoryId": "",
       "categories": [
         "film"
@@ -3809,7 +3809,7 @@
       "isShort": true,
       "subscribers": 634000,
       "appearances": 3,
-      "firstSeen": "2026-09-14T10:10:55.583Z",
+      "firstSeen": "2026-09-14T10:18:49.298Z",
       "viewsGained": 28800,
       "viewsPerHour": 15200,
       "rankDelta": -5,
@@ -3823,7 +3823,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-14T03:10:55.583Z",
+      "publishedAt": "2026-09-14T03:18:49.298Z",
       "categoryId": "",
       "categories": [
         "autos"
@@ -3842,7 +3842,7 @@
       "isShort": false,
       "subscribers": 2028300,
       "appearances": 4,
-      "firstSeen": "2026-09-14T03:10:55.583Z",
+      "firstSeen": "2026-09-14T03:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 22130,
       "rankDelta": 0,
@@ -3856,7 +3856,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #83",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-13T20:10:55.583Z",
+      "publishedAt": "2026-09-13T20:18:49.298Z",
       "categoryId": "",
       "categories": [
         "pets"
@@ -3875,7 +3875,7 @@
       "isShort": false,
       "subscribers": 502600,
       "appearances": 5,
-      "firstSeen": "2026-09-13T20:10:55.583Z",
+      "firstSeen": "2026-09-13T20:18:49.298Z",
       "viewsGained": 20520,
       "viewsPerHour": 29060,
       "rankDelta": -4,
@@ -3889,7 +3889,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #84",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-13T13:10:55.583Z",
+      "publishedAt": "2026-09-13T13:18:49.298Z",
       "categoryId": "",
       "categories": [
         "travel"
@@ -3908,7 +3908,7 @@
       "isShort": false,
       "subscribers": 1896900,
       "appearances": 6,
-      "firstSeen": "2026-09-13T13:10:55.583Z",
+      "firstSeen": "2026-09-13T13:18:49.298Z",
       "viewsGained": 52380,
       "viewsPerHour": 35990,
       "rankDelta": 3,
@@ -3922,7 +3922,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-13T06:10:55.583Z",
+      "publishedAt": "2026-09-13T06:18:49.298Z",
       "categoryId": "",
       "categories": [
         "music"
@@ -3941,7 +3941,7 @@
       "isShort": false,
       "subscribers": 371200,
       "appearances": 1,
-      "firstSeen": "2026-09-13T06:10:55.583Z",
+      "firstSeen": "2026-09-13T06:18:49.298Z",
       "viewsGained": 12240,
       "viewsPerHour": 42920,
       "rankDelta": -3,
@@ -3955,7 +3955,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #86",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-12T23:10:55.583Z",
+      "publishedAt": "2026-09-12T23:18:49.298Z",
       "categoryId": "",
       "categories": [
         "gaming"
@@ -3974,7 +3974,7 @@
       "isShort": true,
       "subscribers": 1765500,
       "appearances": 2,
-      "firstSeen": "2026-09-12T23:10:55.583Z",
+      "firstSeen": "2026-09-12T23:18:49.298Z",
       "viewsGained": 44100,
       "viewsPerHour": 4850,
       "rankDelta": 4,
@@ -3988,7 +3988,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #87",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-12T16:10:55.583Z",
+      "publishedAt": "2026-09-12T16:18:49.298Z",
       "categoryId": "",
       "categories": [
         "entertainment"
@@ -4007,7 +4007,7 @@
       "isShort": false,
       "subscribers": 239800,
       "appearances": 3,
-      "firstSeen": "2026-09-12T16:10:55.583Z",
+      "firstSeen": "2026-09-12T16:18:49.298Z",
       "viewsGained": 3960,
       "viewsPerHour": 11780,
       "rankDelta": -2,
@@ -4021,7 +4021,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-12T09:10:55.583Z",
+      "publishedAt": "2026-09-12T09:18:49.298Z",
       "categoryId": "",
       "categories": [
         "people"
@@ -4040,7 +4040,7 @@
       "isShort": false,
       "subscribers": 1634100,
       "appearances": 4,
-      "firstSeen": "2026-09-12T09:10:55.583Z",
+      "firstSeen": "2026-09-12T09:18:49.298Z",
       "viewsGained": 35820,
       "viewsPerHour": 18710,
       "rankDelta": 5,
@@ -4054,7 +4054,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #89",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-12T02:10:55.583Z",
+      "publishedAt": "2026-09-12T02:18:49.298Z",
       "categoryId": "",
       "categories": [
         "comedy",
@@ -4063,7 +4063,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 4160,
-      "liveStartedAt": "2026-09-15T03:10:55.583Z",
+      "liveStartedAt": "2026-09-15T03:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23ff5252%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23ff5252%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -4074,7 +4074,7 @@
       "isShort": false,
       "subscribers": 108400,
       "appearances": 5,
-      "firstSeen": "2026-09-12T02:10:55.583Z",
+      "firstSeen": "2026-09-12T02:18:49.298Z",
       "viewsGained": 67680,
       "viewsPerHour": 25640,
       "rankDelta": -1,
@@ -4088,7 +4088,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #90",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-11T19:10:55.583Z",
+      "publishedAt": "2026-09-11T19:18:49.298Z",
       "categoryId": "",
       "categories": [
         "sports"
@@ -4107,7 +4107,7 @@
       "isShort": false,
       "subscribers": 1502700,
       "appearances": 6,
-      "firstSeen": "2026-09-11T19:10:55.583Z",
+      "firstSeen": "2026-09-11T19:18:49.298Z",
       "viewsGained": 27540,
       "viewsPerHour": 32570,
       "rankDelta": 6,
@@ -4121,7 +4121,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-15T06:10:55.583Z",
+      "publishedAt": "2026-09-15T06:18:49.298Z",
       "categoryId": "",
       "categories": [
         "news"
@@ -4140,7 +4140,7 @@
       "isShort": true,
       "subscribers": 2897000,
       "appearances": 1,
-      "firstSeen": "2026-09-15T06:10:55.583Z",
+      "firstSeen": "2026-09-15T06:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 39500,
       "rankDelta": 0,
@@ -4154,7 +4154,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #92",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-14T23:10:55.583Z",
+      "publishedAt": "2026-09-14T23:18:49.298Z",
       "categoryId": "",
       "categories": [
         "howto"
@@ -4173,7 +4173,7 @@
       "isShort": false,
       "subscribers": 1371300,
       "appearances": 2,
-      "firstSeen": "2026-09-14T23:10:55.583Z",
+      "firstSeen": "2026-09-14T23:18:49.298Z",
       "viewsGained": 19260,
       "viewsPerHour": 1430,
       "rankDelta": -6,
@@ -4187,7 +4187,7 @@
       "title": "まさかの結末、最後まで見てほしい #93",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-14T16:10:55.583Z",
+      "publishedAt": "2026-09-14T16:18:49.298Z",
       "categoryId": "",
       "categories": [
         "education"
@@ -4206,7 +4206,7 @@
       "isShort": false,
       "subscribers": 2765600,
       "appearances": 3,
-      "firstSeen": "2026-09-14T16:10:55.583Z",
+      "firstSeen": "2026-09-14T16:18:49.298Z",
       "viewsGained": 51120,
       "viewsPerHour": 8360,
       "rankDelta": 1,
@@ -4220,7 +4220,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-14T09:10:55.583Z",
+      "publishedAt": "2026-09-14T09:18:49.298Z",
       "categoryId": "",
       "categories": [
         "tech"
@@ -4239,7 +4239,7 @@
       "isShort": false,
       "subscribers": 1239900,
       "appearances": 4,
-      "firstSeen": "2026-09-14T09:10:55.583Z",
+      "firstSeen": "2026-09-14T09:18:49.298Z",
       "viewsGained": 10980,
       "viewsPerHour": 15290,
       "rankDelta": -5,
@@ -4253,7 +4253,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #95",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-14T02:10:55.583Z",
+      "publishedAt": "2026-09-14T02:18:49.298Z",
       "categoryId": "",
       "categories": [
         "film"
@@ -4272,7 +4272,7 @@
       "isShort": false,
       "subscribers": 2634200,
       "appearances": 5,
-      "firstSeen": "2026-09-14T02:10:55.583Z",
+      "firstSeen": "2026-09-14T02:18:49.298Z",
       "viewsGained": 42840,
       "viewsPerHour": 22220,
       "rankDelta": 2,
@@ -4286,7 +4286,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #96",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-13T19:10:55.583Z",
+      "publishedAt": "2026-09-13T19:18:49.298Z",
       "categoryId": "",
       "categories": [
         "autos"
@@ -4305,7 +4305,7 @@
       "isShort": true,
       "subscribers": 1108500,
       "appearances": 6,
-      "firstSeen": "2026-09-13T19:10:55.583Z",
+      "firstSeen": "2026-09-13T19:18:49.298Z",
       "viewsGained": 2700,
       "viewsPerHour": 29150,
       "rankDelta": -4,
@@ -4319,7 +4319,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-13T12:10:55.583Z",
+      "publishedAt": "2026-09-13T12:18:49.298Z",
       "categoryId": "",
       "categories": [
         "pets"
@@ -4338,7 +4338,7 @@
       "isShort": false,
       "subscribers": 2502800,
       "appearances": 1,
-      "firstSeen": "2026-09-13T12:10:55.583Z",
+      "firstSeen": "2026-09-13T12:18:49.298Z",
       "viewsGained": 34560,
       "viewsPerHour": 36080,
       "rankDelta": 3,
@@ -4352,7 +4352,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #98",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-13T05:10:55.583Z",
+      "publishedAt": "2026-09-13T05:18:49.298Z",
       "categoryId": "",
       "categories": [
         "travel"
@@ -4371,7 +4371,7 @@
       "isShort": false,
       "subscribers": 977100,
       "appearances": 2,
-      "firstSeen": "2026-09-13T05:10:55.583Z",
+      "firstSeen": "2026-09-13T05:18:49.298Z",
       "viewsGained": 66420,
       "viewsPerHour": 43010,
       "rankDelta": -3,
@@ -4385,7 +4385,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #99",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-12T22:10:55.583Z",
+      "publishedAt": "2026-09-12T22:18:49.298Z",
       "categoryId": "",
       "categories": [
         "music"
@@ -4404,7 +4404,7 @@
       "isShort": false,
       "subscribers": 2371400,
       "appearances": 3,
-      "firstSeen": "2026-09-12T22:10:55.583Z",
+      "firstSeen": "2026-09-12T22:18:49.298Z",
       "viewsGained": 26280,
       "viewsPerHour": 4940,
       "rankDelta": 4,
@@ -4418,7 +4418,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-12T15:10:55.583Z",
+      "publishedAt": "2026-09-12T15:18:49.298Z",
       "categoryId": "",
       "categories": [
         "gaming",
@@ -4427,7 +4427,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 9080,
-      "liveStartedAt": "2026-09-15T02:10:55.583Z",
+      "liveStartedAt": "2026-09-15T02:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23f59f00%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -4438,7 +4438,7 @@
       "isShort": false,
       "subscribers": 845700,
       "appearances": 4,
-      "firstSeen": "2026-09-12T15:10:55.583Z",
+      "firstSeen": "2026-09-12T15:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 11870,
       "rankDelta": 0,
@@ -4452,7 +4452,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #101",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-12T08:10:55.583Z",
+      "publishedAt": "2026-09-12T08:18:49.298Z",
       "categoryId": "",
       "categories": [
         "entertainment"
@@ -4471,7 +4471,7 @@
       "isShort": true,
       "subscribers": 2240000,
       "appearances": 5,
-      "firstSeen": "2026-09-12T08:10:55.583Z",
+      "firstSeen": "2026-09-12T08:18:49.298Z",
       "viewsGained": 18000,
       "viewsPerHour": 18800,
       "rankDelta": 5,
@@ -4485,7 +4485,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #102",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-12T01:10:55.583Z",
+      "publishedAt": "2026-09-12T01:18:49.298Z",
       "categoryId": "",
       "categories": [
         "people"
@@ -4504,7 +4504,7 @@
       "isShort": false,
       "subscribers": 714300,
       "appearances": 6,
-      "firstSeen": "2026-09-12T01:10:55.583Z",
+      "firstSeen": "2026-09-12T01:18:49.298Z",
       "viewsGained": 49860,
       "viewsPerHour": 25730,
       "rankDelta": -1,
@@ -4518,7 +4518,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-11T18:10:55.583Z",
+      "publishedAt": "2026-09-11T18:18:49.298Z",
       "categoryId": "",
       "categories": [
         "comedy"
@@ -4537,7 +4537,7 @@
       "isShort": false,
       "subscribers": 2108600,
       "appearances": 1,
-      "firstSeen": "2026-09-11T18:10:55.583Z",
+      "firstSeen": "2026-09-11T18:18:49.298Z",
       "viewsGained": 9720,
       "viewsPerHour": 32660,
       "rankDelta": 6,
@@ -4551,7 +4551,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #104",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-15T05:10:55.583Z",
+      "publishedAt": "2026-09-15T05:18:49.298Z",
       "categoryId": "",
       "categories": [
         "sports"
@@ -4570,7 +4570,7 @@
       "isShort": false,
       "subscribers": 582900,
       "appearances": 2,
-      "firstSeen": "2026-09-15T05:10:55.583Z",
+      "firstSeen": "2026-09-15T05:18:49.298Z",
       "viewsGained": 41580,
       "viewsPerHour": 39590,
       "rankDelta": 0,
@@ -4584,7 +4584,7 @@
       "title": "まさかの結末、最後まで見てほしい #105",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-14T22:10:55.583Z",
+      "publishedAt": "2026-09-14T22:18:49.298Z",
       "categoryId": "",
       "categories": [
         "news"
@@ -4603,7 +4603,7 @@
       "isShort": false,
       "subscribers": 1977200,
       "appearances": 3,
-      "firstSeen": "2026-09-14T22:10:55.583Z",
+      "firstSeen": "2026-09-14T22:18:49.298Z",
       "viewsGained": 1440,
       "viewsPerHour": 1520,
       "rankDelta": -6,
@@ -4617,7 +4617,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-14T15:10:55.583Z",
+      "publishedAt": "2026-09-14T15:18:49.298Z",
       "categoryId": "",
       "categories": [
         "howto"
@@ -4636,7 +4636,7 @@
       "isShort": true,
       "subscribers": 451500,
       "appearances": 4,
-      "firstSeen": "2026-09-14T15:10:55.583Z",
+      "firstSeen": "2026-09-14T15:18:49.298Z",
       "viewsGained": 33300,
       "viewsPerHour": 8450,
       "rankDelta": 1,
@@ -4650,7 +4650,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #107",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-14T08:10:55.583Z",
+      "publishedAt": "2026-09-14T08:18:49.298Z",
       "categoryId": "",
       "categories": [
         "education"
@@ -4669,7 +4669,7 @@
       "isShort": false,
       "subscribers": 1845800,
       "appearances": 5,
-      "firstSeen": "2026-09-14T08:10:55.583Z",
+      "firstSeen": "2026-09-14T08:18:49.298Z",
       "viewsGained": 65160,
       "viewsPerHour": 15380,
       "rankDelta": -5,
@@ -4683,7 +4683,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #108",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-14T01:10:55.583Z",
+      "publishedAt": "2026-09-14T01:18:49.298Z",
       "categoryId": "",
       "categories": [
         "tech"
@@ -4702,7 +4702,7 @@
       "isShort": false,
       "subscribers": 320100,
       "appearances": 6,
-      "firstSeen": "2026-09-14T01:10:55.583Z",
+      "firstSeen": "2026-09-14T01:18:49.298Z",
       "viewsGained": 25020,
       "viewsPerHour": 22310,
       "rankDelta": 2,
@@ -4716,7 +4716,7 @@
       "title": "【検証】1週間○○だけで生活したらどうなるのか",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-13T18:10:55.583Z",
+      "publishedAt": "2026-09-13T18:18:49.298Z",
       "categoryId": "",
       "categories": [
         "film"
@@ -4735,7 +4735,7 @@
       "isShort": false,
       "subscribers": 1714400,
       "appearances": 1,
-      "firstSeen": "2026-09-13T18:10:55.583Z",
+      "firstSeen": "2026-09-13T18:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 29240,
       "rankDelta": 0,
@@ -4749,7 +4749,7 @@
       "title": "新曲「夜明けのサイン」Official Music Video #110",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-13T11:10:55.583Z",
+      "publishedAt": "2026-09-13T11:18:49.298Z",
       "categoryId": "",
       "categories": [
         "autos"
@@ -4768,7 +4768,7 @@
       "isShort": false,
       "subscribers": 188700,
       "appearances": 2,
-      "firstSeen": "2026-09-13T11:10:55.583Z",
+      "firstSeen": "2026-09-13T11:18:49.298Z",
       "viewsGained": 16740,
       "viewsPerHour": 36170,
       "rankDelta": 3,
@@ -4782,7 +4782,7 @@
       "title": "神アプデ後の最強構成でランクマ登ってみた #111",
       "channelId": "ch0",
       "channel": "ウォッチャーTV",
-      "publishedAt": "2026-09-13T04:10:55.583Z",
+      "publishedAt": "2026-09-13T04:18:49.298Z",
       "categoryId": "",
       "categories": [
         "pets",
@@ -4791,7 +4791,7 @@
       "isLive": true,
       "isUpcoming": false,
       "concurrentViewers": 14000,
-      "liveStartedAt": "2026-09-15T06:10:55.583Z",
+      "liveStartedAt": "2026-09-15T06:18:49.298Z",
       "liveScheduledAt": "",
       "thumb": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20320%20180%22%3E%3Crect%20width%3D%22320%22%20height%3D%22180%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.2%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2290%22%20r%3D%2234%22%20fill%3D%22%23e8590c%22%20opacity%3D%22.55%22%2F%3E%3Cpath%20d%3D%22M150%2074l28%2016-28%2016z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E",
       "channelThumb": "",
@@ -4802,7 +4802,7 @@
       "isShort": false,
       "subscribers": 1583000,
       "appearances": 3,
-      "firstSeen": "2026-09-13T04:10:55.583Z",
+      "firstSeen": "2026-09-13T04:18:49.298Z",
       "viewsGained": 48600,
       "viewsPerHour": 43100,
       "rankDelta": -3,
@@ -4816,7 +4816,7 @@
       "title": "大食い企画、限界まで食べたら記録更新しました",
       "channelId": "ch1",
       "channel": "まとめTV",
-      "publishedAt": "2026-09-12T21:10:55.583Z",
+      "publishedAt": "2026-09-12T21:18:49.298Z",
       "categoryId": "",
       "categories": [
         "travel"
@@ -4835,7 +4835,7 @@
       "isShort": false,
       "subscribers": 57300,
       "appearances": 4,
-      "firstSeen": "2026-09-12T21:10:55.583Z",
+      "firstSeen": "2026-09-12T21:18:49.298Z",
       "viewsGained": 8460,
       "viewsPerHour": 5030,
       "rankDelta": 4,
@@ -4849,7 +4849,7 @@
       "title": "密着24時、朝5時起きの一日ルーティン #113",
       "channelId": "ch2",
       "channel": "あさひの実験室",
-      "publishedAt": "2026-09-12T14:10:55.583Z",
+      "publishedAt": "2026-09-12T14:18:49.298Z",
       "categoryId": "",
       "categories": [
         "music"
@@ -4868,7 +4868,7 @@
       "isShort": false,
       "subscribers": 1451600,
       "appearances": 5,
-      "firstSeen": "2026-09-12T14:10:55.583Z",
+      "firstSeen": "2026-09-12T14:18:49.298Z",
       "viewsGained": 40320,
       "viewsPerHour": 11960,
       "rankDelta": -2,
@@ -4882,7 +4882,7 @@
       "title": "話題のスポットに行ってみたら想像以上だった #114",
       "channelId": "ch3",
       "channel": "ミュージックレーベル公式",
-      "publishedAt": "2026-09-12T07:10:55.583Z",
+      "publishedAt": "2026-09-12T07:18:49.298Z",
       "categoryId": "",
       "categories": [
         "gaming"
@@ -4901,7 +4901,7 @@
       "isShort": false,
       "subscribers": 2845900,
       "appearances": 6,
-      "firstSeen": "2026-09-12T07:10:55.583Z",
+      "firstSeen": "2026-09-12T07:18:49.298Z",
       "viewsGained": 180,
       "viewsPerHour": 18890,
       "rankDelta": 5,
@@ -4915,7 +4915,7 @@
       "title": "初心者でも分かる解説、5分でまるっと理解",
       "channelId": "ch4",
       "channel": "ゲーム部",
-      "publishedAt": "2026-09-12T00:10:55.583Z",
+      "publishedAt": "2026-09-12T00:18:49.298Z",
       "categoryId": "",
       "categories": [
         "entertainment"
@@ -4934,7 +4934,7 @@
       "isShort": false,
       "subscribers": 1320200,
       "appearances": 1,
-      "firstSeen": "2026-09-12T00:10:55.583Z",
+      "firstSeen": "2026-09-12T00:18:49.298Z",
       "viewsGained": 32040,
       "viewsPerHour": 25820,
       "rankDelta": -1,
@@ -4948,7 +4948,7 @@
       "title": "生配信アーカイブ：みんなで振り返り雑談 #116",
       "channelId": "ch5",
       "channel": "旅するカメラ",
-      "publishedAt": "2026-09-11T17:10:55.583Z",
+      "publishedAt": "2026-09-11T17:18:49.298Z",
       "categoryId": "",
       "categories": [
         "people"
@@ -4967,7 +4967,7 @@
       "isShort": true,
       "subscribers": 2714500,
       "appearances": 2,
-      "firstSeen": "2026-09-11T17:10:55.583Z",
+      "firstSeen": "2026-09-11T17:18:49.298Z",
       "viewsGained": 63900,
       "viewsPerHour": 32750,
       "rankDelta": 6,
@@ -4981,7 +4981,7 @@
       "title": "まさかの結末、最後まで見てほしい #117",
       "channelId": "ch6",
       "channel": "くらし手帖",
-      "publishedAt": "2026-09-15T04:10:55.583Z",
+      "publishedAt": "2026-09-15T04:18:49.298Z",
       "categoryId": "",
       "categories": [
         "comedy"
@@ -5000,7 +5000,7 @@
       "isShort": false,
       "subscribers": 1188800,
       "appearances": 3,
-      "firstSeen": "2026-09-15T04:10:55.583Z",
+      "firstSeen": "2026-09-15T04:18:49.298Z",
       "viewsGained": 23760,
       "viewsPerHour": 39680,
       "rankDelta": 0,
@@ -5014,7 +5014,7 @@
       "title": "プロが本気でやってみた結果がすごいことに",
       "channelId": "ch7",
       "channel": "スポーツダイジェスト",
-      "publishedAt": "2026-09-14T21:10:55.583Z",
+      "publishedAt": "2026-09-14T21:18:49.298Z",
       "categoryId": "",
       "categories": [
         "sports"
@@ -5033,7 +5033,7 @@
       "isShort": false,
       "subscribers": 2583100,
       "appearances": 4,
-      "firstSeen": "2026-09-14T21:10:55.583Z",
+      "firstSeen": "2026-09-14T21:18:49.298Z",
       "viewsGained": 0,
       "viewsPerHour": 1610,
       "rankDelta": 0,
@@ -5047,7 +5047,7 @@
       "title": "新商品を全種類食べ比べしてランキングにした #119",
       "channelId": "ch8",
       "channel": "ニュースライブ",
-      "publishedAt": "2026-09-14T14:10:55.583Z",
+      "publishedAt": "2026-09-14T14:18:49.298Z",
       "categoryId": "",
       "categories": [
         "news"
@@ -5066,7 +5066,7 @@
       "isShort": false,
       "subscribers": 1057400,
       "appearances": 5,
-      "firstSeen": "2026-09-14T14:10:55.583Z",
+      "firstSeen": "2026-09-14T14:18:49.298Z",
       "viewsGained": 15480,
       "viewsPerHour": 8540,
       "rankDelta": 1,
@@ -5080,7 +5080,7 @@
       "title": "ドッキリ大成功、リアクションが良すぎた #120",
       "channelId": "ch9",
       "channel": "サイエンスラボ",
-      "publishedAt": "2026-09-14T07:10:55.583Z",
+      "publishedAt": "2026-09-14T07:18:49.298Z",
       "categoryId": "",
       "categories": [
         "howto"
@@ -5099,7 +5099,7 @@
       "isShort": false,
       "subscribers": 2451700,
       "appearances": 6,
-      "firstSeen": "2026-09-14T07:10:55.583Z",
+      "firstSeen": "2026-09-14T07:18:49.298Z",
       "viewsGained": 47340,
       "viewsPerHour": 15470,
       "rankDelta": -5,
