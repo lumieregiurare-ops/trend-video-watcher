@@ -1017,6 +1017,15 @@ main.wrap {
     gap: 8px;
   }
 
+  .logo {
+    margin-left: 6px;
+  }
+
+  .header-tools {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .search {
     width: 100%;
   }
