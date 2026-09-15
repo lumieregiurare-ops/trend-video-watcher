@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Youtubeランキングゴッチャ｜YouTube のいろんなランキングまとめ</title>
+  <meta name="description" content="YouTube の急上昇を、総合・音楽・ゲーム・エンタメなどカテゴリ別に。さらに「いま伸びてる順」「高評価率順」「コメント数順」など、いろいろな切り口のランキングでまとめています。">
+  <meta property="og:title" content="Youtubeランキングゴッチャ">
+  <meta property="og:description" content="YouTube の急上昇をカテゴリ別・伸び順・高評価率などいろいろな切り口でまとめています。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff0033'/%3E%3Cpath d='M40 30l30 20-30 20z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-inner">
+      <h1 class="logo"><a href="./"><span class="play" aria-hidden="true"></span>Youtubeランキング<span class="hit">ゴッチャ</span></a></h1>
+      <div class="header-tools">
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M21 21l-4.3-4.3M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/></svg>
+          <input type="search" id="q" placeholder="動画名・チャンネル名（/）" autocomplete="off" aria-label="検索">
+        </div>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="カテゴリ"></nav>
+  </header>
+
+  <main class="wrap">
+    <p class="notice" id="sampleNotice" hidden>これはサンプルデータです。実際のランキングではありません。</p>
+
+    <section class="rank-picker">
+      <div class="chips" id="rankChips" role="group" aria-label="ランキングの種類"></div>
+      <p class="rank-desc" id="rankDesc"></p>
+    </section>
+
+    <div class="toolbar">
+      <p class="meta" id="meta">読み込み中…</p>
+      <div class="controls">
+        <div class="seg" id="lenSeg" role="group" aria-label="動画の長さ">
+          <button data-len="all" class="active">すべて</button>
+          <button data-len="short">ショート</button>
+          <button data-len="long">通常動画</button>
+        </div>
+      </div>
+    </div>
+
+    <ol class="list" id="list"></ol>
+    <button class="more-btn" id="more" hidden></button>
+    <p class="empty" id="empty" hidden>条件に合う動画がありません。絞り込みを変えてみてください。</p>
+
+    <section class="channels" id="channelSection">
+      <div class="sec-head">
+        <h2>ランクインの多いチャンネル</h2>
+        <p class="sec-desc">いま急上昇に何本入っているかの数で並べています。</p>
+      </div>
+      <ol class="ch-list" id="channelList"></ol>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>Youtubeランキングゴッチャ</strong> は、YouTube の急上昇ランキングを自動で集めて、いろいろな切り口で並べ直しているサイトです。1 日 4 回更新しています。</p>
+      <p>掲載しているのはタイトル・サムネイル・公開されている数値と、YouTube へのリンクのみです。動画の権利は各投稿者に帰属します。再生数などは収集時点の値です。</p>
+      <p class="copy">© <span id="year"></span> Youtubeランキングゴッチャ</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="先頭へ戻る" hidden>↑</button>
+  <script src="assets/app.js"></script>
+</body>
+</html>

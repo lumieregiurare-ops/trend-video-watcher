@@ -1,0 +1,15 @@
+{
+  "name": "youtube-ranking-gotcha",
+  "version": "1.0.0",
+  "description": "YouTube の急上昇をいろいろな切り口のランキングにまとめる静的サイト",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "collect": "node scripts/collect.mjs",
+    "sample": "node scripts/sample.mjs",
+    "start": "npm run build && node server.mjs"
+  },
+  "devDependencies": { "esbuild": "^0.24.2", "sharp": "^0.33.5" }
+}

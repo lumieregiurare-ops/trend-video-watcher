@@ -1,0 +1,57 @@
+# 急上昇ランキングを定期収集して docs/ を更新し、そのままサーバーへ配信する
+name: collect
+
+on:
+  schedule:
+    # 1 日 4 回（UTC 表記・JST では 08/12/18/22 時）。間隔があくと「伸び」の精度が落ちるので等間隔寄りにしている
+    - cron: "0 23 * * *"
+    - cron: "0 3 * * *"
+    - cron: "0 9 * * *"
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install build tools
+        run: npm ci
+      - name: Build site (minify JS/CSS/HTML into docs/)
+        run: npm run build
+      - name: Collect
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/collect.mjs
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # history.json は次回の「伸び」計算に使うので必ずコミットする
+          git add docs data/history.json
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "chore: collect $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+      # GITHUB_TOKEN による push は deploy ワークフローを起動しないので、ここでもアップロードする
+      - name: Upload docs/ to Lolipop (FTP)
+        if: ${{ vars.DEPLOY_TARGET == 'lolipop' }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.LOLIPOP_FTP_SERVER }}
+          username: ${{ secrets.LOLIPOP_FTP_USER }}
+          password: ${{ secrets.LOLIPOP_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./docs/
+          server-dir: ${{ vars.LOLIPOP_SERVER_DIR }}
+          dangerous-clean-slate: false
