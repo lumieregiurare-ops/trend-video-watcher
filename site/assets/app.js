@@ -2,6 +2,7 @@
   const $ = (s) => document.querySelector(s);
   const PAGE = 30;
   const STATE_KEY = "ytg:state";
+  const SHARE_TEXT = "YouTube の急上昇ランキングを、カテゴリ別・伸び順・高評価率など、いろいろな切り口でまとめています。";
 
   let data = { videos: [], channels: [], categories: [], rankings: [] };
   let shown = PAGE;
@@ -478,6 +479,14 @@
       $("#q").focus();
     }
   });
+  $("#shareX").addEventListener("click", () => {
+    const shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(SHARE_TEXT) + "&url=" + encodeURIComponent(location.origin + "/");
+    const w = 600, h = 480;
+    const left = Math.round((window.screen.width - w) / 2);
+    const top = Math.round((window.screen.height - h) / 2);
+    window.open(shareUrl, "share", `width=${w},height=${h},left=${left},top=${top},noopener,noreferrer`);
+  });
+
   const toTop = $("#toTop");
   const onScroll = () => (toTop.hidden = window.scrollY < 500);
   window.addEventListener("scroll", onScroll, { passive: true });
