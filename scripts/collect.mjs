@@ -3,8 +3,8 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
-import { buildKeywords, buildStats, buildDigest, buildLongRunners } from "./lib/derive.mjs";
-import { fetchTrending, fetchChannels, apiKey } from "./lib/youtube.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive } from "./lib/derive.mjs";
+import { fetchTrending, fetchChannels, fetchLive, apiKey } from "./lib/youtube.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = join(ROOT, "docs", "data", "rankings.json");
@@ -34,6 +34,11 @@ const byVideo = new Map();
 const perCategory = [];
 
 for (const cat of config.categories) {
+  // ライブのタブは急上昇ではなく検索から作るので、ここでは飛ばす
+  if (cat.kind === "live") {
+    perCategory.push({ id: cat.id, label: cat.label, count: 0 });
+    continue;
+  }
   let list = [];
   try {
     list = await fetchTrending({
@@ -63,6 +68,42 @@ for (const cat of config.categories) {
   }
   log(`[${cat.label}] ${list.length} 件`);
   await new Promise((r) => setTimeout(r, 120));
+}
+
+// ---------- 1.5 いま配信中のライブを足す ----------
+const liveCat = config.categories.find((c) => c.kind === "live");
+if (liveCat && config.live?.enabled !== false) {
+  const jobs = [
+    ...(config.live?.queries || [""]).map((query) => ({ query })),
+    ...(config.live?.categoryIds || []).map((categoryId) => ({ categoryId })),
+  ];
+  let found = 0;
+  for (const job of jobs) {
+    let list = [];
+    try {
+      list = await fetchLive({ regionCode: config.regionCode || "JP", maxResults: config.live?.maxResults || 50, ...job });
+    } catch (e) {
+      log(`[ライブ] 取得できませんでした: ${e.message}`);
+      continue;
+    }
+    for (const v of list) {
+      const prev = byVideo.get(v.id);
+      if (prev) {
+        // 急上昇にも出ているライブは、そこでの順位を保ったままライブのタブにも載せる
+        if (!prev.categories.includes(liveCat.id)) prev.categories.push(liveCat.id);
+        prev.isLive = true;
+        prev.concurrentViewers = v.concurrentViewers;
+        prev.liveStartedAt = v.liveStartedAt;
+        continue;
+      }
+      byVideo.set(v.id, { ...v, categories: [liveCat.id], overallRank: 0 });
+      found++;
+    }
+  }
+  const liveCount = [...byVideo.values()].filter((v) => v.categories.includes(liveCat.id)).length;
+  const row = perCategory.find((c) => c.id === liveCat.id);
+  if (row) row.count = liveCount;
+  log(`[ライブ配信中] ${liveCount} 件（うち新規 ${found} 件）`);
 }
 
 const videos = [...byVideo.values()];
@@ -137,6 +178,7 @@ const keywords = buildKeywords(videos);
 const stats = buildStats(videos, cats);
 const digest = buildDigest(videos, cats);
 const longRunners = buildLongRunners(videos);
+const live = buildLive(videos);
 
 // ---------- 5. 保存 ----------
 await writeJson(OUT, {
@@ -152,6 +194,7 @@ await writeJson(OUT, {
   stats,
   digest,
   longRunners,
+  live,
   videos,
 });
 

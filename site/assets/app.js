@@ -46,6 +46,7 @@
   const SORTS = {
     trending: (a, b) => (a.rank || 999) - (b.rank || 999) || b.views - a.views,
     growth: (a, b) => b.viewsPerHour - a.viewsPerHour,
+    viewers: (a, b) => (b.concurrentViewers || 0) - (a.concurrentViewers || 0),
     views: (a, b) => b.views - a.views,
     like: (a, b) => b.likeRate - a.likeRate,
     comment: (a, b) => b.comments - a.comments,
@@ -61,6 +62,8 @@
       if (state.len === "long" && v.isShort) return false;
       // 高評価率は再生数が少ないと極端な値になるので、一定以上の動画だけを対象にする
       if (state.rank === "like" && v.views < minViews) return false;
+      // 同時視聴者数は配信中のものにしかないので、そのときはライブだけを出す
+      if (state.rank === "viewers" && !v.isLive) return false;
       if (q && !`${v.title} ${v.channel}`.toLowerCase().includes(q)) return false;
       return true;
     });
@@ -70,6 +73,7 @@
   function statTags(v) {
     const key = state.rank;
     const tags = [
+      ...(v.isLive ? [{ id: "viewers", html: `<b>${jpNum(v.concurrentViewers)}</b> 人が視聴中` }] : []),
       { id: "views", html: `再生 <b>${jpNum(v.views)}</b>` },
       { id: "growth", html: `<b>+${jpNum(v.viewsPerHour)}</b>/時` },
       { id: "like", html: `高評価率 <b>${v.likeRate}%</b>` },
@@ -108,7 +112,13 @@
     img.loading = "lazy";
     img.decoding = "async";
     thumb.appendChild(img);
-    if (v.durationSec) {
+    if (v.isLive) {
+      // 配信中は再生時間の代わりに LIVE と経過時間を出す
+      const l = document.createElement("span");
+      l.className = "live-tag";
+      l.textContent = v.liveStartedAt ? `LIVE ${rel(v.liveStartedAt).replace("前", "経過")}` : "LIVE";
+      thumb.appendChild(l);
+    } else if (v.durationSec) {
       const d = document.createElement("span");
       d.className = "dur";
       d.textContent = mmss(v.durationSec);
@@ -231,7 +241,7 @@
     const boxes = [
       { k: "急上昇の動画", v: jpNum(s.videoCount), u: "本" },
       { k: "合計再生数", v: jpNum(s.totalViews), u: "回" },
-      { k: "ショート比率", v: s.shortRatio, u: "%" },
+      { k: "配信中", v: jpNum(s.liveCount || 0), u: "本" },
       { k: "初登場", v: jpNum(s.newCount), u: "本" },
     ];
     $("#statGrid").innerHTML = boxes
@@ -269,6 +279,38 @@
     body.append(label, title, num);
     a.append(img, body);
     box.appendChild(a);
+  }
+
+  function renderLive() {
+    const list = data.live || [];
+    const box = $("#liveList");
+    box.innerHTML = "";
+    for (const v of list.slice(0, 6)) {
+      const li = document.createElement("li");
+      li.className = "live-item";
+      const a = document.createElement("a");
+      a.href = `https://www.youtube.com/watch?v=${v.id}`;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.style.display = "contents";
+      const img = document.createElement("img");
+      img.src = v.thumb;
+      img.alt = "";
+      img.loading = "lazy";
+      const info = document.createElement("div");
+      info.className = "info";
+      const t = document.createElement("div");
+      t.className = "t";
+      t.textContent = v.title;
+      const m = document.createElement("div");
+      m.className = "m";
+      m.textContent = `${jpNum(v.concurrentViewers)} 人視聴中 ・ ${v.channel}`;
+      info.append(t, m);
+      a.append(img, info);
+      li.appendChild(a);
+      box.appendChild(li);
+    }
+    $("#liveMod").hidden = !list.length;
   }
 
   function renderKeywords() {
@@ -450,6 +492,7 @@
     renderTabs();
     renderRankChips();
     renderStats();
+    renderLive();
     renderChannels();
     renderKeywords();
     renderDigest();
@@ -471,6 +514,10 @@
       set({ len: b.dataset.len });
     });
   }
+  $("#liveMore").addEventListener("click", () => {
+    set({ cat: "live", rank: "viewers" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   $("#more").addEventListener("click", () => {
     shown += PAGE;
     render();

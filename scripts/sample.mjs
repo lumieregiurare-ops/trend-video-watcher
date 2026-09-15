@@ -3,7 +3,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
-import { buildKeywords, buildStats, buildDigest, buildLongRunners } from "./lib/derive.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive } from "./lib/derive.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const config = await readJson(join(ROOT, "config.json"));
@@ -25,7 +25,7 @@ const TITLES = [
 const CHANNELS = ["ウォッチャーTV", "まとめTV", "あさひの実験室", "ミュージックレーベル公式", "ゲーム部", "旅するカメラ", "くらし手帖", "スポーツダイジェスト", "ニュースライブ", "サイエンスラボ"];
 const COLORS = ["#ff5252", "#4c6ef5", "#12b886", "#f59f00", "#ae3ec9", "#1098ad", "#e8590c", "#5c7cfa"];
 
-const cats = config.categories.filter((c) => c.id !== "all").map((c) => c.id);
+const cats = config.categories.filter((c) => c.id !== "all" && c.kind !== "live").map((c) => c.id);
 const videos = [];
 const now = Date.now();
 
@@ -37,6 +37,7 @@ for (let i = 0; i < 120; i++) {
   const ageH = 1 + ((i * 7) % 90);
   const cat = cats[i % cats.length];
   const isNew = i % 9 === 0;
+  const isLive = i % 11 === 0;
   videos.push({
     id: `sample${String(i).padStart(3, "0")}`,
     rank: (i % 50) + 1,
@@ -46,14 +47,19 @@ for (let i = 0; i < 120; i++) {
     channel: CHANNELS[i % CHANNELS.length],
     publishedAt: new Date(now - ageH * 3600000).toISOString(),
     categoryId: "",
-    categories: i < 50 ? ["all", cat] : [cat],
+    categories: [...(i < 50 ? ["all", cat] : [cat]), ...(isLive ? ["live"] : [])],
+    isLive,
+    isUpcoming: false,
+    concurrentViewers: isLive ? 800 + ((i * 331) % 300) * 120 : 0,
+    liveStartedAt: isLive ? new Date(now - (1 + (i % 5)) * 3600000).toISOString() : "",
+    liveScheduledAt: "",
     thumb: `data:image/svg+xml,${encodeURIComponent(svg)}`,
     channelThumb: "",
     views,
     likes,
     comments: Math.round(likes * (0.02 + ((i * 17) % 40) / 400)),
-    durationSec: i % 5 === 0 ? 45 : 300 + ((i * 37) % 1500),
-    isShort: i % 5 === 0,
+    durationSec: isLive ? 0 : i % 5 === 0 ? 45 : 300 + ((i * 37) % 1500),
+    isShort: !isLive && i % 5 === 0,
     subscribers: 50000 + ((i * 991) % 400) * 7300,
     appearances: 1 + (i % 6),
     firstSeen: new Date(now - ageH * 3600000).toISOString(),
@@ -96,6 +102,7 @@ await writeJson(join(ROOT, "docs", "data", "rankings.json"), {
   stats: buildStats(videos, catCounts),
   digest: buildDigest(videos, catCounts),
   longRunners: buildLongRunners(videos),
+  live: buildLive(videos),
   videos,
 });
 log(`サンプルデータを書き出しました: 動画 ${videos.length} 件 / チャンネル ${channels.length} 件`);

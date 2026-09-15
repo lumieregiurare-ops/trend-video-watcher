@@ -11,29 +11,132 @@
   "historyDays": 14,
   "channelRankingSize": 20,
   "categories": [
-    { "id": "all", "label": "総合", "youtubeCategoryId": "" },
-    { "id": "music", "label": "音楽", "youtubeCategoryId": "10" },
-    { "id": "gaming", "label": "ゲーム", "youtubeCategoryId": "20" },
-    { "id": "entertainment", "label": "エンタメ", "youtubeCategoryId": "24" },
-    { "id": "people", "label": "ブログ・Vlog", "youtubeCategoryId": "22" },
-    { "id": "comedy", "label": "お笑い", "youtubeCategoryId": "23" },
-    { "id": "sports", "label": "スポーツ", "youtubeCategoryId": "17" },
-    { "id": "news", "label": "ニュース", "youtubeCategoryId": "25" },
-    { "id": "howto", "label": "ハウツー", "youtubeCategoryId": "26" },
-    { "id": "education", "label": "教育", "youtubeCategoryId": "27" },
-    { "id": "tech", "label": "科学・技術", "youtubeCategoryId": "28" },
-    { "id": "film", "label": "映画・アニメ", "youtubeCategoryId": "1" },
-    { "id": "autos", "label": "車・乗り物", "youtubeCategoryId": "2" },
-    { "id": "pets", "label": "ペット・動物", "youtubeCategoryId": "15" },
-    { "id": "travel", "label": "旅行", "youtubeCategoryId": "19" }
+    {
+      "id": "all",
+      "label": "総合",
+      "youtubeCategoryId": ""
+    },
+    {
+      "id": "live",
+      "label": "ライブ配信中",
+      "youtubeCategoryId": "",
+      "kind": "live"
+    },
+    {
+      "id": "music",
+      "label": "音楽",
+      "youtubeCategoryId": "10"
+    },
+    {
+      "id": "gaming",
+      "label": "ゲーム",
+      "youtubeCategoryId": "20"
+    },
+    {
+      "id": "entertainment",
+      "label": "エンタメ",
+      "youtubeCategoryId": "24"
+    },
+    {
+      "id": "people",
+      "label": "ブログ・Vlog",
+      "youtubeCategoryId": "22"
+    },
+    {
+      "id": "comedy",
+      "label": "お笑い",
+      "youtubeCategoryId": "23"
+    },
+    {
+      "id": "sports",
+      "label": "スポーツ",
+      "youtubeCategoryId": "17"
+    },
+    {
+      "id": "news",
+      "label": "ニュース",
+      "youtubeCategoryId": "25"
+    },
+    {
+      "id": "howto",
+      "label": "ハウツー",
+      "youtubeCategoryId": "26"
+    },
+    {
+      "id": "education",
+      "label": "教育",
+      "youtubeCategoryId": "27"
+    },
+    {
+      "id": "tech",
+      "label": "科学・技術",
+      "youtubeCategoryId": "28"
+    },
+    {
+      "id": "film",
+      "label": "映画・アニメ",
+      "youtubeCategoryId": "1"
+    },
+    {
+      "id": "autos",
+      "label": "車・乗り物",
+      "youtubeCategoryId": "2"
+    },
+    {
+      "id": "pets",
+      "label": "ペット・動物",
+      "youtubeCategoryId": "15"
+    },
+    {
+      "id": "travel",
+      "label": "旅行",
+      "youtubeCategoryId": "19"
+    }
   ],
   "rankings": [
-    { "id": "trending", "label": "急上昇順", "desc": "YouTube の急上昇に出ている順番そのまま" },
-    { "id": "growth", "label": "いま伸びてる順", "desc": "前回の集計からの再生数の増え方（1時間あたり）が大きい順" },
-    { "id": "views", "label": "再生数順", "desc": "急上昇に入っている動画を再生数の多い順に" },
-    { "id": "like", "label": "高評価率順", "desc": "再生数に対する高評価の割合が高い順（1万回再生以上）" },
-    { "id": "comment", "label": "コメント数順", "desc": "コメントが多い順。盛り上がっている動画が分かります" },
-    { "id": "fresh", "label": "新着順", "desc": "公開されたばかりで急上昇に入った動画" }
+    {
+      "id": "trending",
+      "label": "急上昇順",
+      "desc": "YouTube の急上昇に出ている順番そのまま"
+    },
+    {
+      "id": "growth",
+      "label": "いま伸びてる順",
+      "desc": "前回の集計からの再生数の増え方（1時間あたり）が大きい順"
+    },
+    {
+      "id": "viewers",
+      "label": "同時視聴者数順",
+      "desc": "いま配信中のライブを、見ている人が多い順に"
+    },
+    {
+      "id": "views",
+      "label": "再生数順",
+      "desc": "急上昇に入っている動画を再生数の多い順に"
+    },
+    {
+      "id": "like",
+      "label": "高評価率順",
+      "desc": "再生数に対する高評価の割合が高い順（1万回再生以上）"
+    },
+    {
+      "id": "comment",
+      "label": "コメント数順",
+      "desc": "コメントが多い順。盛り上がっている動画が分かります"
+    },
+    {
+      "id": "fresh",
+      "label": "新着順",
+      "desc": "公開されたばかりで急上昇に入った動画"
+    }
   ],
-  "likeRateMinViews": 10000
+  "likeRateMinViews": 10000,
+  "live": {
+    "enabled": true,
+    "maxResults": 50,
+    "queries": [
+      ""
+    ],
+    "categoryIds": []
+  }
 }

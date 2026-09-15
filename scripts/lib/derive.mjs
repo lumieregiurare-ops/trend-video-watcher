@@ -54,16 +54,35 @@ export function buildStats(videos, categories) {
     })
     .filter((c) => c.count > 0)
     .sort((a, b) => b.viewsPerHour - a.viewsPerHour);
+  const lives = videos.filter((v) => v.isLive);
   return {
     videoCount: videos.length,
     totalViews,
     avgViews: videos.length ? Math.round(totalViews / videos.length) : 0,
+    liveCount: lives.length,
+    liveViewers: lives.reduce((a, v) => a + (v.concurrentViewers || 0), 0),
     shortCount: shorts,
     shortRatio: videos.length ? Math.round((shorts / videos.length) * 100) : 0,
     newCount: videos.filter((v) => v.isNew).length,
     topGrowth: top ? { id: top.id, title: top.title, viewsPerHour: top.viewsPerHour, thumb: top.thumb, channel: top.channel } : null,
     categoryStrength: strength,
   };
+}
+
+// いま配信中のライブを、同時視聴者数の多い順に
+export function buildLive(videos, { limit = 8 } = {}) {
+  return videos
+    .filter((v) => v.isLive)
+    .sort((a, b) => (b.concurrentViewers || 0) - (a.concurrentViewers || 0))
+    .slice(0, limit)
+    .map((v) => ({
+      id: v.id,
+      title: v.title,
+      channel: v.channel,
+      thumb: v.thumb,
+      concurrentViewers: v.concurrentViewers || 0,
+      liveStartedAt: v.liveStartedAt || "",
+    }));
 }
 
 // カテゴリごとの上位数件。ページ下部のダイジェストに使う。

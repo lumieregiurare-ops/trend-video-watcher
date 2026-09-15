@@ -28,7 +28,14 @@ function normalizeVideo(v, rank) {
   const st = v.statistics || {};
   const th = s.thumbnails || {};
   const sec = durationSec(v.contentDetails?.duration);
+  const live = v.liveStreamingDetails || {};
+  const broadcast = s.liveBroadcastContent || "none";
   return {
+    isLive: broadcast === "live",
+    isUpcoming: broadcast === "upcoming",
+    concurrentViewers: Number(live.concurrentViewers) || 0,
+    liveStartedAt: live.actualStartTime || "",
+    liveScheduledAt: live.scheduledStartTime || "",
     id: v.id,
     rank,
     title: (s.title || "").trim(),
@@ -50,7 +57,7 @@ export async function fetchTrending({ regionCode = "JP", categoryId = "", maxRes
   if (!apiKey()) return [];
   const json = await fetchJson(
     url("videos", {
-      part: "snippet,statistics,contentDetails",
+      part: "snippet,statistics,contentDetails,liveStreamingDetails",
       chart: "mostPopular",
       regionCode,
       videoCategoryId: categoryId,
@@ -59,6 +66,48 @@ export async function fetchTrending({ regionCode = "JP", categoryId = "", maxRes
     { timeoutMs: 25000 }
   );
   return (json.items || []).map((v, i) => normalizeVideo(v, i + 1));
+}
+
+// 動画 ID から詳細をまとめて引く（1 回 50 件まで、1 ユニット）
+export async function fetchVideosByIds(ids) {
+  if (!apiKey() || !ids.length) return [];
+  const out = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    const json = await fetchJson(
+      url("videos", { part: "snippet,statistics,contentDetails,liveStreamingDetails", id: ids.slice(i, i + 50).join(",") }),
+      { timeoutMs: 25000 }
+    );
+    out.push(...(json.items || []).map((v) => normalizeVideo(v, 0)));
+  }
+  return out;
+}
+
+// いま配信中のライブを探す。
+// search.list は 1 回 100 ユニットと高いので、呼ぶ回数は config で絞れるようにしている。
+export async function fetchLive({ regionCode = "JP", query = "", categoryId = "", maxResults = 50 } = {}) {
+  if (!apiKey()) return [];
+  const json = await fetchJson(
+    url("search", {
+      part: "snippet",
+      type: "video",
+      eventType: "live",
+      order: "viewCount",
+      regionCode,
+      relevanceLanguage: "ja",
+      q: query,
+      videoCategoryId: categoryId,
+      maxResults,
+    }),
+    { timeoutMs: 25000 }
+  );
+  const ids = (json.items || []).map((i) => i.id?.videoId).filter(Boolean);
+  // search.list は再生数などを返さないので、videos.list で数値を取り直す
+  const videos = await fetchVideosByIds(ids);
+  // 同時視聴者数の多い順に並べ、その順番を順位にする
+  return videos
+    .filter((v) => v.isLive)
+    .sort((a, b) => b.concurrentViewers - a.concurrentViewers)
+    .map((v, i) => ({ ...v, rank: i + 1 }));
 }
 
 // チャンネル情報をまとめて取得する（1 回 50 件まで）
