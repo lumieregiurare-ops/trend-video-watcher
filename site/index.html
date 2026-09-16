@@ -92,6 +92,8 @@
           <button type="button" id="favImport">読み込む</button>
         </div>
 
+        <!-- 動画が入るまでの間、同じくらいの高さを確保しておく（描画時に下の要素が飛ばないように） -->
+        <div class="loading loading-feed" id="listLoading"><span class="spinner" role="status" aria-label="読み込み中"></span><span>動画を読み込んでいます…</span></div>
         <ol class="list" id="list"></ol>
         <button class="more-btn" id="more" hidden></button>
         <p class="empty" id="empty" hidden>条件に合う動画がありません。絞り込みを変えてみてください。</p>

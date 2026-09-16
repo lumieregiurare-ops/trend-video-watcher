@@ -1210,6 +1210,44 @@ main.wrap {
   font-size: 13px;
 }
 
+/* ---------- 読み込み中 ---------- */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.loading-feed {
+  min-height: 60vh;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+
+#pickupBody.is-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    opacity: .45;
+  }
+}
+
 .footer {
   border-top: 1px solid var(--border);
   background: var(--surface);
@@ -1311,5 +1349,11 @@ main.wrap {
   .controls {
     width: 100%;
     margin-left: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

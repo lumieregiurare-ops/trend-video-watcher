@@ -345,6 +345,8 @@
     const all = visible();
     const list = all.slice(0, shown);
     const box = $("#list");
+    const loading = $("#listLoading");
+    if (loading) loading.hidden = true;
     box.innerHTML = "";
     list.forEach((v, i) => box.appendChild(makeItem(v, i)));
 
@@ -427,6 +429,31 @@
   }
 
   // ---------- 右カラム ----------
+  // すぐ入れ替えると切り替わったことが分かりにくいので、いまの高さを保ったままクルクルを挟む。
+  // 高さを固定しないと、サムネイルの読み込みと見出しの行数でこの枠から下が上下に動いてしまう。
+  const PICKUP_SPIN_MS = 320;
+  let pickupTimer = 0;
+  function pickupAgain() {
+    const box = $("#pickupBody");
+    clearTimeout(pickupTimer);
+    // 描画前や非表示のタブでは offsetHeight が 0 や極端な値になることがあるので、
+    // 常識的な範囲（120〜360px）に収めてから使う
+    const h = Math.min(360, Math.max(120, box.offsetHeight || 0));
+    box.style.minHeight = `${h}px`;
+    box.classList.add("is-loading");
+    box.innerHTML = "";
+    const sp = document.createElement("span");
+    sp.className = "spinner";
+    sp.setAttribute("role", "status");
+    sp.setAttribute("aria-label", "読み込み中");
+    box.appendChild(sp);
+    pickupTimer = setTimeout(() => {
+      renderPickup();
+      box.classList.remove("is-loading");
+      box.style.minHeight = "";
+    }, PICKUP_SPIN_MS);
+  }
+
   function renderPickup() {
     const pool = data.videos.filter((v) => !v.gone);
     if (!pool.length) {
@@ -754,6 +781,10 @@
       data = await r.json();
     } catch {
       $("#meta").textContent = "データを読み込めませんでした。";
+      // 読み込み中の表示のまま残さない
+      $("#listLoading").hidden = true;
+      $("#empty").hidden = false;
+      $("#empty").textContent = "動画を読み込めませんでした。時間をおいて開き直してください。";
       return;
     }
     $("#sampleNotice").hidden = !data.isSample;
@@ -797,7 +828,7 @@
     shown += PAGE;
     render();
   });
-  $("#pickupAgain").addEventListener("click", renderPickup);
+  $("#pickupAgain").addEventListener("click", pickupAgain);
   $("#liveMore").addEventListener("click", () => {
     set({ cat: "live", rank: "viewers" });
     window.scrollTo({ top: 0, behavior: "smooth" });
