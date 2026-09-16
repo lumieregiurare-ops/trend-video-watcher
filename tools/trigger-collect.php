@@ -26,6 +26,7 @@ declare(strict_types=1);
 const REPOS = [
     'lumieregiurare-ops/trend-video-watcher',
     'lumieregiurare-ops/aimatome',
+    'lumieregiurare-ops/mhmatome',
 ];
 const EVENT_TYPE = 'collect';
 const TOKEN_FILE = __DIR__ . '/token.txt';
