@@ -212,6 +212,20 @@ const churn = buildChurn(videos, prevIds, history.ranAt || "");
 const timeMachine = buildTimeMachine(history.videos, now - 24 * 3600000);
 
 // ---------- 5. 保存 ----------
+// 次の更新の目安は、cron の設定値ではなく「実際に走った間隔の中央値」から出す。
+// GitHub Actions のスケジュール実行は遅れたり飛んだりするため、設定どおりの時刻を書くと
+// カウントダウンが 0 のまま何時間も止まり、更新が終わったように見えてしまう。
+function medianGapMin(runList) {
+  const ts = [...runList, nowIso].map((t) => new Date(t).getTime()).filter((n) => n > 0);
+  ts.sort((a, b) => a - b);
+  const gaps = [];
+  for (let i = 1; i < ts.length; i++) gaps.push((ts[i] - ts[i - 1]) / 60000);
+  if (!gaps.length) return null;
+  gaps.sort((a, b) => a - b);
+  return Math.round(gaps[Math.floor(gaps.length / 2)]);
+}
+const gapMin = medianGapMin(history.runs || []);
+
 await writeJson(OUT, {
   updatedAt: nowIso,
   previousAt: history.ranAt || "",
@@ -228,8 +242,9 @@ await writeJson(OUT, {
   live,
   churn,
   timeMachine,
-  // 次の収集のおおよその時刻（cron は 1 時間おき）
-  nextUpdateAt: new Date(now + 3600000).toISOString(),
+  // 直近の実績から見た更新間隔（分）と、次の収集のおおよその時刻
+  updateGapMin: gapMin,
+  nextUpdateAt: gapMin ? new Date(now + gapMin * 60000).toISOString() : "",
   // samples は履歴用なので公開ファイルには載せない（spark だけ渡す）
   videos: videos.map(({ samples, ...v }) => v),
 });

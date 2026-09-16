@@ -3,8 +3,12 @@ name: collect
 
 on:
   schedule:
-    # 1 時間に 1 回（毎日 24 回）。1 回あたり約 120 ユニットなので 1 日約 2,880 ユニット（無料枠 10,000 の約 3 割）
-    - cron: "0 * * * *"
+    # 30 分に 1 回（毎日 48 回）。1 回あたり約 120 ユニットなので 1 日約 5,760 ユニット（無料枠 10,000 の約 6 割）
+    #
+    # 毎時 0 分ちょうどは GitHub 側が最も混み合う時刻で、スケジュール実行が大きく遅れたり
+    # そのまま実行されないことがある（実際、"0 * * * *" だったときは 12 回中 4 回しか走らず、
+    # 遅れも 3 分〜54 分とばらついていた）。混雑を避けるため 7 分・37 分にずらしている。
+    - cron: "7,37 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,10 +27,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install build tools
-        run: npm ci
-      - name: Build site (minify JS/CSS/HTML into docs/)
-        run: npm run build
+      # collect.mjs は Node の標準機能だけで動く（esbuild / sharp を使うのは build.mjs だけ）。
+      # docs/ の HTML・JS・CSS はビルド済みのものがコミットされていて、site/ を変えたときは
+      # deploy.yml が作り直すので、収集のたびに npm ci とビルドを回す必要はない。
+      # 30 分おき（1 日 48 回）だと、この 2 ステップだけで Actions の無料枠をかなり消費する。
       - name: Collect
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
@@ -40,8 +44,11 @@ jobs:
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "chore: collect $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
-      # GITHUB_TOKEN による push は deploy ワークフローを起動しないので、ここでもアップロードする
-      - name: Upload docs/ to Lolipop (FTP)
+      # GITHUB_TOKEN による push は deploy ワークフローを起動しないので、ここでもアップロードする。
+      # 収集で変わるのは docs/data/rankings.json だけなので、docs/ 全体ではなく data/ だけを上げる。
+      # 毎回 docs/ 全体を上げると時間がかかるうえ、site/ を直したあと docs/ を作り直さずに
+      # push した場合、リポジトリ側の古い HTML・JS で公開中のファイルを上書きしてしまう。
+      - name: Upload docs/data/ to Lolipop (FTP)
         if: ${{ vars.DEPLOY_TARGET == 'lolipop' }}
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -49,6 +56,6 @@ jobs:
           username: ${{ secrets.LOLIPOP_FTP_USER }}
           password: ${{ secrets.LOLIPOP_FTP_PASSWORD }}
           protocol: ftps
-          local-dir: ./docs/
-          server-dir: ${{ vars.LOLIPOP_SERVER_DIR }}
+          local-dir: ./docs/data/
+          server-dir: ${{ vars.LOLIPOP_SERVER_DIR }}data/
           dangerous-clean-slate: false
