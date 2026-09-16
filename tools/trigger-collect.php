@@ -33,9 +33,13 @@ const REPOS = [
 const EVENT_TYPE = 'collect';
 const TOKEN_FILE = __DIR__ . '/token.txt';
 
+// ロリポップの cron は PHP を CLI ではなく CGI 的に実行することがあり、
+// その場合 STDERR 定数が未定義で Fatal error になる。php://stderr を直接開けば両対応できる。
+$stderr = fopen('php://stderr', 'w');
+
 $token = @file_get_contents(TOKEN_FILE);
 if ($token === false || trim($token) === '') {
-    fwrite(STDERR, "token.txt が読めません: " . TOKEN_FILE . "\n");
+    fwrite($stderr, "token.txt が読めません: " . TOKEN_FILE . "\n");
     exit(1);
 }
 $token = trim($token);
@@ -68,7 +72,7 @@ foreach (REPOS as $repo) {
         continue;
     }
     $failed++;
-    fwrite(STDERR, date('c') . " {$repo}: NG status={$status} err={$err} body={$body}\n");
+    fwrite($stderr, date('c') . " {$repo}: NG status={$status} err={$err} body={$body}\n");
 }
 
 exit($failed > 0 ? 1 : 0);
