@@ -134,7 +134,37 @@ APIキーと FTP の認証情報はご本人で入力してください。
 
 同じアカウントの aimatome でも同じ傾向だったので、cron の書き方の問題ではありません。
 
-そこで **10 分おきに起動し、前回の収集から 25 分たっていなければ即座に終了する**構成にしています（`collect.yml` の「前回からの経過時間を見る」ステップ。前回の時刻は `data/history.json` の `ranAt`）。走るチャンスを 6 倍に増やしつつ、実際の収集は 30 分おきに保たれます。空振りの回は 15 秒ほどで終わり、YouTube API のユニットも消費しません。手動実行（Actions タブの Run workflow）は間隔に関係なく必ず収集します。
+10 分おきに起動して密度で補おうともしましたが、**9 スロット連続で 1 回も配信されませんでした**（trend-video-watcher と aimatome の両方で同時に確認）。**cron 側でできることはありません。**
+
+一方 `workflow_dispatch` と `repository_dispatch`（どちらも外から叩く経路）は**一度も失敗していません**。そこで、更新の主役は外部トリガーにしています。
+
+### 外部から 30 分おきに叩く（推奨・実質これが本番の更新経路）
+
+ロリポップの cron から `tools/trigger-collect.php` を実行します。このスクリプトは trend-video-watcher と aimatome の両方に `repository_dispatch` を送るので、**サーバー上に 1 つ置けば両サイトが更新されます**。
+
+1. GitHub で **fine-grained personal access token** を作る
+   - Repository access: 対象のリポジトリだけ
+   - Permissions: **Contents = Read and write**（`repository_dispatch` に必要なのはこれだけ）
+   - 有効期限を必ず設定する
+2. ロリポップの**公開ディレクトリの外**に `tools/trigger-collect.php` を置き、同じ場所に `token.txt`（トークンを 1 行、パーミッション 600）を作る
+   - 公開ディレクトリに置くと誰でも叩けてしまう
+   - `token.txt` は `.gitignore` 済み。**リポジトリには絶対に入れない**
+3. ユーザー専用ページ → cron 設定で 30 分おきに実行する
+   - 例: `/usr/local/bin/php /home/users/0/xxxx/tools/trigger-collect.php`
+
+手元から 1 回だけ叩いて確かめることもできます（`<TOKEN>` は自分のトークンに置き換え）。
+
+```bash
+curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer <TOKEN>" \
+  https://api.github.com/repos/lumieregiurare-ops/trend-video-watcher/dispatches \
+  -d '{"event_type":"collect"}'
+```
+
+成功すると **204 No Content** が返り、Actions に `repository_dispatch` の実行が現れます。
+
+### cron はフォールバックとして残してある
+
+配信されたときのために 10 分おきの cron も残しています。外部トリガーと二重に走らないよう、**前回の収集から 25 分たっていなければ即座に終了する**ガードを入れてあります（`collect.yml` の「前回からの経過時間を見る」ステップ。前回の時刻は `data/history.json` の `ranAt`）。空振りの回は 15 秒ほどで終わり、YouTube API のユニットも消費しません。手動実行（Actions タブの Run workflow）だけは間隔に関係なく必ず収集します。
 
 **この密な cron は公開リポジトリ（Actions の実行時間が無制限）を前提にしています。** 非公開に戻す場合は、1 日 144 回の起動が無料枠 2,000 分を圧迫するので見直してください。
 

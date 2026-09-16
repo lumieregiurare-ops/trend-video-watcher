@@ -14,6 +14,11 @@ on:
     # （公開リポジトリなので Actions の実行時間は無制限。非公開に戻す場合はこの密な cron を見直すこと）
     - cron: "2,12,22,32,42,52 * * * *"
   workflow_dispatch:
+  # 外部から叩くための入口。GitHub のスケジュール配信が当てにならないため、
+  # 外の定期実行サービス（ロリポップの cron など）から 30 分おきにこれを叩く。
+  # 叩き方は README の「更新の間隔について」を参照。
+  repository_dispatch:
+    types: [collect]
 
 permissions:
   contents: write
@@ -28,8 +33,9 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      # 10 分おきに起動しているので、前回の収集から間がないときはここで終わる。
-      # 手動実行（workflow_dispatch）は間隔に関係なく必ず走らせる。
+      # 10 分おきの cron と外部トリガー（repository_dispatch）の両方で起動するので、
+      # 前回の収集から間がないときはここで終わる。外部サービスが二重に叩いても
+      # 余計な収集が走らない。手動実行（workflow_dispatch）だけは間隔を無視する。
       - name: 前回からの経過時間を見る
         id: gate
         env:
