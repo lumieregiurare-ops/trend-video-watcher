@@ -8,7 +8,7 @@ YouTube の急上昇ランキングを自動で集めて、**いろいろな切�
 - 順位の隣に **前回からの変動（▲▼・NEW）** を表示
 - サムネイル・再生時間・ショート判定つきの一覧
 - 「ランクインの多いチャンネル」ランキングも併載
-- 収集も公開も GitHub Actions で自動実行（1 日 4 回）
+- 収集も公開も GitHub Actions で自動実行（1 時間おき）
 
 ## 必要な準備：YouTube Data API のキー
 
@@ -113,7 +113,7 @@ APIキーと FTP の認証情報はご本人で入力してください。
 | 名前 | 内容 |
 | --- | --- |
 | `DEPLOY_TARGET` | `lolipop`（この値のときだけアップロードする） |
-| `LOLIPOP_SERVER_DIR` | サブドメインの公開ディレクトリ（例: `./trend.gamelab.website/`。末尾のスラッシュ必須） |
+| `LOLIPOP_SERVER_DIR` | `./trend/`（サブドメイン trend.gamelab.website の公開ディレクトリ。末尾のスラッシュ必須） |
 
 サブドメインを決めたら `config.json` の `site.url` と `site/index.html` の OGP も更新してください。
 

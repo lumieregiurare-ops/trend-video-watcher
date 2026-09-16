@@ -2,13 +2,15 @@
 // JS と CSS は esbuild で圧縮し、HTML はコメントと余分な空白を落とす。
 // docs/data/ と docs/radar/data/ は収集スクリプトが書く JSON なので触らない。
 import { readdir, readFile, writeFile, mkdir, stat } from "node:fs/promises";
-import { join, dirname, extname, relative } from "node:path";
+import { join, dirname, extname, relative, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { transform } from "esbuild";
 import sharp from "sharp";
 
 // カードのサムネイル枠は 382x200 程度なので、その 2 倍を上限に縮小する
 const IMAGE_MAX_WIDTH = 800;
+// OGP 画像は SNS 側の推奨が 1200px 以上なので、縮小の上限を分けている
+const OGP_MAX_WIDTH = 1200;
 const IMAGE_QUALITY = 82;
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -46,7 +48,8 @@ for (const file of await walk(SRC)) {
     const buf = await readFile(file);
     const meta = await sharp(buf).metadata();
     let img = sharp(buf).rotate();
-    if ((meta.width || 0) > IMAGE_MAX_WIDTH) img = img.resize({ width: IMAGE_MAX_WIDTH });
+    const maxWidth = /^ogp/i.test(basename(rel)) ? OGP_MAX_WIDTH : IMAGE_MAX_WIDTH;
+    if ((meta.width || 0) > maxWidth) img = img.resize({ width: maxWidth });
     const data = ext === ".png" ? await img.png({ compressionLevel: 9 }).toBuffer() : await img.jpeg({ quality: IMAGE_QUALITY, mozjpeg: true }).toBuffer();
     await writeFile(dest, data);
     count++;
