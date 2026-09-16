@@ -3,7 +3,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
-import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive } from "./lib/derive.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive, buildChurn, buildTimeMachine } from "./lib/derive.mjs";
 import { fetchTrending, fetchChannels, fetchLive, apiKey } from "./lib/youtube.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -109,20 +109,36 @@ if (liveCat && config.live?.enabled !== false) {
 const videos = [...byVideo.values()];
 log(`動画 ${videos.length} 件（重複を除いた実数）`);
 
-// ---------- 2. 前回との差分から「伸び」と順位変動を出す ----------
-const history = (await readJson(HISTORY, { videos: {}, ranAt: "" })) || { videos: {}, ranAt: "" };
+// ---------- 2. 履歴と突き合わせて、伸び・順位変動・推移グラフを作る ----------
+// history.videos[id].samples は [{ t: 時刻, v: 再生数, r: 順位 }] の配列。
+// 直近 SAMPLE_KEEP 回分を残し、推移グラフと「24 時間前のランキング」に使う。
+const SAMPLE_KEEP = config.samplePoints ?? 24;
+const SPARK_POINTS = config.sparkPoints ?? 12;
+
+const history = (await readJson(HISTORY, { videos: {}, ranAt: "", runs: [] })) || { videos: {}, ranAt: "", runs: [] };
+history.videos = history.videos || {};
 const prevRanAt = history.ranAt ? new Date(history.ranAt).getTime() : 0;
-const elapsedH = prevRanAt ? Math.max(0.25, (now - prevRanAt) / 3600000) : 0;
+
+// 前回の収集に出ていた動画（入れ替わりの本数を数えるのに使う）
+const prevIds = new Set(
+  Object.entries(history.videos)
+    .filter(([, h]) => h.samples?.length && new Date(h.samples[h.samples.length - 1].t).getTime() === prevRanAt)
+    .map(([id]) => id)
+);
 
 for (const v of videos) {
   const h = history.videos[v.id];
+  const samples = (h?.samples || []).slice();
   v.appearances = (h?.appearances || 0) + 1;
   v.firstSeen = h?.firstSeen || nowIso;
-  if (h && elapsedH) {
-    v.viewsGained = Math.max(0, v.views - (h.views || 0));
-    v.viewsPerHour = Math.round(v.viewsGained / elapsedH);
-    v.rankDelta = h.rank ? h.rank - v.rank : 0;
-    v.isNew = false;
+
+  const last = samples[samples.length - 1];
+  if (last) {
+    const gapH = Math.max(0.25, (now - new Date(last.t).getTime()) / 3600000);
+    v.viewsGained = Math.max(0, v.views - (last.v || 0));
+    v.viewsPerHour = Math.round(v.viewsGained / gapH);
+    v.rankDelta = last.r ? last.r - v.rank : 0;
+    v.isNew = !prevIds.has(v.id);
   } else {
     // 初めて見る動画は伸びが計算できないので、公開からの平均で代用する
     const ageH = Math.max(1, (now - new Date(v.publishedAt).getTime()) / 3600000);
@@ -132,6 +148,18 @@ for (const v of videos) {
     v.isNew = true;
   }
   v.likeRate = v.views > 0 ? Math.round((v.likes / v.views) * 1000) / 10 : 0;
+
+  // 今回の値を足してから、1 時間あたりの伸びの推移を作る
+  samples.push({ t: nowIso, v: v.views, r: v.rank });
+  v.samples = samples.slice(-SAMPLE_KEEP);
+  const spark = [];
+  for (let i = 1; i < v.samples.length; i++) {
+    const a = v.samples[i - 1];
+    const b = v.samples[i];
+    const gapH = Math.max(0.25, (new Date(b.t).getTime() - new Date(a.t).getTime()) / 3600000);
+    spark.push(Math.max(0, Math.round((b.v - a.v) / gapH)));
+  }
+  v.spark = spark.slice(-SPARK_POINTS);
 }
 
 // ---------- 3. チャンネル情報を足す ----------
@@ -179,6 +207,9 @@ const stats = buildStats(videos, cats);
 const digest = buildDigest(videos, cats);
 const longRunners = buildLongRunners(videos);
 const live = buildLive(videos);
+const churn = buildChurn(videos, prevIds, history.ranAt || "");
+// 履歴の更新より前に、いまの history から 24 時間前のランキングを復元する
+const timeMachine = buildTimeMachine(history.videos, now - 24 * 3600000);
 
 // ---------- 5. 保存 ----------
 await writeJson(OUT, {
@@ -195,19 +226,34 @@ await writeJson(OUT, {
   digest,
   longRunners,
   live,
-  videos,
+  churn,
+  timeMachine,
+  // 次の収集のおおよその時刻（cron は 1 時間おき）
+  nextUpdateAt: new Date(now + 3600000).toISOString(),
+  // samples は履歴用なので公開ファイルには載せない（spark だけ渡す）
+  videos: videos.map(({ samples, ...v }) => v),
 });
 
-// 履歴は次回の差分計算のためだけに持つ。古いものは捨てる。
+// 履歴は次回の差分計算と「24 時間前のランキング」に使う。古いものは捨てる。
 const keepAfter = now - (config.historyDays || 14) * 86400000;
 const nextVideos = {};
 for (const [id, h] of Object.entries(history.videos)) {
-  if (new Date(h.seenAt || 0).getTime() > keepAfter) nextVideos[id] = h;
+  const seen = h.samples?.length ? new Date(h.samples[h.samples.length - 1].t).getTime() : 0;
+  if (seen > keepAfter) nextVideos[id] = h;
 }
 for (const v of videos) {
-  nextVideos[v.id] = { views: v.views, rank: v.rank, appearances: v.appearances, firstSeen: v.firstSeen, seenAt: nowIso };
+  nextVideos[v.id] = {
+    firstSeen: v.firstSeen,
+    appearances: v.appearances,
+    // タイムマシンで昔の動画を並べるため、見出しとサムネイルも残しておく
+    title: v.title,
+    channel: v.channel,
+    thumb: v.thumb,
+    samples: v.samples,
+  };
 }
-await writeJson(HISTORY, { ranAt: nowIso, videos: nextVideos });
+const runs = [...(history.runs || []), nowIso].slice(-SAMPLE_KEEP);
+await writeJson(HISTORY, { ranAt: nowIso, runs, videos: nextVideos });
 
 const summary = {
   ranAt: nowIso,

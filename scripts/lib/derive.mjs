@@ -69,6 +69,42 @@ export function buildStats(videos, categories) {
   };
 }
 
+// 前回の収集からどれだけ入れ替わったか
+export function buildChurn(videos, prevIds, prevRanAt) {
+  const nowIds = new Set(videos.map((v) => v.id));
+  let stayed = 0;
+  for (const id of prevIds) if (nowIds.has(id)) stayed++;
+  return {
+    previousAt: prevRanAt || "",
+    previousCount: prevIds.size,
+    newCount: videos.filter((v) => v.isNew).length,
+    droppedCount: Math.max(0, prevIds.size - stayed),
+    upCount: videos.filter((v) => v.rankDelta > 0).length,
+    downCount: videos.filter((v) => v.rankDelta < 0).length,
+  };
+}
+
+// 指定時刻ごろの順位を履歴から復元する（タイムマシン用）
+export function buildTimeMachine(historyVideos, targetMs, { limit = 10, toleranceH = 3 } = {}) {
+  const rows = [];
+  for (const [id, h] of Object.entries(historyVideos || {})) {
+    if (!h.samples?.length || !h.title) continue;
+    let best = null;
+    let bestGap = Infinity;
+    for (const s of h.samples) {
+      if (!s.r) continue;
+      const gap = Math.abs(new Date(s.t).getTime() - targetMs);
+      if (gap < bestGap) {
+        bestGap = gap;
+        best = s;
+      }
+    }
+    if (!best || bestGap > toleranceH * 3600000) continue;
+    rows.push({ id, title: h.title, channel: h.channel || "", thumb: h.thumb || "", rank: best.r, views: best.v, at: best.t });
+  }
+  return rows.sort((a, b) => a.rank - b.rank || b.views - a.views).slice(0, limit);
+}
+
 // いま配信中のライブを、同時視聴者数の多い順に
 export function buildLive(videos, { limit = 8 } = {}) {
   return videos

@@ -8,7 +8,7 @@
   "port": 3240,
   "regionCode": "JP",
   "maxResults": 50,
-  "historyDays": 14,
+  "historyDays": 3,
   "channelRankingSize": 20,
   "categories": [
     {
@@ -128,6 +128,11 @@
       "id": "fresh",
       "label": "新着順",
       "desc": "公開されたばかりで急上昇に入った動画です。"
+    },
+    {
+      "id": "shuffle",
+      "label": "おまかせ順",
+      "desc": "順不同で並べ替えます。読み込むたびに並びが変わります。"
     }
   ],
   "likeRateMinViews": 10000,
@@ -138,5 +143,7 @@
       ""
     ],
     "categoryIds": []
-  }
+  },
+  "samplePoints": 24,
+  "sparkPoints": 12
 }

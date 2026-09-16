@@ -72,6 +72,8 @@
           <p class="rank-desc" id="rankDesc"></p>
         </section>
 
+        <p class="churn" id="churn" hidden></p>
+
         <div class="toolbar">
           <p class="meta" id="meta">読み込み中…</p>
           <button type="button" class="new-data-btn" id="newData" hidden>新しいランキングがあります・更新する</button>
@@ -84,12 +86,24 @@
           </div>
         </div>
 
+        <div class="fav-tools" id="favTools" hidden>
+          <span>お気に入りはこのブラウザにだけ保存されます。</span>
+          <button type="button" id="favExport">書き出す</button>
+          <button type="button" id="favImport">読み込む</button>
+        </div>
+
         <ol class="list" id="list"></ol>
         <button class="more-btn" id="more" hidden></button>
         <p class="empty" id="empty" hidden>条件に合う動画がありません。絞り込みを変えてみてください。</p>
       </div>
 
       <aside class="side">
+        <section class="mod pickup" id="pickupMod" hidden>
+          <h2 class="mod-head">この 1 本どうですか</h2>
+          <div id="pickupBody"></div>
+          <button class="mod-link" id="pickupAgain" type="button">別の動画を引く</button>
+        </section>
+
         <section class="mod" id="liveMod" hidden>
           <h2 class="mod-head"><span class="live-dot" aria-hidden="true"></span>ライブ配信中</h2>
           <p class="mod-desc">同時視聴者数が多い順です。</p>
@@ -124,6 +138,14 @@
         <p class="sec-desc">カテゴリごとに、急上昇に入っている動画の 1 時間あたりの再生数を合計したものです。</p>
       </div>
       <div class="bars" id="strengthBars"></div>
+    </section>
+
+    <section class="bottom" id="timeSection">
+      <div class="sec-head">
+        <h2>24 時間前の急上昇</h2>
+        <p class="sec-desc">1 日前の同じ時間帯に上位だった動画です。いまの順位と見比べられます。</p>
+      </div>
+      <ol class="time-list" id="timeList"></ol>
     </section>
 
     <section class="bottom" id="longSection">

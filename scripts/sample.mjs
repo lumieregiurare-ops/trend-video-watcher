@@ -3,7 +3,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
-import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive } from "./lib/derive.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive, buildChurn, buildTimeMachine } from "./lib/derive.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const config = await readJson(join(ROOT, "config.json"));
@@ -68,6 +68,8 @@ for (let i = 0; i < 120; i++) {
     rankDelta: isNew ? 0 : ((i * 7) % 13) - 6,
     isNew,
     likeRate: Math.round((likes / views) * 1000) / 10,
+    // 1 時間あたりの伸びの推移（グラフ表示の確認用）
+    spark: Array.from({ length: 12 }, (_, k) => Math.max(0, Math.round((((i * 37 + k * 53) % 100) / 100) * 40000 + 2000 - k * 400))),
   });
 }
 
@@ -103,6 +105,11 @@ await writeJson(join(ROOT, "docs", "data", "rankings.json"), {
   digest: buildDigest(videos, catCounts),
   longRunners: buildLongRunners(videos),
   live: buildLive(videos),
+  churn: buildChurn(videos, new Set(videos.slice(0, 104).map((v) => v.id)), new Date(now - 3600000).toISOString()),
+  timeMachine: videos
+    .slice(20, 30)
+    .map((v, k) => ({ id: v.id, title: v.title, channel: v.channel, thumb: v.thumb, rank: k + 1, views: Math.round(v.views * 0.82), at: new Date(now - 24 * 3600000).toISOString() })),
+  nextUpdateAt: new Date(now + 3600000).toISOString(),
   videos,
 });
 log(`サンプルデータを書き出しました: 動画 ${videos.length} 件 / チャンネル ${channels.length} 件`);
