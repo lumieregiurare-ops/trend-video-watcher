@@ -29,6 +29,7 @@ const REPOS = [
     'lumieregiurare-ops/mhmatome',
     'lumieregiurare-ops/pokematome',
     'lumieregiurare-ops/animematome',
+    'lumieregiurare-ops/newsites',
 ];
 const EVENT_TYPE = 'collect';
 const TOKEN_FILE = __DIR__ . '/token.txt';
