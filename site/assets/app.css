@@ -1681,3 +1681,14 @@ main.wrap {
     transform: rotate(360deg);
   }
 }
+
+/* フッターのお問い合わせリンク */
+.footer .contact a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer .contact a:hover {
+  color: var(--accent);
+}
