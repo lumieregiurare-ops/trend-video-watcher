@@ -5,6 +5,7 @@
   const FAV_KEY = "ytg:favs";
   const FOLLOW_KEY = "ytg:follows";
   const SEEN_KEY = "ytg:seen";
+  const VISIT_KEY = "ytg:lastRanks";
   const SEEN_MAX = 400;
 
   let data = { videos: [], channels: [], categories: [], rankings: [] };
@@ -238,6 +239,15 @@
       else if (v.rankDelta > 0) delta = `<span class="delta up">▲${v.rankDelta}</span>`;
       else if (v.rankDelta < 0) delta = `<span class="delta down">▼${Math.abs(v.rankDelta)}</span>`;
       rank.innerHTML = `<span class="num">${i + 1}</span>${delta}`;
+      // 総合の急上昇順を見ているときは、前回このサイトを見たときの順位も添える
+      if (lastRanks && state.cat === "all" && state.rank === "trending" && state.len === "all" && !state.q.trim()) {
+        const was = document.createElement("span");
+        const r = lastRanks[v.id];
+        was.className = "was" + (r ? "" : " first");
+        was.textContent = r ? `前回${r}位` : "前回圏外";
+        was.title = "前回このサイトを見たときの順位";
+        rank.appendChild(was);
+      }
     }
 
     const thumb = document.createElement("a");
@@ -400,9 +410,44 @@
   }
 
   // ---------- 更新の様子 ----------
+  // ---------- 前回見たときの順位 ----------
+  // 前回開いたときの総合ランキングを覚えておく。同じタブで開き直しても基準が動かないよう、
+  // 最初に読んだ値を sessionStorage に固定する
+  let lastRanks = null;
+  function setupLastRanks() {
+    let prev = null;
+    try {
+      prev = JSON.parse(sessionStorage.getItem(VISIT_KEY) || "null");
+    } catch {
+      /* 読めなければ localStorage の値を使う */
+    }
+    if (!prev) {
+      prev = load(VISIT_KEY, {});
+      try {
+        sessionStorage.setItem(VISIT_KEY, JSON.stringify(prev));
+      } catch {
+        /* 保存できなくても動く */
+      }
+    }
+    // 総合・急上昇順の画面に出ている並びをそのまま覚える
+    const now = {};
+    [...data.videos].sort(SORTS.trending).forEach((v, i) => (now[v.id] = i + 1));
+    store(VISIT_KEY, now);
+    lastRanks = Object.keys(prev).length ? prev : null;
+  }
+
   function renderChurn() {
     const c = data.churn;
     const el = $("#churn");
+    if (lastRanks) {
+      const ranked = [...data.videos].sort(SORTS.trending);
+      const fresh = ranked.filter((v) => !lastRanks[v.id]).length;
+      const up = ranked.filter((v, i) => lastRanks[v.id] && lastRanks[v.id] > i + 1).length;
+      el.hidden = false;
+      el.innerHTML = `前回見たときから <b>${fresh}</b> 本が新しくランクイン・<b>${up}</b> 本が順位を上げました<span class="next" id="nextUpdate"></span>`;
+      tickCountdown();
+      return;
+    }
     if (!c || !c.previousCount) {
       el.hidden = true;
       return;
@@ -792,6 +837,7 @@
     if (!catIds.has(state.cat)) state.cat = "all";
     if (!data.rankings.some((r) => r.id === state.rank)) state.rank = "trending";
 
+    setupLastRanks();
     renderTabs();
     renderRankChips();
     renderChurn();

@@ -1285,6 +1285,330 @@ main.wrap {
   color: #fff;
 }
 
+/* ==========================================================
+   チャート番組ふうの見た目（ここより上の指定を上書きする）
+   黒い放送卓のヘッダー、太い順位数字、行は罫線で区切る
+   ========================================================== */
+:root {
+  --bg: #f3f2ef;
+  --border: #dfddd7;
+  --border-strong: #bcb9b0;
+  --accent: #ff3b30;
+  --accent-dark: #c9241b;
+  --accent-soft: #ffe9e7;
+  --up: #d42a1e;
+  --down: #2f63b8;
+  --gold: #e0a100;
+  --radius: 4px;
+  --studio: #0e0e11;
+  --studio-2: #1b1b20;
+  --font-num: "Oswald", "Noto Sans JP", system-ui, sans-serif;
+}
+
+.header {
+  background: var(--studio);
+  color: #fff;
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+
+.logo {
+  font-weight: 900;
+}
+
+.logo .mark {
+  color: var(--accent);
+}
+
+.logo .hit {
+  color: #fff;
+}
+
+/* 収録中のランプ */
+.logo a::after {
+  content: "ON AIR";
+  margin-left: 6px;
+  font-family: var(--font-num);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 2px;
+  padding: 2px 6px 1px;
+}
+
+.search {
+  background: var(--studio-2);
+  border-color: #2e2e36;
+  border-radius: 4px;
+  color: #8d8d97;
+}
+
+.search input {
+  color: #fff;
+}
+
+.search:focus-within {
+  background: var(--studio-2);
+  border-color: var(--accent);
+}
+
+.share-x {
+  background: var(--studio-2);
+  border-color: #2e2e36;
+  border-radius: 4px;
+  color: #c9c9d0;
+}
+
+.share-x:hover {
+  background: var(--studio-2);
+}
+
+.tabs button {
+  color: #a3a3ad;
+  font-size: 13px;
+  padding: 8px 12px 9px;
+}
+
+.tabs button:hover {
+  color: #fff;
+  background: transparent;
+}
+
+.tabs button[aria-selected="true"] {
+  color: #fff;
+  border-bottom-color: var(--accent);
+}
+
+.side {
+  top: 112px;
+}
+
+/* ランキングの種類は放送卓のスイッチのように */
+.chips {
+  gap: 0;
+  border: 1.5px solid var(--text);
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.chips button {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--surface);
+  padding: 5px 12px;
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.chips button:last-child {
+  border-right: 0;
+}
+
+.chips button.active {
+  background: var(--text);
+  color: #fff;
+}
+
+.seg {
+  border: 1.5px solid var(--text);
+  border-radius: 4px;
+}
+
+.seg button {
+  color: var(--text);
+}
+
+.seg button.active {
+  background: var(--text);
+}
+
+/* 一覧は 1 枚の紙に罫線で並べる */
+.list {
+  gap: 0;
+  background: var(--surface);
+  border-top: 3px solid var(--text);
+}
+
+.item {
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 12px 12px 12px 4px;
+}
+
+.item:hover {
+  border-color: var(--border);
+  box-shadow: none;
+  background: #fffbeb;
+}
+
+.rank .num {
+  font-family: var(--font-num);
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+
+.item.top2 .rank .num,
+.item.top3 .rank .num {
+  color: var(--text);
+}
+
+.delta {
+  font-family: var(--font-num);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.delta.new {
+  font-family: "Noto Sans JP", sans-serif;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* 前回見たときの順位 */
+.was {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  line-height: 1.25;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.was.first {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.thumb {
+  border-radius: 3px;
+}
+
+/* 上位 3 本はサムネイルを大きく */
+.item.top1,
+.item.top2,
+.item.top3 {
+  grid-template-columns: 60px 256px 1fr auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.item.top1 .rank .num,
+.item.top2 .rank .num,
+.item.top3 .rank .num {
+  font-size: 46px;
+}
+
+.item.top1 .title,
+.item.top2 .title,
+.item.top3 .title {
+  font-size: 17px;
+}
+
+.mod {
+  border: 0;
+  border-top: 3px solid var(--text);
+  border-radius: 0;
+  background: transparent;
+  padding: 9px 0 0;
+}
+
+.mod-head {
+  font-size: 14.5px;
+  font-weight: 900;
+}
+
+.mod-link {
+  border: 1.5px solid var(--text);
+  background: var(--surface);
+  border-radius: 4px;
+  color: var(--text);
+}
+
+.mod-link:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+.churn {
+  border-radius: 0 !important;
+  border: 0 !important;
+  border-left: 3px solid var(--accent) !important;
+  background: var(--surface) !important;
+}
+
+.churn b {
+  font-family: var(--font-num);
+  font-size: 15px;
+}
+
+.footer {
+  background: var(--studio);
+  color: #9a9aa4;
+  border-top: 0;
+}
+
+.footer strong {
+  color: #fff;
+}
+
+.to-top {
+  border-radius: 4px;
+  background: var(--studio);
+  border-color: var(--studio);
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .item.top1,
+  .item.top2,
+  .item.top3 {
+    grid-template-columns: 44px 1fr 30px;
+  }
+
+  .item.top1 .fav-btn,
+  .item.top2 .fav-btn,
+  .item.top3 .fav-btn {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  .item.top1 .thumb,
+  .item.top2 .thumb,
+  .item.top3 .thumb {
+    grid-column: 2;
+  }
+
+  .item.top1 .body,
+  .item.top2 .body,
+  .item.top3 .body {
+    grid-column: 1 / -1;
+    padding-left: 8px;
+  }
+
+  .item.top1 .rank .num,
+  .item.top2 .rank .num,
+  .item.top3 .rank .num {
+    font-size: 34px;
+  }
+
+  .rank .num {
+    font-size: 22px;
+  }
+
+  .logo a::after {
+    display: none;
+  }
+}
+
+
 @media (max-width: 1080px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
@@ -1356,4 +1680,15 @@ main.wrap {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* フッターのお問い合わせリンク */
+.footer .contact a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer .contact a:hover {
+  color: var(--accent);
 }
