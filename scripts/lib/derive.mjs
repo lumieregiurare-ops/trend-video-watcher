@@ -37,23 +37,10 @@ export function buildKeywords(videos, { limit = 18, minCount = 2 } = {}) {
     .map(([word, n]) => ({ word, count: n }));
 }
 
-export function buildStats(videos, categories) {
+export function buildStats(videos) {
   const shorts = videos.filter((v) => v.isShort).length;
   const totalViews = videos.reduce((a, v) => a + v.views, 0);
   const top = [...videos].sort((a, b) => b.viewsPerHour - a.viewsPerHour)[0];
-  const strength = categories
-    .filter((c) => c.id !== "all")
-    .map((c) => {
-      const list = videos.filter((v) => v.categories.includes(c.id));
-      return {
-        id: c.id,
-        label: c.label,
-        count: list.length,
-        viewsPerHour: list.reduce((a, v) => a + v.viewsPerHour, 0),
-      };
-    })
-    .filter((c) => c.count > 0)
-    .sort((a, b) => b.viewsPerHour - a.viewsPerHour);
   const lives = videos.filter((v) => v.isLive);
   return {
     videoCount: videos.length,
@@ -65,8 +52,49 @@ export function buildStats(videos, categories) {
     shortRatio: videos.length ? Math.round((shorts / videos.length) * 100) : 0,
     newCount: videos.filter((v) => v.isNew).length,
     topGrowth: top ? { id: top.id, title: top.title, viewsPerHour: top.viewsPerHour, thumb: top.thumb, channel: top.channel } : null,
-    categoryStrength: strength,
   };
+}
+
+// 直近の伸びが、それまでのペース（直前 6 回の中央値）の何倍か。
+// 急上昇の並びは数時間変わらないことが多いので、集計ごとに顔ぶれが変わる指標として使う。
+export function accelOf(spark, viewsPerHour, { minViewsPerHour = 3000, floor = 500 } = {}) {
+  if (!spark || spark.length < 4 || viewsPerHour < minViewsPerHour) return 0;
+  const before = spark.slice(0, -1).slice(-6).sort((a, b) => a - b);
+  const base = Math.max(floor, before[Math.floor(before.length / 2)] || 0);
+  return Math.round((viewsPerHour / base) * 10) / 10;
+}
+
+// 前回の集計からの目立った動き。一覧の上に並べる。
+export function buildMoves(videos, { limit = 5 } = {}) {
+  const used = new Set();
+  const moves = [];
+  const pick = (list, make) => {
+    const v = list.find((x) => !used.has(x.id));
+    if (!v) return;
+    used.add(v.id);
+    moves.push({ id: v.id, title: v.title, channel: v.channel, thumb: v.thumb, isShort: !!v.isShort, ...make(v) });
+  };
+  const by = (f) => [...videos].sort((a, b) => f(b) - f(a));
+
+  const accelList = by((v) => v.accel || 0).filter((v) => v.accel >= 1.5);
+
+  pick(by((v) => v.viewsPerHour), (v) => ({ kind: "growth", value: v.viewsPerHour }));
+  pick(accelList, (v) => ({ kind: "accel", value: v.accel }));
+  pick(
+    videos.filter((v) => v.isNew && v.overallRank > 0).sort((a, b) => a.overallRank - b.overallRank),
+    (v) => ({ kind: "entry", value: v.overallRank })
+  );
+  pick(
+    videos.filter((v) => v.isLive && v.isNew).sort((a, b) => (b.concurrentViewers || 0) - (a.concurrentViewers || 0)),
+    (v) => ({ kind: "live", value: v.concurrentViewers || 0 })
+  );
+  pick(by((v) => v.rankDelta).filter((v) => v.rankDelta >= 3), (v) => ({ kind: "up", value: v.rankDelta }));
+  // 枠が余ったら加速の 2 番手以降で埋める
+  for (const v of accelList) {
+    if (moves.length >= limit) break;
+    pick([v], (x) => ({ kind: "accel", value: x.accel }));
+  }
+  return moves.slice(0, limit);
 }
 
 // 前回の収集からどれだけ入れ替わったか
@@ -84,7 +112,8 @@ export function buildChurn(videos, prevIds, prevRanAt) {
   };
 }
 
-// 指定時刻ごろの順位を履歴から復元する（タイムマシン用）
+// 指定時刻ごろの総合の順位を履歴から復元する（タイムマシン用）。
+// o（総合の順位）を控える前の記録は、カテゴリ内の順位 r で代わりにする
 export function buildTimeMachine(historyVideos, targetMs, { limit = 10, toleranceH = 3 } = {}) {
   const rows = [];
   for (const [id, h] of Object.entries(historyVideos || {})) {
@@ -92,7 +121,7 @@ export function buildTimeMachine(historyVideos, targetMs, { limit = 10, toleranc
     let best = null;
     let bestGap = Infinity;
     for (const s of h.samples) {
-      if (!s.r) continue;
+      if (!(s.o ?? s.r)) continue;
       const gap = Math.abs(new Date(s.t).getTime() - targetMs);
       if (gap < bestGap) {
         bestGap = gap;
@@ -100,7 +129,7 @@ export function buildTimeMachine(historyVideos, targetMs, { limit = 10, toleranc
       }
     }
     if (!best || bestGap > toleranceH * 3600000) continue;
-    rows.push({ id, title: h.title, channel: h.channel || "", thumb: h.thumb || "", rank: best.r, views: best.v, at: best.t });
+    rows.push({ id, title: h.title, channel: h.channel || "", thumb: h.thumb || "", rank: best.o ?? best.r, views: best.v, at: best.t });
   }
   return rows.sort((a, b) => a.rank - b.rank || b.views - a.views).slice(0, limit);
 }

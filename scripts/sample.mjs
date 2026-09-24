@@ -3,7 +3,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { readJson, writeJson, log } from "./lib/util.mjs";
-import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive, buildChurn, buildTimeMachine } from "./lib/derive.mjs";
+import { buildKeywords, buildStats, buildDigest, buildLongRunners, buildLive, buildChurn, buildTimeMachine, buildMoves, accelOf } from "./lib/derive.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const config = await readJson(join(ROOT, "config.json"));
@@ -66,12 +66,14 @@ for (let i = 0; i < 120; i++) {
     viewsGained: isNew ? 0 : ((i * 977) % 400) * 180,
     viewsPerHour: ((i * 577) % 500) * 90 + 800,
     rankDelta: isNew ? 0 : ((i * 7) % 13) - 6,
+    overallDelta: isNew || i >= 50 ? 0 : ((i * 5) % 11) - 5,
     isNew,
     likeRate: Math.round((likes / views) * 1000) / 10,
     // 1 時間あたりの伸びの推移（グラフ表示の確認用）
     spark: Array.from({ length: 12 }, (_, k) => Math.max(0, Math.round((((i * 37 + k * 53) % 100) / 100) * 40000 + 2000 - k * 400))),
   });
 }
+for (const v of videos) v.accel = v.isNew ? 0 : accelOf(v.spark, v.viewsPerHour);
 
 const byChannel = new Map();
 for (const v of videos) {
@@ -101,10 +103,12 @@ await writeJson(join(ROOT, "docs", "data", "rankings.json"), {
   likeRateMinViews: config.likeRateMinViews ?? 10000,
   channels,
   keywords: buildKeywords(videos),
-  stats: buildStats(videos, catCounts),
+  stats: buildStats(videos),
   digest: buildDigest(videos, catCounts),
   longRunners: buildLongRunners(videos),
   live: buildLive(videos),
+  moves: buildMoves(videos),
+  chartChangedAt: new Date(now - 3 * 3600000).toISOString(),
   churn: buildChurn(videos, new Set(videos.slice(0, 104).map((v) => v.id)), new Date(now - 3600000).toISOString()),
   timeMachine: videos
     .slice(20, 30)

@@ -101,7 +101,10 @@
 
   const SORTS = {
     trending: (a, b) => (a.rank || 999) - (b.rank || 999) || b.views - a.views,
+    // 総合の急上昇順。rank はカテゴリ内の順位なので、各カテゴリの 1 位が並んでしまう
+    overall: (a, b) => (a.overallRank || 999) - (b.overallRank || 999) || (a.rank || 999) - (b.rank || 999) || b.views - a.views,
     growth: (a, b) => b.viewsPerHour - a.viewsPerHour,
+    accel: (a, b) => (b.accel || 0) - (a.accel || 0) || b.viewsPerHour - a.viewsPerHour,
     viewers: (a, b) => (b.concurrentViewers || 0) - (a.concurrentViewers || 0),
     views: (a, b) => b.views - a.views,
     like: (a, b) => b.likeRate - a.likeRate,
@@ -152,11 +155,14 @@
       if (state.rank === "like" && v.views < minViews) return false;
       // 同時視聴者数は配信中のものにしかないので、そのときはライブだけを出す
       if (state.rank === "viewers" && !v.isLive) return false;
+      // 加速は 2 回以上集計した動画にしか出ない
+      if (state.rank === "accel" && !v.accel) return false;
       if (q && !`${v.title} ${v.channel}`.toLowerCase().includes(q)) return false;
       return true;
     });
     // お気に入りは既定では保存した順（新しいものが上）
     if (state.cat === "fav" && state.rank === "trending") return list;
+    if (state.cat === "all" && state.rank === "trending") return list.sort(SORTS.overall);
     return list.sort(SORTS[state.rank] || SORTS.trending);
   }
 
@@ -192,6 +198,7 @@
       ...(v.isLive ? [{ id: "viewers", html: `<b>${jpNum(v.concurrentViewers)}</b> 人が視聴中` }] : []),
       { id: "views", html: `再生 <b>${jpNum(v.views)}</b>` },
       ...(v.gone ? [] : [{ id: "growth", html: `<b>+${jpNum(v.viewsPerHour)}</b>/時` }]),
+      ...(v.accel && state.rank === "accel" ? [{ id: "accel", html: `伸び <b>${v.accel} 倍</b>` }] : []),
       ...(v.gone ? [] : [{ id: "like", html: `高評価率 <b>${v.likeRate}%</b>` }]),
       ...(v.gone ? [] : [{ id: "comment", html: `コメント <b>${jpNum(v.comments)}</b>` }]),
       { id: "fresh", html: rel(v.publishedAt) },
@@ -223,7 +230,9 @@
 
   function makeItem(v, i) {
     const li = document.createElement("li");
-    li.className = "item" + (i < 3 && state.cat !== "fav" ? ` top${i + 1}` : "") + (v.rankDelta > 0 ? " rose" : "");
+    // 総合タブでは総合の順位の変動を出す
+    const d = state.cat === "all" ? v.overallDelta || 0 : v.rankDelta;
+    li.className = "item" + (i < 3 && state.cat !== "fav" ? ` top${i + 1}` : "") + (d > 0 ? " rose" : "");
     const url = `https://www.youtube.com/watch?v=${v.id}`;
 
     const rank = document.createElement("div");
@@ -236,8 +245,8 @@
     } else {
       let delta = `<span class="delta">—</span>`;
       if (v.isNew) delta = `<span class="delta new">NEW</span>`;
-      else if (v.rankDelta > 0) delta = `<span class="delta up">▲${v.rankDelta}</span>`;
-      else if (v.rankDelta < 0) delta = `<span class="delta down">▼${Math.abs(v.rankDelta)}</span>`;
+      else if (d > 0) delta = `<span class="delta up">▲${d}</span>`;
+      else if (d < 0) delta = `<span class="delta down">▼${Math.abs(d)}</span>`;
       rank.innerHTML = `<span class="num">${i + 1}</span>${delta}`;
       // 総合の急上昇順を見ているときは、前回このサイトを見たときの順位も添える
       if (lastRanks && state.cat === "all" && state.rank === "trending" && state.len === "all" && !state.q.trim()) {
@@ -406,7 +415,56 @@
       b.addEventListener("click", () => set({ rank: r.id }));
       box.appendChild(b);
     }
-    $("#rankDesc").textContent = data.rankings.find((r) => r.id === state.rank)?.desc || "";
+    let desc = data.rankings.find((r) => r.id === state.rank)?.desc || "";
+    // YouTube 側の並びは数時間おきにしか変わらないので、止まっているのではないと分かるようにする
+    if (state.rank === "trending" && data.chartChangedAt) {
+      desc += `YouTube の急上昇は数時間おきに入れ替わります（前回の入れ替わりは${rel(data.chartChangedAt)}）。`;
+    }
+    $("#rankDesc").textContent = desc;
+  }
+
+  // ---------- 前回からの動き ----------
+  const MOVE_LABEL = {
+    growth: (m) => ["伸び 1 位", `+${jpNum(m.value)}/時`],
+    accel: (m) => ["加速", `伸びが ${m.value} 倍に`],
+    entry: (m) => ["急上昇入り", `総合 ${m.value} 位`],
+    live: (m) => ["配信開始", `${jpNum(m.value)} 人が視聴中`],
+    up: (m) => ["順位アップ", `${m.value} ランクアップ`],
+  };
+
+  function renderMoves() {
+    const list = (data.moves || []).filter((m) => MOVE_LABEL[m.kind]);
+    const box = $("#movesList");
+    box.innerHTML = "";
+    for (const m of list) {
+      const [tag, text] = MOVE_LABEL[m.kind](m);
+      const li = document.createElement("li");
+      li.className = `move move-${m.kind}`;
+      const a = document.createElement("a");
+      a.href = `https://www.youtube.com/watch?v=${m.id}`;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.addEventListener("click", () => markSeen(m.id));
+      const img = document.createElement("img");
+      img.src = m.thumb;
+      img.alt = "";
+      img.loading = "lazy";
+      const tg = document.createElement("span");
+      tg.className = "move-tag";
+      tg.textContent = tag;
+      const t = document.createElement("span");
+      t.className = "move-title";
+      t.textContent = m.title;
+      const v = document.createElement("span");
+      v.className = "move-val";
+      v.textContent = text;
+      a.append(img, tg, t, v);
+      li.appendChild(a);
+      box.appendChild(li);
+    }
+    const u = new Date(data.updatedAt);
+    $("#movesAt").textContent = `${String(u.getHours()).padStart(2, "0")}:${String(u.getMinutes()).padStart(2, "0")} の集計`;
+    $("#movesSection").hidden = !list.length;
   }
 
   // ---------- 更新の様子 ----------
@@ -431,7 +489,7 @@
     }
     // 総合・急上昇順の画面に出ている並びをそのまま覚える
     const now = {};
-    [...data.videos].sort(SORTS.trending).forEach((v, i) => (now[v.id] = i + 1));
+    [...data.videos].sort(SORTS.overall).forEach((v, i) => (now[v.id] = i + 1));
     store(VISIT_KEY, now);
     lastRanks = Object.keys(prev).length ? prev : null;
   }
@@ -440,7 +498,7 @@
     const c = data.churn;
     const el = $("#churn");
     if (lastRanks) {
-      const ranked = [...data.videos].sort(SORTS.trending);
+      const ranked = [...data.videos].sort(SORTS.overall);
       const fresh = ranked.filter((v) => !lastRanks[v.id]).length;
       const up = ranked.filter((v, i) => lastRanks[v.id] && lastRanks[v.id] > i + 1).length;
       el.hidden = false;
@@ -681,37 +739,11 @@
     $("#digestSection").hidden = !list.length;
   }
 
-  function renderStrength() {
-    const box = $("#strengthBars");
-    box.innerHTML = "";
-    const list = data.stats?.categoryStrength || [];
-    const max = Math.max(1, ...list.map((c) => c.viewsPerHour));
-    for (const c of list) {
-      const row = document.createElement("div");
-      row.className = "bar-row";
-      const lbl = document.createElement("span");
-      lbl.className = "lbl";
-      lbl.textContent = c.label;
-      const track = document.createElement("div");
-      track.className = "bar-track";
-      const fill = document.createElement("div");
-      fill.className = "bar-fill";
-      fill.style.width = `${Math.max(3, Math.round((c.viewsPerHour / max) * 100))}%`;
-      track.appendChild(fill);
-      const val = document.createElement("span");
-      val.className = "val";
-      val.textContent = `+${jpNum(c.viewsPerHour)}/時`;
-      row.append(lbl, track, val);
-      box.appendChild(row);
-    }
-    $("#strengthSection").hidden = !list.length;
-  }
-
   function renderTimeMachine() {
     const box = $("#timeList");
     box.innerHTML = "";
     const list = data.timeMachine || [];
-    const nowRank = new Map(data.videos.map((v) => [v.id, v.rank]));
+    const nowRank = new Map(data.videos.filter((v) => v.overallRank).map((v) => [v.id, v.overallRank]));
     for (const v of list) {
       const li = document.createElement("li");
       li.className = "time-item";
@@ -735,7 +767,7 @@
       const m = document.createElement("div");
       m.className = "m";
       const cur = nowRank.get(v.id);
-      m.innerHTML = cur ? `いまは <b>${cur} 位</b> ・ ${v.channel}` : `いまは圏外 ・ ${v.channel}`;
+      m.innerHTML = cur ? `いまは総合 <b>${cur} 位</b> ・ ${v.channel}` : `いまは総合の圏外 ・ ${v.channel}`;
       info.append(t, m);
       a.append(img, info);
       li.append(r, a);
@@ -832,25 +864,64 @@
       $("#empty").textContent = "動画を読み込めませんでした。時間をおいて開き直してください。";
       return;
     }
+    setupLastRanks();
+    renderAll();
+    setInterval(tickCountdown, 30000);
+    setInterval(checkNewData, CHECK_MS);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) checkNewData();
+    });
+  }
+
+  function renderAll() {
     $("#sampleNotice").hidden = !data.isSample;
     const catIds = new Set([...data.categories.map((c) => c.id), "fav", "follow"]);
     if (!catIds.has(state.cat)) state.cat = "all";
     if (!data.rankings.some((r) => r.id === state.rank)) state.rank = "trending";
 
-    setupLastRanks();
     renderTabs();
     renderRankChips();
+    renderMoves();
     renderChurn();
     renderPickup();
     renderLive();
     renderChannels();
     renderKeywords();
     renderDigest();
-    renderStrength();
     renderTimeMachine();
     renderLongRunners();
     render();
-    setInterval(tickCountdown, 30000);
+  }
+
+  // ---------- 開いたままのときの更新 ----------
+  // 開きっぱなしでも新しい集計に気づけるよう、ときどき確かめてボタンを出す
+  const CHECK_MS = 3 * 60000;
+  let pending = null;
+  let checking = false;
+  async function checkNewData() {
+    if (document.hidden || checking || pending) return;
+    checking = true;
+    try {
+      const r = await fetch(`data/rankings.json?t=${Date.now()}`, { cache: "no-store" });
+      const next = await r.json();
+      if (next.updatedAt && new Date(next.updatedAt) > new Date(data.updatedAt)) {
+        pending = next;
+        $("#newData").hidden = false;
+      }
+    } catch {
+      /* 次の確認でまた試す */
+    } finally {
+      checking = false;
+    }
+  }
+
+  function applyNewData() {
+    if (!pending) return;
+    data = pending;
+    pending = null;
+    $("#newData").hidden = true;
+    shuffleOrder.clear();
+    renderAll();
   }
 
   // ---------- イベント ----------
@@ -879,6 +950,7 @@
     set({ cat: "live", rank: "viewers" });
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+  $("#newData").addEventListener("click", applyNewData);
   $("#favExport").addEventListener("click", exportFavs);
   $("#favImport").addEventListener("click", importFavs);
   document.addEventListener("keydown", (e) => {

@@ -67,6 +67,11 @@
 
     <div class="layout">
       <div class="col-main">
+        <section class="moves" id="movesSection" hidden>
+          <h2 class="moves-head">前回からの動き<span class="moves-at" id="movesAt"></span></h2>
+          <ol class="moves-list" id="movesList"></ol>
+        </section>
+
         <section class="rank-picker">
           <div class="chips" id="rankChips" role="group" aria-label="ランキングの種類"></div>
           <p class="rank-desc" id="rankDesc"></p>
@@ -134,14 +139,6 @@
       <div class="digest-grid" id="digestGrid"></div>
     </section>
 
-    <section class="bottom" id="strengthSection">
-      <div class="sec-head">
-        <h2>いま勢いのあるカテゴリ</h2>
-        <p class="sec-desc">カテゴリごとに、急上昇に入っている動画の 1 時間あたりの再生数を合計したものです。</p>
-      </div>
-      <div class="bars" id="strengthBars"></div>
-    </section>
-
     <section class="bottom" id="timeSection">
       <div class="sec-head">
         <h2>24 時間前の急上昇</h2>
@@ -161,7 +158,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p><strong>急上昇動画ウォッチャー</strong> は、YouTube の急上昇ランキングを自動で集めて、いろいろな切り口で並べ直しているサイトです。1 時間おきに更新しています。</p>
+      <p><strong>急上昇動画ウォッチャー</strong> は、YouTube の急上昇ランキングを自動で集めて、いろいろな切り口で並べ直しているサイトです。30 分おきに更新しています。</p>
       <p>掲載しているのはタイトル・サムネイル・公開されている数値と、YouTube へのリンクのみです。動画の権利は各投稿者に帰属します。再生数などは収集時点の値です。</p>
       <p class="contact"><a href="https://docs.google.com/forms/d/e/1FAIpQLSesWyhmZ6sRS_ve-c3X2KqF_wC5PK2TgwgQbTKmnQltSlg5Jw/viewform" target="_blank" rel="noopener noreferrer">お問い合わせはこちら</a></p>
       <p class="copy">© <span id="year"></span> 急上昇動画ウォッチャー</p>
