@@ -1758,3 +1758,16 @@ main.wrap {
 .footer .contact a:hover {
   color: var(--accent);
 }
+
+/* 運営サイトの一覧（フッター） */
+.footer-sisters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 8px 0;
+  font-size: 12.5px;
+}
+.footer-nav-label {
+  font-weight: bold;
+  opacity: 0.8;
+}
