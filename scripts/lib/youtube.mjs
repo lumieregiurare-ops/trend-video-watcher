@@ -82,6 +82,61 @@ export async function fetchVideosByIds(ids) {
   return out;
 }
 
+// VTuber の配信の追跡用。normalizeVideo の内容に、配信の終了時刻とプレミア公開かどうかを足す。
+// API から消えた動画（削除・非公開）は結果に含まれないので、呼び出し側で消えたものとして扱える。
+export async function fetchVideosDetailed(ids) {
+  if (!apiKey() || !ids.length) return [];
+  const out = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    const json = await fetchJson(
+      url("videos", { part: "snippet,statistics,contentDetails,liveStreamingDetails", id: ids.slice(i, i + 50).join(",") }),
+      { timeoutMs: 25000 }
+    );
+    for (const v of json.items || []) {
+      const n = normalizeVideo(v, 0);
+      const live = v.liveStreamingDetails || {};
+      out.push({
+        ...n,
+        liveEndedAt: live.actualEndTime || "",
+        hasLiveDetails: !!v.liveStreamingDetails,
+        // 配信は再生時間が 0（P0D）。予約やライブ中なのに長さがあるのはプレミア公開
+        isPremiere: (n.isLive || n.isUpcoming) && n.durationSec > 0,
+      });
+    }
+  }
+  return out;
+}
+
+// チャンネルのアップロード一覧（uploads プレイリスト）の新しいほうから引く（1 回 1 ユニット）。
+// VTuber の収集で RSS が読めなかったチャンネルの代わりに使う
+export async function fetchUploads(channelId, maxResults = 10) {
+  if (!apiKey() || !/^UC[\w-]{22}$/.test(channelId)) return [];
+  const json = await fetchJson(url("playlistItems", { part: "snippet,contentDetails", playlistId: `UU${channelId.slice(2)}`, maxResults }), { timeoutMs: 20000 });
+  return (json.items || []).map((it) => ({
+    id: it.contentDetails?.videoId || it.snippet?.resourceId?.videoId || "",
+    channelId,
+    title: (it.snippet?.title || "").trim(),
+    publishedAt: it.contentDetails?.videoPublishedAt || it.snippet?.publishedAt || "",
+    views: 0,
+  })).filter((e) => e.id);
+}
+
+// @handle からチャンネル ID を引く（1 件 1 ユニット。名簿を作るときだけ使う）
+export async function fetchChannelIdsByHandle(handles) {
+  const out = new Map();
+  if (!apiKey()) return out;
+  for (const h of handles) {
+    try {
+      const json = await fetchJson(url("channels", { part: "id", forHandle: h }), { timeoutMs: 20000 });
+      const id = json.items?.[0]?.id;
+      if (id) out.set(h.toLowerCase(), id);
+    } catch (e) {
+      console.error(`[youtube] channels.list forHandle=${h}: ${e.message}`);
+    }
+  }
+  return out;
+}
+
 // いま配信中のライブを探す。
 // search.list は 1 回 100 ユニットと高いので、呼ぶ回数は config で絞れるようにしている。
 export async function fetchLive({ regionCode = "JP", query = "", categoryId = "", maxResults = 50 } = {}) {
@@ -125,6 +180,8 @@ export async function fetchChannels(ids) {
           thumb: (c.snippet?.thumbnails?.default || c.snippet?.thumbnails?.medium || {}).url || "",
           subscribers: c.statistics?.hiddenSubscriberCount ? 0 : Number(c.statistics?.subscriberCount) || 0,
           videoCount: Number(c.statistics?.videoCount) || 0,
+          viewCount: Number(c.statistics?.viewCount) || 0,
+          handle: c.snippet?.customUrl || "",
         });
       }
     } catch (e) {

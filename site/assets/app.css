@@ -1771,3 +1771,102 @@ main.wrap {
   font-weight: bold;
   opacity: 0.8;
 }
+
+/* ページの切り替え（急上昇 / VTuber） */
+.site-nav {
+  display: flex;
+  gap: 2px;
+  margin-left: 6px;
+}
+
+.site-nav a {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #a3a3ad;
+  white-space: nowrap;
+}
+
+.site-nav a:hover {
+  color: #fff;
+  background: var(--studio-2);
+}
+
+.site-nav a[aria-current="page"] {
+  color: #fff;
+  background: var(--studio-2);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* 急上昇のページの右カラムに出す「VTuber 配信中」 */
+.vtop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.vtop-item a {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.vtop-item img {
+  width: 96px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--surface-2);
+}
+
+.vtop-item .t {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.vtop-item a:hover .t {
+  text-decoration: underline;
+}
+
+.vtop-item .m {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vtop-item .m b {
+  font-family: var(--font-num);
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .header-tools {
+    order: 3;
+  }
+}
+
+a.vtop-link {
+  display: block;
+  text-align: center;
+}
+
+.vt-footer-link {
+  color: #fff;
+  text-decoration: underline;
+}

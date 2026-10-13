@@ -47,6 +47,10 @@
   <header class="header">
     <div class="wrap header-inner">
       <h1 class="logo"><a href="./"><svg class="mark" viewBox="0 0 26 20" width="26" height="20" aria-hidden="true"><path d="M3 16l6.5-6.5 4 4L21 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="5" r="2.6" fill="currentColor"/></svg>急上昇<span class="hit">動画ウォッチャー</span></a></h1>
+      <nav class="site-nav" aria-label="ページ">
+        <a href="./" aria-current="page">急上昇</a>
+        <a href="vtuber/">VTuber</a>
+      </nav>
       <div class="header-tools">
         <div class="search">
           <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M21 21l-4.3-4.3M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/></svg>
@@ -111,6 +115,13 @@
           <button class="mod-link" id="pickupAgain" type="button">別の動画を引く</button>
         </section>
 
+        <section class="mod" id="vtuberMod" hidden>
+          <h2 class="mod-head"><span class="live-dot" aria-hidden="true"></span>VTuber 配信中</h2>
+          <p class="mod-desc" id="vtuberDesc">ホロライブ・にじさんじ・ぶいすぽっ！など</p>
+          <ol class="vtop-list" id="vtuberList"></ol>
+          <a class="mod-link vtop-link" href="vtuber/">VTuber の配信予定・同接ランキングを見る</a>
+        </section>
+
         <section class="mod" id="liveMod" hidden>
           <h2 class="mod-head"><span class="live-dot" aria-hidden="true"></span>ライブ配信中</h2>
           <p class="mod-desc">同時視聴者数が多い順です。</p>
@@ -158,7 +169,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p><strong>急上昇動画ウォッチャー</strong> は、YouTube の急上昇ランキングを自動で集めて、いろいろな切り口で並べ直しているサイトです。30 分おきに更新しています。</p>
+      <p><strong>急上昇動画ウォッチャー</strong> は、YouTube の急上昇ランキングを自動で集めて、いろいろな切り口で並べ直しているサイトです。30 分おきに更新しています。ホロライブ・にじさんじなどの配信は <a href="vtuber/" class="vt-footer-link">VTuber 配信ウォッチ</a> にまとめています。</p>
       <p>掲載しているのはタイトル・サムネイル・公開されている数値と、YouTube へのリンクのみです。動画の権利は各投稿者に帰属します。再生数などは収集時点の値です。</p>
       <nav class="footer-nav footer-sisters" aria-label="運営サイト"><span class="footer-nav-label">運営サイト</span><a href="https://gamelab.website/" target="_blank" rel="noopener noreferrer">GameLab Radar</a><a href="https://animematome.gamelab.website/" target="_blank" rel="noopener noreferrer">アニメ速報</a><a href="https://pokematome.gamelab.website/" target="_blank" rel="noopener noreferrer">ポケモン速報</a><a href="https://mhmatome.gamelab.website/" target="_blank" rel="noopener noreferrer">モンハン速報</a><a href="https://aimatome.gamelab.website/" target="_blank" rel="noopener noreferrer">AI matomechatter</a><a href="https://chiikawamatome.gamelab.website/" target="_blank" rel="noopener noreferrer">ちいかわ速報</a><a href="https://naroumatome.gamelab.website/" target="_blank" rel="noopener noreferrer">なろう系まとめ</a></nav>
       <p class="contact"><a href="https://docs.google.com/forms/d/e/1FAIpQLSesWyhmZ6sRS_ve-c3X2KqF_wC5PK2TgwgQbTKmnQltSlg5Jw/viewform" target="_blank" rel="noopener noreferrer">お問い合わせはこちら</a></p>

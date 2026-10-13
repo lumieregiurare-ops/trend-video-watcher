@@ -8,7 +8,10 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "collect": "node scripts/collect.mjs",
+    "collect:vtuber": "node scripts/collect-vtuber.mjs",
+    "roster": "node scripts/sync-roster.mjs",
     "sample": "node scripts/sample.mjs",
+    "sample:vtuber": "node scripts/sample-vtuber.mjs",
     "start": "npm run build && node server.mjs"
   },
   "devDependencies": { "esbuild": "^0.24.2", "sharp": "^0.33.5" }

@@ -681,6 +681,47 @@
     $("#keywordMod").hidden = !list.length;
   }
 
+  // VTuber の配信中（vtuber/ のページの小さな版。急上昇のデータとは別に読む）
+  async function renderVtuber() {
+    let top;
+    try {
+      const r = await fetch(`data/vtuber-top.json?t=${Math.floor(Date.now() / 300000)}`);
+      top = await r.json();
+    } catch {
+      return;
+    }
+    const list = top.top || [];
+    const box = $("#vtuberList");
+    box.innerHTML = "";
+    const agLabel = new Map((top.agencies || []).map((a) => [a.id, a.label]));
+    for (const v of list) {
+      const li = document.createElement("li");
+      li.className = "vtop-item";
+      const a = document.createElement("a");
+      a.href = `https://www.youtube.com/watch?v=${v.id}`;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      const img = document.createElement("img");
+      img.src = `https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`;
+      img.alt = "";
+      img.loading = "lazy";
+      const info = document.createElement("div");
+      const t = document.createElement("div");
+      t.className = "t";
+      t.textContent = v.t;
+      const m = document.createElement("div");
+      m.className = "m";
+      m.innerHTML = `<b>${jpNum(v.cv)}</b> 人 ・ `;
+      m.appendChild(document.createTextNode(`${v.n}${agLabel.get(v.a) ? `（${agLabel.get(v.a)}）` : ""}`));
+      info.append(t, m);
+      a.append(img, info);
+      li.appendChild(a);
+      box.appendChild(li);
+    }
+    $("#vtuberDesc").textContent = top.live ? `いま ${top.live} 枠が配信中・合計 ${jpNum(top.viewers || 0)} 人が視聴しています。` : "いま配信中の枠はありません。";
+    $("#vtuberMod").hidden = false;
+  }
+
   // ---------- 下部 ----------
   function renderDigest() {
     const box = $("#digestGrid");
@@ -866,6 +907,7 @@
     }
     setupLastRanks();
     renderAll();
+    renderVtuber();
     setInterval(tickCountdown, 30000);
     setInterval(checkNewData, CHECK_MS);
     document.addEventListener("visibilitychange", () => {
@@ -950,7 +992,19 @@
     set({ cat: "live", rank: "viewers" });
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-  $("#newData").addEventListener("click", applyNewData);
+  $("#newData").addEventListener("click", () => {
+    applyNewData();
+    renderVtuber();
+  });
+  $("#shareX").addEventListener("click", () => {
+    const text = "YouTube の急上昇ランキングを、カテゴリ別・伸び順・高評価率など、いろいろな切り口でまとめています。";
+    const shareUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(location.origin + "/");
+    const w = 600,
+      h = 480;
+    const left = Math.round((window.screen.width - w) / 2);
+    const top = Math.round((window.screen.height - h) / 2);
+    window.open(shareUrl, "share", `width=${w},height=${h},left=${left},top=${top},noopener,noreferrer`);
+  });
   $("#favExport").addEventListener("click", exportFavs);
   $("#favImport").addEventListener("click", importFavs);
   document.addEventListener("keydown", (e) => {

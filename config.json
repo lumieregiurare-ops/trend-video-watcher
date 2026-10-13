@@ -150,5 +150,58 @@
     "categoryIds": []
   },
   "samplePoints": 24,
-  "sparkPoints": 12
+  "sparkPoints": 12,
+  "vtuber": {
+    "enabled": true,
+    "rosterMaxAgeDays": 7,
+    "rssConcurrency": 8,
+    "checkWindowDays": 10,
+    "keepDays": 3,
+    "upcomingDays": 7,
+    "channelStatsEveryMin": 180,
+    "discoverMax": 120,
+    "discoverKeepDays": 14,
+    "agencies": [
+      {
+        "id": "hololive",
+        "label": "ホロライブ",
+        "color": "#2a78d6",
+        "source": { "type": "pages", "list": "https://hololive.hololivepro.com/talents/", "page": "^https://hololive\\.hololivepro\\.com/talents/[a-z0-9-]+/$" }
+      },
+      {
+        "id": "nijisanji",
+        "label": "にじさんじ",
+        "color": "#eb6834",
+        "source": { "type": "nijisanji", "affiliations": ["にじさんじ", "NIJISANJI EN"] }
+      },
+      {
+        "id": "vspo",
+        "label": "ぶいすぽっ！",
+        "color": "#1baf7a",
+        "source": { "type": "links", "url": "https://vspo.jp/member/" }
+      },
+      {
+        "id": "holostars",
+        "label": "ホロスターズ",
+        "color": "#eda100",
+        "source": { "type": "pages", "list": "https://holostars.hololivepro.com/talent/", "page": "^https://holostars\\.hololivepro\\.com/talent/[a-z0-9-]+/$" }
+      },
+      {
+        "id": "774inc",
+        "label": "ななしいんく",
+        "color": "#e87ba4",
+        "source": { "type": "links", "url": "https://www.774.ai/talents" }
+      },
+      {
+        "id": "neoporte",
+        "label": "ネオポルテ",
+        "color": "#008300",
+        "source": { "type": "pages", "list": "https://neo-porte.jp/member/", "page": "^https://neo-porte\\.jp/member/[a-z0-9-]+/?$" }
+      }
+    ],
+    "other": { "id": "other", "label": "個人勢・その他", "color": "#4a3aa7" },
+    "extraChannels": [],
+    "keywords": ["vtuber", "ぶいちゅーばー", "バーチャルyoutuber", "バーチャルライバー", "新人vtuber", "個人vtuber", "個人勢"],
+    "excludeKeywords": ["切り抜き", "切抜", "clip", "ファンメイド", "非公式", "まとめ", "解説"]
+  }
 }

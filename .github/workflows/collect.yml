@@ -1,4 +1,4 @@
-# 急上昇ランキングを定期収集して docs/ を更新し、そのままサーバーへ配信する
+# 急上昇ランキングと VTuber の配信を定期収集して docs/ を更新し、そのままサーバーへ配信する
 name: collect
 
 on:
@@ -73,13 +73,22 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: node scripts/collect.mjs
+      # VTuber の配信（vtuber/ のページ）。急上昇の結果（rankings.json）も使うので、そのあとに走らせる。
+      # 名簿は 1 週間おきにここで公式サイトから作り直す。失敗しても急上昇の更新は止めない。
+      - name: Collect VTuber
+        if: steps.gate.outputs.run == 'true'
+        continue-on-error: true
+        timeout-minutes: 12
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node scripts/collect-vtuber.mjs
       - name: Commit and push
         if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # history.json は次回の「伸び」計算に使うので必ずコミットする
-          git add docs data/history.json
+          # history.json は次回の「伸び」計算に、vtuber-state.json は同接のピークや登録者数の推移に使うので必ずコミットする
+          git add docs data/history.json data/vtuber-state.json data/vtuber-roster.json
           git diff --cached --quiet && echo "no changes" && exit 0
           git commit -m "chore: collect $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
