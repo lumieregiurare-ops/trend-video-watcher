@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-27T15:01:04.453Z",
+  "syncedAt": "2026-11-03T15:31:07.274Z",
   "report": [
     {
       "agency": "hololive",
@@ -1243,18 +1243,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCYKP16oMX9KKPbrNgo_Kgag",
-      "name": "える",
-      "enName": "Elu",
-      "unit": "",
-      "birthday": "01-24",
-      "debut": "2018-02-01",
-      "fanName": "おれら",
-      "color": "#e2364f",
-      "page": "https://www.nijisanji.jp/talents/l/elu",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCNW1Ex0r6HsWRD4LCtPwvoQ",
       "name": "三枝明那",
       "enName": "Saegusa Akina",
@@ -1264,6 +1252,18 @@
       "fanName": "どうし",
       "color": "#F03C32",
       "page": "https://www.nijisanji.jp/talents/l/akina-saegusa",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCYKP16oMX9KKPbrNgo_Kgag",
+      "name": "える",
+      "enName": "Elu",
+      "unit": "",
+      "birthday": "01-24",
+      "debut": "2018-02-01",
+      "fanName": "おれら",
+      "color": "#e2364f",
+      "page": "https://www.nijisanji.jp/talents/l/elu",
       "agency": "nijisanji"
     },
     {
@@ -1903,18 +1903,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCTIE7LM5X15NVugV7Krp9Hw",
-      "name": "夢追翔",
-      "enName": "Yumeoi Kakeru",
-      "unit": "",
-      "birthday": "06-28",
-      "debut": "2018-09-25",
-      "fanName": "追っ翔",
-      "color": "#AC324B",
-      "page": "https://www.nijisanji.jp/talents/l/kakeru-yumeoi",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UChdY64fJb14Nfnbs8EGdQig",
       "name": "叢雲カゲツ",
       "enName": "Murakumo Kagetsu",
@@ -1924,6 +1912,18 @@
       "fanName": "叢人",
       "color": "#6eb487",
       "page": "https://www.nijisanji.jp/talents/l/kagetsu-murakumo",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCTIE7LM5X15NVugV7Krp9Hw",
+      "name": "夢追翔",
+      "enName": "Yumeoi Kakeru",
+      "unit": "",
+      "birthday": "06-28",
+      "debut": "2018-09-25",
+      "fanName": "追っ翔",
+      "color": "#AC324B",
+      "page": "https://www.nijisanji.jp/talents/l/kakeru-yumeoi",
       "agency": "nijisanji"
     },
     {
@@ -2023,18 +2023,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCFgXWZOUZA2oYHNr6qDmsTQ",
-      "name": "スカーレ ヨナグニ",
-      "enName": "Scarle Yonaguni",
-      "unit": "NIJISANJI EN",
-      "birthday": "",
-      "debut": "2022-07-25",
-      "fanName": "",
-      "color": "#E60012",
-      "page": "https://www.nijisanji.jp/talents/l/scarle-yonaguni",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCyXBNgCulibV9pRm3ZKpmoQ",
       "name": "榊ネス",
       "enName": "Sakaki Ness",
@@ -2044,6 +2032,18 @@
       "fanName": "ネッシー",
       "color": "#C2AAE6",
       "page": "https://www.nijisanji.jp/talents/l/ness-sakaki",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCFgXWZOUZA2oYHNr6qDmsTQ",
+      "name": "スカーレ ヨナグニ",
+      "enName": "Scarle Yonaguni",
+      "unit": "NIJISANJI EN",
+      "birthday": "",
+      "debut": "2022-07-25",
+      "fanName": "",
+      "color": "#E60012",
+      "page": "https://www.nijisanji.jp/talents/l/scarle-yonaguni",
       "agency": "nijisanji"
     },
     {
@@ -2131,18 +2131,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCe22Bcwd_GCpTjLxn83zl7A",
-      "name": "先斗寧",
-      "enName": "Ponto Nei",
-      "unit": "",
-      "birthday": "08-21",
-      "debut": "2022-03-16",
-      "fanName": "ぽんめいと",
-      "color": "#5a7dff",
-      "page": "https://www.nijisanji.jp/talents/l/nei-ponto",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCpjypWF_wNRs9_TrjjWngpQ",
       "name": "渚トラウト",
       "enName": "Nagisa Trout",
@@ -2152,6 +2140,18 @@
       "fanName": "",
       "color": "#77B6C2",
       "page": "https://www.nijisanji.jp/talents/l/trout-nagisa",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCe22Bcwd_GCpTjLxn83zl7A",
+      "name": "先斗寧",
+      "enName": "Ponto Nei",
+      "unit": "",
+      "birthday": "08-21",
+      "debut": "2022-03-16",
+      "fanName": "ぽんめいと",
+      "color": "#5a7dff",
+      "page": "https://www.nijisanji.jp/talents/l/nei-ponto",
       "agency": "nijisanji"
     },
     {
@@ -2239,18 +2239,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC2OacIzd2UxGHRGhdHl1Rhw",
-      "name": "早瀬走",
-      "enName": "Hayase Sou",
-      "unit": "",
-      "birthday": "03-20",
-      "debut": "2019-09-20",
-      "fanName": "らんナー",
-      "color": "#aa7be8",
-      "page": "https://www.nijisanji.jp/talents/l/sou-hayase",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCllKI7VjyANuS1RXatizfLQ",
       "name": "山神カルタ",
       "enName": "Yamagami Karuta",
@@ -2260,6 +2248,18 @@
       "fanName": "かるたっこ",
       "color": "#384b5a",
       "page": "https://www.nijisanji.jp/talents/l/karuta-yamagami",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UC2OacIzd2UxGHRGhdHl1Rhw",
+      "name": "早瀬走",
+      "enName": "Hayase Sou",
+      "unit": "",
+      "birthday": "03-20",
+      "debut": "2019-09-20",
+      "fanName": "らんナー",
+      "color": "#aa7be8",
+      "page": "https://www.nijisanji.jp/talents/l/sou-hayase",
       "agency": "nijisanji"
     },
     {
@@ -2455,18 +2455,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCO8WcDsF5znr-qsXlzZNpqg",
-      "name": "ヴェール ヴァーミリオン",
-      "enName": "Ver Vermillion",
-      "unit": "NIJISANJI EN",
-      "birthday": "",
-      "debut": "2022-12-06",
-      "fanName": "",
-      "color": "#D5345E",
-      "page": "https://www.nijisanji.jp/talents/l/ver-vermillion",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCEFOogmvTTcCaO8Qe0I8-tg",
       "name": "ケイリクス・デボネア",
       "enName": "Kaelix Debonair",
@@ -2476,6 +2464,18 @@
       "fanName": "",
       "color": "#CDCD00",
       "page": "https://www.nijisanji.jp/talents/l/kaelix-debonair",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCO8WcDsF5znr-qsXlzZNpqg",
+      "name": "ヴェール ヴァーミリオン",
+      "enName": "Ver Vermillion",
+      "unit": "NIJISANJI EN",
+      "birthday": "",
+      "debut": "2022-12-06",
+      "fanName": "",
+      "color": "#D5345E",
+      "page": "https://www.nijisanji.jp/talents/l/ver-vermillion",
       "agency": "nijisanji"
     },
     {
@@ -2503,6 +2503,18 @@
       "agency": "nijisanji"
     },
     {
+      "id": "UCwjlRIySBvZ-kLV5bfjya4A",
+      "name": "御子神琴音",
+      "enName": "Mikogami Kotone",
+      "unit": "",
+      "birthday": "03-09",
+      "debut": "2026-04-19",
+      "fanName": "",
+      "color": "#d0669a",
+      "page": "https://www.nijisanji.jp/talents/l/kotone-mikogami",
+      "agency": "nijisanji"
+    },
+    {
       "id": "UCK9l6rTwU3hiSZijIMq51Gw",
       "name": "ヴェザリウス バンデージ",
       "enName": "Vezalius Bandage",
@@ -2524,18 +2536,6 @@
       "fanName": "きさらぶ",
       "color": "#846FC7",
       "page": "https://www.nijisanji.jp/talents/l/kisara",
-      "agency": "nijisanji"
-    },
-    {
-      "id": "UCwjlRIySBvZ-kLV5bfjya4A",
-      "name": "御子神琴音",
-      "enName": "Mikogami Kotone",
-      "unit": "",
-      "birthday": "03-09",
-      "debut": "2026-04-19",
-      "fanName": "",
-      "color": "#d0669a",
-      "page": "https://www.nijisanji.jp/talents/l/kotone-mikogami",
       "agency": "nijisanji"
     },
     {
@@ -2875,18 +2875,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCGLS7BOgNa6c03r7VYacblw",
-      "name": "水面まどか",
-      "enName": "Minamo Madoka",
-      "unit": "",
-      "birthday": "10-09",
-      "debut": "2026-01-29",
-      "fanName": "",
-      "color": "#FF8184",
-      "page": "https://www.nijisanji.jp/talents/l/madoka-minamo",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCHVSA2OScyef9W7OwPGgJ9w",
       "name": "城瀬いすみ",
       "enName": "Shirose Isumi",
@@ -2896,6 +2884,18 @@
       "fanName": "",
       "color": "#e5e2f6",
       "page": "https://www.nijisanji.jp/talents/l/isumi-shirose",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCGLS7BOgNa6c03r7VYacblw",
+      "name": "水面まどか",
+      "enName": "Minamo Madoka",
+      "unit": "",
+      "birthday": "10-09",
+      "debut": "2026-01-29",
+      "fanName": "",
+      "color": "#FF8184",
+      "page": "https://www.nijisanji.jp/talents/l/madoka-minamo",
       "agency": "nijisanji"
     },
     {
