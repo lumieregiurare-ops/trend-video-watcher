@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-03T15:31:07.274Z",
+  "syncedAt": "2026-11-10T16:01:07.387Z",
   "report": [
     {
       "agency": "hololive",
@@ -991,6 +991,18 @@
       "agency": "nijisanji"
     },
     {
+      "id": "UCsg-YqdqQ-KFF0LNk23BY4A",
+      "name": "樋口楓",
+      "enName": "Higuchi Kaede",
+      "unit": "",
+      "birthday": "",
+      "debut": "2018-02-01",
+      "fanName": "楓組",
+      "color": "#fbaf71",
+      "page": "https://www.nijisanji.jp/talents/l/kaede-higuchi",
+      "agency": "nijisanji"
+    },
+    {
       "id": "UCHVXbQzkl3rDfsXWo8xi2qw",
       "name": "アンジュ・カトリーナ",
       "enName": "Ange Katrina",
@@ -1015,15 +1027,15 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCsg-YqdqQ-KFF0LNk23BY4A",
-      "name": "樋口楓",
-      "enName": "Higuchi Kaede",
+      "id": "UCXRlIK3Cw_TJIQC5kSJJQMg",
+      "name": "戌亥とこ",
+      "enName": "Inui Toko",
       "unit": "",
-      "birthday": "",
-      "debut": "2018-02-01",
-      "fanName": "楓組",
-      "color": "#fbaf71",
-      "page": "https://www.nijisanji.jp/talents/l/kaede-higuchi",
+      "birthday": "09-09",
+      "debut": "2019-03-22",
+      "fanName": "無し",
+      "color": "#92F3A4",
+      "page": "https://www.nijisanji.jp/talents/l/toko-inui",
       "agency": "nijisanji"
     },
     {
@@ -1036,18 +1048,6 @@
       "fanName": "ヘルエスタ王国民",
       "color": "#42ffff",
       "page": "https://www.nijisanji.jp/talents/l/lize-helesta",
-      "agency": "nijisanji"
-    },
-    {
-      "id": "UCXRlIK3Cw_TJIQC5kSJJQMg",
-      "name": "戌亥とこ",
-      "enName": "Inui Toko",
-      "unit": "",
-      "birthday": "09-09",
-      "debut": "2019-03-22",
-      "fanName": "無し",
-      "color": "#92F3A4",
-      "page": "https://www.nijisanji.jp/talents/l/toko-inui",
       "agency": "nijisanji"
     },
     {
@@ -1399,18 +1399,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCIG9rDtgR45VCZmYnd-4DUw",
-      "name": "ラトナ・プティ",
-      "enName": "Ratna Petit",
-      "unit": "",
-      "birthday": "10-14",
-      "debut": "2019-08-08",
-      "fanName": "ぷりすなー",
-      "color": "#f36c21",
-      "page": "https://www.nijisanji.jp/talents/l/ratna-petit",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCS-XXTgVkotkbkDnGEprXpg",
       "name": "ましろ爻",
       "enName": "Mashiro Meme",
@@ -1420,6 +1408,18 @@
       "fanName": "無し",
       "color": "#1e2232",
       "page": "https://www.nijisanji.jp/talents/l/meme-mashiro",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCIG9rDtgR45VCZmYnd-4DUw",
+      "name": "ラトナ・プティ",
+      "enName": "Ratna Petit",
+      "unit": "",
+      "birthday": "10-14",
+      "debut": "2019-08-08",
+      "fanName": "ぷりすなー",
+      "color": "#f36c21",
+      "page": "https://www.nijisanji.jp/talents/l/ratna-petit",
       "agency": "nijisanji"
     },
     {
@@ -1543,18 +1543,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCIeSUTOTkF9Hs7q3SGcO-Ow",
-      "name": "エリーラ ペンドラ",
-      "enName": "Elira Pendora",
-      "unit": "NIJISANJI EN",
-      "birthday": "",
-      "debut": "2021-05-16",
-      "fanName": "",
-      "color": "#95C8D8",
-      "page": "https://www.nijisanji.jp/talents/l/elira-pendora",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UC-6rZgmxZSIbq786j3RD5ow",
       "name": "レオス・ヴィンセント",
       "enName": "Leos Vincent",
@@ -1567,15 +1555,15 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCgA2jKRkqpY_8eysPUs8sjw",
-      "name": "ペトラ グリン",
-      "enName": "Petra Gurin",
+      "id": "UCIeSUTOTkF9Hs7q3SGcO-Ow",
+      "name": "エリーラ ペンドラ",
+      "enName": "Elira Pendora",
       "unit": "NIJISANJI EN",
       "birthday": "",
-      "debut": "2021-07-18",
+      "debut": "2021-05-16",
       "fanName": "",
-      "color": "#FFAE42",
-      "page": "https://www.nijisanji.jp/talents/l/petra-gurin",
+      "color": "#95C8D8",
+      "page": "https://www.nijisanji.jp/talents/l/elira-pendora",
       "agency": "nijisanji"
     },
     {
@@ -1600,6 +1588,18 @@
       "fanName": "インショウ派",
       "color": "#a58cdc",
       "page": "https://www.nijisanji.jp/talents/l/sho-hoshirube",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCgA2jKRkqpY_8eysPUs8sjw",
+      "name": "ペトラ グリン",
+      "enName": "Petra Gurin",
+      "unit": "NIJISANJI EN",
+      "birthday": "",
+      "debut": "2021-07-18",
+      "fanName": "",
+      "color": "#FFAE42",
+      "page": "https://www.nijisanji.jp/talents/l/petra-gurin",
       "agency": "nijisanji"
     },
     {
@@ -1795,18 +1795,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC48jH1ul-6HOrcSSfoR02fQ",
-      "name": "夕陽リリ",
-      "enName": "Yuhi Riri",
-      "unit": "",
-      "birthday": "01-21",
-      "debut": "2018-03-15",
-      "fanName": "無し",
-      "color": "#bfffff",
-      "page": "https://www.nijisanji.jp/talents/l/riri-yuhi",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCz89MGFBrAqwJ5xMr5weSuA",
       "name": "伊波ライ",
       "enName": "Inami Rai",
@@ -1816,6 +1804,18 @@
       "fanName": "無し",
       "color": "#dcff50",
       "page": "https://www.nijisanji.jp/talents/l/rai-inami",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UC48jH1ul-6HOrcSSfoR02fQ",
+      "name": "夕陽リリ",
+      "enName": "Yuhi Riri",
+      "unit": "",
+      "birthday": "01-21",
+      "debut": "2018-03-15",
+      "fanName": "無し",
+      "color": "#bfffff",
+      "page": "https://www.nijisanji.jp/talents/l/riri-yuhi",
       "agency": "nijisanji"
     },
     {
@@ -1951,18 +1951,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC8SJPcLpIM3x8RdBJFfiluw",
-      "name": "魁星",
-      "enName": "Kaisei",
-      "unit": "",
-      "birthday": "06-09",
-      "debut": "2024-03-12",
-      "fanName": "錠連",
-      "color": "#0C6F72",
-      "page": "https://www.nijisanji.jp/talents/l/kaisei",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCkhViRjLUKgIcVpar9JiNrw",
       "name": "珠乃井ナナ",
       "enName": "Tamanoi Nana",
@@ -1972,6 +1960,18 @@
       "fanName": "ななかま",
       "color": "#63AED9",
       "page": "https://www.nijisanji.jp/talents/l/nana-tamanoi",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UC8SJPcLpIM3x8RdBJFfiluw",
+      "name": "魁星",
+      "enName": "Kaisei",
+      "unit": "",
+      "birthday": "06-09",
+      "debut": "2024-03-12",
+      "fanName": "錠連",
+      "color": "#0C6F72",
+      "page": "https://www.nijisanji.jp/talents/l/kaisei",
       "agency": "nijisanji"
     },
     {
@@ -1987,18 +1987,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC53UDnhAAYwvNO7j_2Ju1cQ",
-      "name": "ドーラ",
-      "enName": "Dola",
-      "unit": "",
-      "birthday": "08-19",
-      "debut": "2018-06-03",
-      "fanName": "竜友（ドラとも）",
-      "color": "#A83E4A",
-      "page": "https://www.nijisanji.jp/talents/l/dola",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCu-rV2gPtJ-CsGxe71z_BrQ",
       "name": "五十嵐梨花",
       "enName": "Igarashi Rika",
@@ -2008,6 +1996,18 @@
       "fanName": "監督くん・監督ちゃん",
       "color": "#FF8C3C",
       "page": "https://www.nijisanji.jp/talents/l/rika-igarashi",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UC53UDnhAAYwvNO7j_2Ju1cQ",
+      "name": "ドーラ",
+      "enName": "Dola",
+      "unit": "",
+      "birthday": "08-19",
+      "debut": "2018-06-03",
+      "fanName": "竜友（ドラとも）",
+      "color": "#A83E4A",
+      "page": "https://www.nijisanji.jp/talents/l/dola",
       "agency": "nijisanji"
     },
     {
@@ -2239,18 +2239,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCllKI7VjyANuS1RXatizfLQ",
-      "name": "山神カルタ",
-      "enName": "Yamagami Karuta",
-      "unit": "",
-      "birthday": "08-11",
-      "debut": "2019-10-17",
-      "fanName": "かるたっこ",
-      "color": "#384b5a",
-      "page": "https://www.nijisanji.jp/talents/l/karuta-yamagami",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UC2OacIzd2UxGHRGhdHl1Rhw",
       "name": "早瀬走",
       "enName": "Hayase Sou",
@@ -2260,6 +2248,18 @@
       "fanName": "らんナー",
       "color": "#aa7be8",
       "page": "https://www.nijisanji.jp/talents/l/sou-hayase",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCllKI7VjyANuS1RXatizfLQ",
+      "name": "山神カルタ",
+      "enName": "Yamagami Karuta",
+      "unit": "",
+      "birthday": "08-11",
+      "debut": "2019-10-17",
+      "fanName": "かるたっこ",
+      "color": "#384b5a",
+      "page": "https://www.nijisanji.jp/talents/l/karuta-yamagami",
       "agency": "nijisanji"
     },
     {
@@ -2407,6 +2407,18 @@
       "agency": "nijisanji"
     },
     {
+      "id": "UCzsCWYuvPUky3-DKzphYbEw",
+      "name": "司賀りこ",
+      "enName": "Shiga Riko",
+      "unit": "",
+      "birthday": "01-19",
+      "debut": "2024-06-19",
+      "fanName": "りこりすと",
+      "color": "#FFE36C",
+      "page": "https://www.nijisanji.jp/talents/l/riko-shiga",
+      "agency": "nijisanji"
+    },
+    {
       "id": "UCb6ObE-XGCctO3WrjRZC-cw",
       "name": "ルイス・キャミー",
       "enName": "Luis Cammy",
@@ -2419,15 +2431,15 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCzsCWYuvPUky3-DKzphYbEw",
-      "name": "司賀りこ",
-      "enName": "Shiga Riko",
+      "id": "UCwjlRIySBvZ-kLV5bfjya4A",
+      "name": "御子神琴音",
+      "enName": "Mikogami Kotone",
       "unit": "",
-      "birthday": "01-19",
-      "debut": "2024-06-19",
-      "fanName": "りこりすと",
-      "color": "#FFE36C",
-      "page": "https://www.nijisanji.jp/talents/l/riko-shiga",
+      "birthday": "03-09",
+      "debut": "2026-04-19",
+      "fanName": "",
+      "color": "#d0669a",
+      "page": "https://www.nijisanji.jp/talents/l/kotone-mikogami",
       "agency": "nijisanji"
     },
     {
@@ -2500,18 +2512,6 @@
       "fanName": "",
       "color": "#c92235",
       "page": "https://www.nijisanji.jp/talents/l/seffyna",
-      "agency": "nijisanji"
-    },
-    {
-      "id": "UCwjlRIySBvZ-kLV5bfjya4A",
-      "name": "御子神琴音",
-      "enName": "Mikogami Kotone",
-      "unit": "",
-      "birthday": "03-09",
-      "debut": "2026-04-19",
-      "fanName": "",
-      "color": "#d0669a",
-      "page": "https://www.nijisanji.jp/talents/l/kotone-mikogami",
       "agency": "nijisanji"
     },
     {
@@ -2635,18 +2635,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCr40BzcLiGruKe7M5gXR9zQ",
-      "name": "フリオドール",
-      "enName": "Freodore",
-      "unit": "NIJISANJI EN",
-      "birthday": "",
-      "debut": "2025-03-13",
-      "fanName": "",
-      "color": "#AA0037",
-      "page": "https://www.nijisanji.jp/talents/l/freodore",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCxTIuegV_Vqx11ctdeezPRQ",
       "name": "神永タイガ",
       "enName": "Kaminaga Taiga",
@@ -2656,6 +2644,18 @@
       "fanName": "",
       "color": "#e4d571",
       "page": "https://www.nijisanji.jp/talents/l/taiga-kaminaga",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCr40BzcLiGruKe7M5gXR9zQ",
+      "name": "フリオドール",
+      "enName": "Freodore",
+      "unit": "NIJISANJI EN",
+      "birthday": "",
+      "debut": "2025-03-13",
+      "fanName": "",
+      "color": "#AA0037",
+      "page": "https://www.nijisanji.jp/talents/l/freodore",
       "agency": "nijisanji"
     },
     {
@@ -3103,18 +3103,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC5ek2GWKvUKFgnKSHuuCFrw",
-      "name": "ソ ナギ",
-      "enName": "So Nagi",
-      "unit": "",
-      "birthday": "",
-      "debut": "2020-06-01",
-      "fanName": "",
-      "color": "#7c86de",
-      "page": "https://www.nijisanji.jp/talents/l/so-nagi",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCIxiVz8JLYTMXexmLh92S6A",
       "name": "ぷりん・らら・もーど",
       "enName": "Purin Lala Mode",
@@ -3127,15 +3115,15 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCX88Pe54pxbJDSGIyGrzNdg",
-      "name": "ナ セラ",
-      "enName": "Na Sera",
+      "id": "UC5ek2GWKvUKFgnKSHuuCFrw",
+      "name": "ソ ナギ",
+      "enName": "So Nagi",
       "unit": "",
       "birthday": "",
-      "debut": "2021-09-01",
+      "debut": "2020-06-01",
       "fanName": "",
-      "color": "#feecf3",
-      "page": "https://www.nijisanji.jp/talents/l/na-sera",
+      "color": "#7c86de",
+      "page": "https://www.nijisanji.jp/talents/l/so-nagi",
       "agency": "nijisanji"
     },
     {
@@ -3148,6 +3136,18 @@
       "fanName": "",
       "color": "#FFEEA0",
       "page": "https://www.nijisanji.jp/talents/l/pomelo-punch",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCX88Pe54pxbJDSGIyGrzNdg",
+      "name": "ナ セラ",
+      "enName": "Na Sera",
+      "unit": "",
+      "birthday": "",
+      "debut": "2021-09-01",
+      "fanName": "",
+      "color": "#feecf3",
+      "page": "https://www.nijisanji.jp/talents/l/na-sera",
       "agency": "nijisanji"
     },
     {
