@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-10T16:01:07.387Z",
+  "syncedAt": "2026-11-17T16:31:19.258Z",
   "report": [
     {
       "agency": "hololive",
@@ -1795,18 +1795,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCz89MGFBrAqwJ5xMr5weSuA",
-      "name": "伊波ライ",
-      "enName": "Inami Rai",
-      "unit": "",
-      "birthday": "10-23",
-      "debut": "2023-04-26",
-      "fanName": "無し",
-      "color": "#dcff50",
-      "page": "https://www.nijisanji.jp/talents/l/rai-inami",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UC48jH1ul-6HOrcSSfoR02fQ",
       "name": "夕陽リリ",
       "enName": "Yuhi Riri",
@@ -1816,6 +1804,18 @@
       "fanName": "無し",
       "color": "#bfffff",
       "page": "https://www.nijisanji.jp/talents/l/riri-yuhi",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCz89MGFBrAqwJ5xMr5weSuA",
+      "name": "伊波ライ",
+      "enName": "Inami Rai",
+      "unit": "",
+      "birthday": "10-23",
+      "debut": "2023-04-26",
+      "fanName": "無し",
+      "color": "#dcff50",
+      "page": "https://www.nijisanji.jp/talents/l/rai-inami",
       "agency": "nijisanji"
     },
     {
@@ -2011,18 +2011,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCqjTqdVlvIipZXIKeCkHKUA",
-      "name": "オリバー・エバンス",
-      "enName": "Oliver Evans",
-      "unit": "",
-      "birthday": "02-21",
-      "debut": "2021-07-22",
-      "fanName": "ゼミ生",
-      "color": "#bcc37e",
-      "page": "https://www.nijisanji.jp/talents/l/oliver-evans",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCyXBNgCulibV9pRm3ZKpmoQ",
       "name": "榊ネス",
       "enName": "Sakaki Ness",
@@ -2032,6 +2020,18 @@
       "fanName": "ネッシー",
       "color": "#C2AAE6",
       "page": "https://www.nijisanji.jp/talents/l/ness-sakaki",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCqjTqdVlvIipZXIKeCkHKUA",
+      "name": "オリバー・エバンス",
+      "enName": "Oliver Evans",
+      "unit": "",
+      "birthday": "02-21",
+      "debut": "2021-07-22",
+      "fanName": "ゼミ生",
+      "color": "#bcc37e",
+      "page": "https://www.nijisanji.jp/talents/l/oliver-evans",
       "agency": "nijisanji"
     },
     {
@@ -2095,6 +2095,18 @@
       "agency": "nijisanji"
     },
     {
+      "id": "UC0xry7czPasj1wPxR8L0MZg",
+      "name": "早乙女ベリー",
+      "enName": "Saotome Berry",
+      "unit": "",
+      "birthday": "03-29",
+      "debut": "2024-08-13",
+      "fanName": "べりすなー",
+      "color": "#DF6D7C",
+      "page": "https://www.nijisanji.jp/talents/l/berry-saotome",
+      "agency": "nijisanji"
+    },
+    {
       "id": "UCryOPk2GZ1meIDt53tL30Tw",
       "name": "鈴木勝",
       "enName": "Suzuki Masaru",
@@ -2119,18 +2131,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC0xry7czPasj1wPxR8L0MZg",
-      "name": "早乙女ベリー",
-      "enName": "Saotome Berry",
-      "unit": "",
-      "birthday": "03-29",
-      "debut": "2024-08-13",
-      "fanName": "べりすなー",
-      "color": "#DF6D7C",
-      "page": "https://www.nijisanji.jp/talents/l/berry-saotome",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCpjypWF_wNRs9_TrjjWngpQ",
       "name": "渚トラウト",
       "enName": "Nagisa Trout",
@@ -2143,18 +2143,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCe22Bcwd_GCpTjLxn83zl7A",
-      "name": "先斗寧",
-      "enName": "Ponto Nei",
-      "unit": "",
-      "birthday": "08-21",
-      "debut": "2022-03-16",
-      "fanName": "ぽんめいと",
-      "color": "#5a7dff",
-      "page": "https://www.nijisanji.jp/talents/l/nei-ponto",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCtC3B1n4XMiJmrDtu1Ni5qw",
       "name": "七瀬すず菜",
       "enName": "Nanase Suzuna",
@@ -2164,6 +2152,18 @@
       "fanName": "すずふぁーむ",
       "color": "#9DD9B9",
       "page": "https://www.nijisanji.jp/talents/l/suzuna-nanase",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCe22Bcwd_GCpTjLxn83zl7A",
+      "name": "先斗寧",
+      "enName": "Ponto Nei",
+      "unit": "",
+      "birthday": "08-21",
+      "debut": "2022-03-16",
+      "fanName": "ぽんめいと",
+      "color": "#5a7dff",
+      "page": "https://www.nijisanji.jp/talents/l/nei-ponto",
       "agency": "nijisanji"
     },
     {
@@ -2191,18 +2191,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCpYf6C9QsP_BRf97vLuXlIA",
-      "name": "ベンタクロウ ブリンガー",
-      "enName": "Vantacrow Bringer",
-      "unit": "NIJISANJI EN",
-      "birthday": "",
-      "debut": "2023-06-22",
-      "fanName": "",
-      "color": "#8728e1",
-      "page": "https://www.nijisanji.jp/talents/l/vantacrow-bringer",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCiA-trSZfB0i92V_-dyDqBw",
       "name": "倉持めると",
       "enName": "Kuramochi Meruto",
@@ -2212,6 +2200,18 @@
       "fanName": "めるねいと",
       "color": "#EB4682",
       "page": "https://www.nijisanji.jp/talents/l/meruto-kuramochi",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCpYf6C9QsP_BRf97vLuXlIA",
+      "name": "ベンタクロウ ブリンガー",
+      "enName": "Vantacrow Bringer",
+      "unit": "NIJISANJI EN",
+      "birthday": "",
+      "debut": "2023-06-22",
+      "fanName": "",
+      "color": "#8728e1",
+      "page": "https://www.nijisanji.jp/talents/l/vantacrow-bringer",
       "agency": "nijisanji"
     },
     {
@@ -2311,18 +2311,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCpJtk0myFr5WnyfsmnInP-w",
-      "name": "ハナ マキア",
-      "enName": "Hana Macchia",
-      "unit": "",
-      "birthday": "",
-      "debut": "2019-09-13",
-      "fanName": "",
-      "color": "#ffefd5",
-      "page": "https://www.nijisanji.jp/talents/l/hana-macchia",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCwrjITPwG4q71HzihV2C7Nw",
       "name": "フミ",
       "enName": "Fumi",
@@ -2332,6 +2320,18 @@
       "fanName": "フミ民",
       "color": "#f4e49d",
       "page": "https://www.nijisanji.jp/talents/l/fumi",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCpJtk0myFr5WnyfsmnInP-w",
+      "name": "ハナ マキア",
+      "enName": "Hana Macchia",
+      "unit": "",
+      "birthday": "",
+      "debut": "2019-09-13",
+      "fanName": "",
+      "color": "#ffefd5",
+      "page": "https://www.nijisanji.jp/talents/l/hana-macchia",
       "agency": "nijisanji"
     },
     {
@@ -2383,18 +2383,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCt0clH12Xk1-Ej5PXKGfdPA",
-      "name": "物述有栖",
-      "enName": "Mononobe Alice",
-      "unit": "",
-      "birthday": "11-16",
-      "debut": "2018-03-15",
-      "fanName": "うさぎさん🐰",
-      "color": "#81d4e2",
-      "page": "https://www.nijisanji.jp/talents/l/alice-mononobe",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UClrQ7xhRBxS_v_-WuudGKmA",
       "name": "鏑木ろこ",
       "enName": "Kaburaki Roco",
@@ -2404,6 +2392,18 @@
       "fanName": "アミューズメイト",
       "color": "#198CAA",
       "page": "https://www.nijisanji.jp/talents/l/roco-kaburaki",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCt0clH12Xk1-Ej5PXKGfdPA",
+      "name": "物述有栖",
+      "enName": "Mononobe Alice",
+      "unit": "",
+      "birthday": "11-16",
+      "debut": "2018-03-15",
+      "fanName": "うさぎさん🐰",
+      "color": "#81d4e2",
+      "page": "https://www.nijisanji.jp/talents/l/alice-mononobe",
       "agency": "nijisanji"
     },
     {
@@ -2419,18 +2419,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCb6ObE-XGCctO3WrjRZC-cw",
-      "name": "ルイス・キャミー",
-      "enName": "Luis Cammy",
-      "unit": "",
-      "birthday": "02-22",
-      "debut": "2019-11-01",
-      "fanName": "怪盗団",
-      "color": "#e86a74",
-      "page": "https://www.nijisanji.jp/talents/l/luis-cammy",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCwjlRIySBvZ-kLV5bfjya4A",
       "name": "御子神琴音",
       "enName": "Mikogami Kotone",
@@ -2440,6 +2428,18 @@
       "fanName": "",
       "color": "#d0669a",
       "page": "https://www.nijisanji.jp/talents/l/kotone-mikogami",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCb6ObE-XGCctO3WrjRZC-cw",
+      "name": "ルイス・キャミー",
+      "enName": "Luis Cammy",
+      "unit": "",
+      "birthday": "02-22",
+      "debut": "2019-11-01",
+      "fanName": "怪盗団",
+      "color": "#e86a74",
+      "page": "https://www.nijisanji.jp/talents/l/luis-cammy",
       "agency": "nijisanji"
     },
     {
@@ -2599,6 +2599,18 @@
       "agency": "nijisanji"
     },
     {
+      "id": "UCxTIuegV_Vqx11ctdeezPRQ",
+      "name": "神永タイガ",
+      "enName": "Kaminaga Taiga",
+      "unit": "",
+      "birthday": "11-22",
+      "debut": "2026-08-27",
+      "fanName": "",
+      "color": "#e4d571",
+      "page": "https://www.nijisanji.jp/talents/l/taiga-kaminaga",
+      "agency": "nijisanji"
+    },
+    {
       "id": "UCvzVB-EYuHFXHZrObB8a_Og",
       "name": "矢車りね",
       "enName": "Yaguruma Rine",
@@ -2632,18 +2644,6 @@
       "fanName": "コハク党",
       "color": "#EA930A",
       "page": "https://www.nijisanji.jp/talents/l/kohaku-todo",
-      "agency": "nijisanji"
-    },
-    {
-      "id": "UCxTIuegV_Vqx11ctdeezPRQ",
-      "name": "神永タイガ",
-      "enName": "Kaminaga Taiga",
-      "unit": "",
-      "birthday": "11-22",
-      "debut": "2026-08-27",
-      "fanName": "",
-      "color": "#e4d571",
-      "page": "https://www.nijisanji.jp/talents/l/taiga-kaminaga",
       "agency": "nijisanji"
     },
     {
@@ -2767,18 +2767,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCCugV2RWXqJMjVVQl_Yh4TQ",
-      "name": "セイブル",
-      "enName": "Seible",
-      "unit": "NIJISANJI EN",
-      "birthday": "",
-      "debut": "2025-03-13",
-      "fanName": "",
-      "color": "#0A44AA",
-      "page": "https://www.nijisanji.jp/talents/l/seible",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCzHiiP2r1zyTr8A1-6HtQtw",
       "name": "山田龍一郎",
       "enName": "Yamada Ryuichiro",
@@ -2788,6 +2776,18 @@
       "fanName": "",
       "color": "#82acc8",
       "page": "https://www.nijisanji.jp/talents/l/ryuichiro-yamada",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UCCugV2RWXqJMjVVQl_Yh4TQ",
+      "name": "セイブル",
+      "enName": "Seible",
+      "unit": "NIJISANJI EN",
+      "birthday": "",
+      "debut": "2025-03-13",
+      "fanName": "",
+      "color": "#0A44AA",
+      "page": "https://www.nijisanji.jp/talents/l/seible",
       "agency": "nijisanji"
     },
     {
@@ -2851,6 +2851,18 @@
       "agency": "nijisanji"
     },
     {
+      "id": "UCHVSA2OScyef9W7OwPGgJ9w",
+      "name": "城瀬いすみ",
+      "enName": "Shirose Isumi",
+      "unit": "",
+      "birthday": "12-23",
+      "debut": "2025-09-17",
+      "fanName": "",
+      "color": "#e5e2f6",
+      "page": "https://www.nijisanji.jp/talents/l/isumi-shirose",
+      "agency": "nijisanji"
+    },
+    {
       "id": "UCvmppcdYf4HOv-tFQhHHJMA",
       "name": "モイラ",
       "enName": "Moira",
@@ -2872,18 +2884,6 @@
       "fanName": "ろきぺ",
       "color": "#E76186",
       "page": "https://www.nijisanji.jp/talents/l/kyoko-todoroki",
-      "agency": "nijisanji"
-    },
-    {
-      "id": "UCHVSA2OScyef9W7OwPGgJ9w",
-      "name": "城瀬いすみ",
-      "enName": "Shirose Isumi",
-      "unit": "",
-      "birthday": "12-23",
-      "debut": "2025-09-17",
-      "fanName": "",
-      "color": "#e5e2f6",
-      "page": "https://www.nijisanji.jp/talents/l/isumi-shirose",
       "agency": "nijisanji"
     },
     {
@@ -3091,18 +3091,6 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UCGGIGlgxXoVu1ZzbQ2XBxqQ",
-      "name": "小々波いるか",
-      "enName": "Kokonami Iruka",
-      "unit": "",
-      "birthday": "09-12",
-      "debut": "2026-04-19",
-      "fanName": "",
-      "color": "#4270b2",
-      "page": "https://www.nijisanji.jp/talents/l/iruka-kokonami",
-      "agency": "nijisanji"
-    },
-    {
       "id": "UCIxiVz8JLYTMXexmLh92S6A",
       "name": "ぷりん・らら・もーど",
       "enName": "Purin Lala Mode",
@@ -3115,15 +3103,15 @@
       "agency": "nijisanji"
     },
     {
-      "id": "UC5ek2GWKvUKFgnKSHuuCFrw",
-      "name": "ソ ナギ",
-      "enName": "So Nagi",
+      "id": "UCGGIGlgxXoVu1ZzbQ2XBxqQ",
+      "name": "小々波いるか",
+      "enName": "Kokonami Iruka",
       "unit": "",
-      "birthday": "",
-      "debut": "2020-06-01",
+      "birthday": "09-12",
+      "debut": "2026-04-19",
       "fanName": "",
-      "color": "#7c86de",
-      "page": "https://www.nijisanji.jp/talents/l/so-nagi",
+      "color": "#4270b2",
+      "page": "https://www.nijisanji.jp/talents/l/iruka-kokonami",
       "agency": "nijisanji"
     },
     {
@@ -3136,6 +3124,18 @@
       "fanName": "",
       "color": "#FFEEA0",
       "page": "https://www.nijisanji.jp/talents/l/pomelo-punch",
+      "agency": "nijisanji"
+    },
+    {
+      "id": "UC5ek2GWKvUKFgnKSHuuCFrw",
+      "name": "ソ ナギ",
+      "enName": "So Nagi",
+      "unit": "",
+      "birthday": "",
+      "debut": "2020-06-01",
+      "fanName": "",
+      "color": "#7c86de",
+      "page": "https://www.nijisanji.jp/talents/l/so-nagi",
       "agency": "nijisanji"
     },
     {
